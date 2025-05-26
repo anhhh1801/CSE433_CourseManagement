@@ -1,0 +1,16 @@
+﻿
+@{
+	
+	ViewData["Title"] = "Home Page";
+	
+}
+@model CourseManagement.Models.Teacher;
+<div>
+	@if (@Model == null){
+		<h1>Not Found Teacher</h1>
+	} else {
+		<h1>Welcome @Model.email @Model.teacherId</h1>
+	}
+</div>
+
+

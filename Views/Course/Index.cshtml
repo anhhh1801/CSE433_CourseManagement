@@ -1,0 +1,52 @@
+﻿
+@{
+
+	ViewData["Title"] = "Course Management Page";
+	@model List<CourseManagement.Models.Course>;
+}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-5">
+			<h2>Course Management</h2>
+			<p>Manage course here.</p>
+		</div>
+		<div class="col-5">
+			<div class="search-container">
+				<input type="text" placeholder="Search....">
+				<button>Search</button>
+			</div>
+		</div>
+		<div class="col-2">
+			<a asp-controller="Course" asp-action="Add" class="btn btn-primary">Add</a>
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Course ID</th>
+				<th>Course Code</th>
+				<th>Course Name</th>
+				<th>Course Subject</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var course in Model)
+			{
+				<tr>
+					<td>@course.courseId</td>
+					<td>@course.courseCode</td>
+					<td>@course.courseName</td>
+					<td>@course.courseSubject</td>
+					<td>
+						<a asp-controller="Course" asp-action="Edit" asp-route-id="@course.courseId" class="btn btn-secondary">Edit</a>
+						<a asp-controller="Course" asp-action="Delete" asp-route-id="@course.courseId" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+

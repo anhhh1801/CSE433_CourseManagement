@@ -1,0 +1,31 @@
+﻿
+@model CourseManagement.Models.Student;
+@{
+	ViewData["Title"] = "Add Course";
+}
+@using System.Security.Claims;
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-6">
+			<h2>Course Management</h2>
+			<p>Add course here.</p>
+		</div>
+		<div class="col-6">
+			<a asp-controller="Student" asp-action="Index" class="btn btn-primary">Back</a>
+		</div>
+	</div>
+	<form asp-controller="Course" asp-action="Add" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="teacherId" value="@User.FindFirstValue("TeacherId")" />
+		<input type="hidden" asp-for="studentId" />
+		<div>
+			<label asp-for="studentName">Student Name:</label>
+			<input asp-for="studentName" type="text" class="form-control" required />
+		</div>
+		<div>
+			<label asp-for="parentNumber">Parent Number:</label>
+			<input asp-for="parentNumber" type="text" class="form-control" required />
+		</div>
+		<button type="submit" class="btn btn-primary">Add</button>
+	</form>
+</div>

@@ -1,0 +1,16 @@
+﻿@model CourseManagement.Models.Teacher;
+<div>
+	<form asp-controller="Authen" asp-action="SignUp" method="post" enctype="multipart/form-data">
+		<div>
+			<label asp-for="email">Email:</label>
+			<input asp-for="email" type="text" class="form-control" required />
+		</div>
+		<div>
+			<label asp-for="password">Password:</label>
+			<input asp-for="password" type="text" class="form-control" required />
+		</div>
+		<button type="submit" class="btn btn-primary">Sign Up</button>
+		<button asp-controller="Authen" asp-action="Login" class="btn btn-primary">Login</button>
+	</form>
+</div>
+

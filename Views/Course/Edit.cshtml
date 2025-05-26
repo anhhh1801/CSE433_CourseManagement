@@ -1,0 +1,33 @@
+﻿
+@model CourseManagement.Models.Course;
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-6">
+			<h2>Course Management</h2>
+			<p>Edit course here.</p>
+		</div>
+		<div class="col-6">
+			<a asp-controller="Course" asp-action="Index" class="btn btn-primary">Back</a>
+		</div>
+	</div>
+	<form asp-controller="Course" asp-action="Edit" method="post" enctype="multipart/form-data">
+		<input type="hidden" asp-for="courseId" />
+		<div>
+			<label asp-for="courseCode">Course Code:</label>
+			<input asp-for="courseCode" type="text" class="form-control" />
+			<span asp-validation-for="courseCode" class="text-danger"></span>
+		</div>
+		<div>
+			<label asp-for="courseName">Course Name:</label>
+			<input asp-for="courseName" type="text" class="form-control" />
+			<span asp-validation-for="courseName" class="text-danger"></span>
+		</div>	
+		<div>
+			<label asp-for="courseSubject">Course Subject:</label>
+			<input type="text" asp-for="courseSubject" class="form-control" />
+			<span asp-validation-for="courseSubject" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary">Update</button>
+	</form>
+</div>

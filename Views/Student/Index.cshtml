@@ -1,0 +1,48 @@
+﻿@{
+
+	ViewData["Title"] = "Course Management Page";
+	@model List<CourseManagement.Models.Student>;
+
+}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-5">
+			<h2>Student Management</h2>
+			<p>Manage student here.</p>
+		</div>
+		<div class="col-5">
+			<div class="search-container">
+				<input type="text" placeholder="Search....">
+				<button>Search</button>
+			</div>
+		</div>
+		<div class="col-2">
+			<a asp-controller="Student" asp-action="Add" class="btn btn-primary">Add</a>
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Student ID</th>
+				<th>Student Name</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var student in Model)
+			{
+				<tr>
+					<td>@student.studentId</td>
+					<td>@student.studentName</td>
+					<td>
+						<a asp-controller="Course" asp-action="Edit" asp-route-id="@student.studentId" class="btn btn-secondary">Edit</a>
+						<a asp-controller="Course" asp-action="Delete" asp-route-id="@student.studentId" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+
