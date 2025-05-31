@@ -26,6 +26,12 @@
 			<label asp-for="parentNumber">Parent Number:</label>
 			<input asp-for="parentNumber" type="text" class="form-control" required />
 		</div>
+		<div class="mb-3">
+			<form asp-action="UploadAvatar" method="post" enctype="multipart/form-data">
+				<input type="file" name="avatar" />
+				<button type="submit">Upload</button>
+			</form>
+		</div>
 		<button type="submit" class="btn btn-primary">Add</button>
 	</form>
 </div>

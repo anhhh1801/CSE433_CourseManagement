@@ -1,5 +1,8 @@
 wwwroot\css\site.css
+wwwroot\css\style-login.css
+wwwroot\css\style-signup.css
 wwwroot\favicon.ico
+wwwroot\img\login-pic.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

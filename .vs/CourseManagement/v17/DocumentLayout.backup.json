@@ -7,20 +7,12 @@
       "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\views\\student\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:views\\student\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:views\\student\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{87432833-13D9-48FF-A1B1-EC1D8EDC1FFE}|CourseManagement.csproj|d:\\cse 443\\project_coursemanagement_cse443\\cse433_coursemanagement\\views\\authen\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -102,8 +102,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Student\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Index.cshtml",
+              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Student\\Index.cshtml",
+              "RelativeToolTip": "Views\\Student\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACsAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T08:47:02.848Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -112,7 +125,7 @@
               "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
               "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\StudentController.cs",
               "RelativeToolTip": "Controllers\\StudentController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAuwC4AAABOAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-30T08:48:25.794Z",
               "EditorCaption": ""
@@ -125,7 +138,7 @@
               "RelativeDocumentMoniker": "Views\\Student\\Add.cshtml",
               "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Student\\Add.cshtml",
               "RelativeToolTip": "Views\\Student\\Add.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-30T08:45:53.097Z",
               "EditorCaption": ""
@@ -140,17 +153,18 @@
               "RelativeToolTip": "Views\\Course\\Add.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T08:16:30.185Z"
+              "WhenOpened": "2025-05-27T08:16:30.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Student.cs",
               "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Models\\Student.cs",
               "RelativeDocumentMoniker": "Models\\Student.cs",
               "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Models\\Student.cs",
               "RelativeToolTip": "Models\\Student.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-26T11:45:05.966Z",
               "EditorCaption": ""
@@ -165,11 +179,38 @@
               "RelativeToolTip": "Views\\Authen\\SignUp.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAAEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T03:21:57.834Z"
+              "WhenOpened": "2025-05-30T03:21:57.834Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
+              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Controllers\\CourseController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T11:54:20.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-30T03:39:02.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -183,42 +224,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Student\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Student\\Index.cshtml",
-              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Student\\Index.cshtml",
-              "RelativeToolTip": "Views\\Student\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACsAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T08:47:02.848Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
-              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "Controllers\\CourseController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:54:20.593Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T03:39:02.684Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -226,7 +231,8 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:41:52.077Z"
+              "WhenOpened": "2025-05-26T11:41:52.077Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -238,7 +244,8 @@
               "RelativeToolTip": "Views\\Course\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T08:16:31.684Z"
+              "WhenOpened": "2025-05-27T08:16:31.684Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -250,7 +257,8 @@
               "RelativeToolTip": "Controllers\\AuthenController.cs",
               "ViewState": "AgIAABcAAAAAAAAAAADgvyIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T10:26:44.35Z"
+              "WhenOpened": "2025-05-26T10:26:44.35Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -262,7 +270,8 @@
               "RelativeToolTip": "Models\\Course.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwBgAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T02:57:52.559Z"
+              "WhenOpened": "2025-05-30T02:57:52.559Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -274,7 +283,8 @@
               "RelativeToolTip": "Models\\Revenue.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:07:00.064Z"
+              "WhenOpened": "2025-05-30T03:07:00.064Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -286,7 +296,8 @@
               "RelativeToolTip": "Views\\Course\\Index.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-27T08:16:32.783Z"
+              "WhenOpened": "2025-05-27T08:16:32.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -298,7 +309,8 @@
               "RelativeToolTip": "Views\\Authen\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T03:11:21.782Z"
+              "WhenOpened": "2025-05-30T03:11:21.782Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -310,7 +322,8 @@
               "RelativeToolTip": "Views\\Shared\\_LayoutLogin.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T03:15:31.537Z"
+              "WhenOpened": "2025-05-30T03:15:31.537Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -322,7 +335,8 @@
               "RelativeToolTip": "Views\\Shared\\_LayoutSignUp.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-30T03:34:29.725Z"
+              "WhenOpened": "2025-05-30T03:34:29.725Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -334,7 +348,8 @@
               "RelativeToolTip": "Models\\Expense.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:05:32.9Z"
+              "WhenOpened": "2025-05-30T03:05:32.9Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -346,7 +361,8 @@
               "RelativeToolTip": "Models\\Enrollment.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA7wBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T03:03:58.663Z"
+              "WhenOpened": "2025-05-30T03:03:58.663Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

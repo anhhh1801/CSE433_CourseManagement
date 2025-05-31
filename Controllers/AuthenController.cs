@@ -29,7 +29,7 @@ namespace CourseManagement.Controllers
         public async Task<IActionResult> Login(string email, string password)
         {
 
-            var teacher = _context.Teachers.FirstOrDefault(t => t.email == email);
+            var teacher = _context.Users.FirstOrDefault(t => t.email == email);
             bool isValid = BCrypt.Net.BCrypt.Verify(password, teacher.password);
 
             if (teacher == null || !isValid)
@@ -54,25 +54,21 @@ namespace CourseManagement.Controllers
 
         [HttpPost]
 
-        public IActionResult SignUp(string email, string password)
+        public IActionResult SignUp(User user)
         {
             
-            if (_context.Teachers.Any(t => t.email == email))
+            if (_context.Users.Any(t => t.email == user.email))
             {
                 ViewBag.ErrorMessage = "Email đã tồn tại!";
                 return View();
             }
 
 
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.password);
 
-            Teacher teacher = new Teacher
-            {
-                email = email,
-                password = hashedPassword
-            };
+            user.password = hashedPassword;
 
-            _context.Teachers.Add(teacher);
+            _context.Users.Add(user);
             _context.SaveChanges();
 
             return RedirectToAction("Login");

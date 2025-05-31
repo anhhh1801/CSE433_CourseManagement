@@ -23,7 +23,7 @@ namespace CourseManagement.Controllers
             {
                 return RedirectToAction("Login", "Authen");
             }
-            var teacher = _context.Teachers.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
             return View(teacher);
         }
 

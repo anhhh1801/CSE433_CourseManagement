@@ -1,18 +1,30 @@
 ﻿@{
 	Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
-@model CourseManagement.Models.Teacher;
-<div>
-	<form asp-controller="Authen" asp-action="Login" method="post" enctype="multipart/form-data">
-		<div>
-			<label asp-for="email">Email:</label>
-			<input asp-for="email" type="text" class="form-control" required />
-		</div>
-		<div>
-			<label asp-for="password">Password:</label>
-			<input asp-for="password" type="text" class="form-control" required />
-		</div>
-		<button type="submit" class="btn btn-primary">Login</button>
-		<a asp-controller="Authen" asp-action="SignUp" class="btn btn-primary">Sign Up</a>
-	</form>
+@model CourseManagement.Models.User;
+<div class="login-wrapper">
+    <div class="login-image">
+        <img src="/img/login-pic.png" alt="Login Image" class="login-img">
+    </div>
+    <div class="login-form">
+        <div class="text-center">
+            <h2 class="login-title">Welcome Back</h2>
+        </div>
+
+        <form asp-controller="Authen" asp-action="Login" method="post">
+            <div class="mb-3 input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" asp-for="email" class="form-control" placeholder="Email or phone" required>
+            </div>
+            <div class="mb-4 input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" name="password" asp-for="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn login-btn w-100 text-white">Login</button>
+        </form>
+
+        <div class="text-center signup-link">
+            Don't have an account? <a asp-controller="Authen" asp-action="SignUp">Sign up</a>
+        </div>
+    </div>
 </div>

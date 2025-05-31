@@ -3,15 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseManagement.Models
 {
-    public class Teacher
+    public class User
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int teacherId { get; set; }
-        public string? teacherName { get; set; }
 
+        [Required]
+        public string teacherName { get; set; }
+
+        [Required]
         public string email { get; set; }
 
+        [Required]
         public string password { get; set; }
 
         public string? avatar { get; set; }
@@ -20,7 +24,6 @@ namespace CourseManagement.Models
 
         public int? phoneNumber { get; set; }
 
-        public Role role = Role.USER;
         public ICollection<Course> courses { get; set; }
 
         public ICollection<Student> students { get; set; }

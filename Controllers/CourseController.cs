@@ -88,7 +88,7 @@ namespace CourseManagement.Controllers
             {
                 return RedirectToAction("Login", "Authen"); // Redirect if teacher is not logged in
             }
-            var teacher = _context.Teachers.FirstOrDefault(t => t.teacherId == parsedTeacherId);
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == parsedTeacherId);
             if (teacher == null)
             {
                 return BadRequest("Không tìm thấy giáo viên.");

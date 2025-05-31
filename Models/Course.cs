@@ -20,7 +20,9 @@ namespace CourseManagement.Models
 
         [ForeignKey("teacherId")]
         public int TeacherId { get; set; }
-        public Teacher teacher { get; set; }
+        public User? teacher { get; set; }
+
+        public ICollection<Enrollment> enrollments { get; set; } = new List<Enrollment>();
 
 
     }

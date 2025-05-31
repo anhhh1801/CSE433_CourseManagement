@@ -1,16 +1,43 @@
-﻿@model CourseManagement.Models.Teacher;
+﻿@{
+	Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
+}
+@model CourseManagement.Models.User;
 <div>
-	<form asp-controller="Authen" asp-action="SignUp" method="post" enctype="multipart/form-data">
-		<div>
-			<label asp-for="email">Email:</label>
-			<input asp-for="email" type="text" class="form-control" required />
-		</div>
-		<div>
-			<label asp-for="password">Password:</label>
-			<input asp-for="password" type="text" class="form-control" required />
-		</div>
-		<button type="submit" class="btn btn-primary">Sign Up</button>
-		<button asp-controller="Authen" asp-action="Login" class="btn btn-primary">Login</button>
-	</form>
+    <div class="signup-wrapper">
+        <div class="signup-image">
+            <img src="/img/login-pic.png" alt="Sign Up Image">
+        </div>
+
+        <div class="signup-form">
+            <h2 class="signup-title">Create an Account</h2>
+
+            <form asp-controller="Authen" asp-action="SignUp"  method="post">
+                <div class="mb-3 input-group">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <input type="text" class="form-control" asp-for="teacherName" placeholder="Full Name" required />
+                </div>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input type="email" class="form-control" asp-for="email" placeholder="Email" required />
+                </div>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                    <input type="tel" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+                </div>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" asp-for=password class="form-control" name="password" placeholder="Password" required />
+                </div>
+                <div class="mb-4 input-group">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required />
+                </div>
+
+                <button type="submit" class="btn signup-btn w-100">Sign Up</button>
+            </form>
+
+            <p class="login-link">Already have an account? <a> Login</a></p>
+        </div>
+    </div>
 </div>
 

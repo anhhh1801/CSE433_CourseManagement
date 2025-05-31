@@ -9,10 +9,14 @@ namespace CourseManagement.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int revenueId { get; set; }
 
+        [Required]
         public double amount { get; set; }
 
         public string? description { get; set; }
 
-        public Course course { get; set; }
+        [Required]
+        [ForeignKey("courseId")]
+        public int CourseId { get; set; }
+        public Course? course { get; set; }
     }
 }

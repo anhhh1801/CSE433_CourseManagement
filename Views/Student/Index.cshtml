@@ -26,6 +26,8 @@
 			<tr>
 				<th>Student ID</th>
 				<th>Student Name</th>
+				<th>Parent Number</th>
+				<th>Avatar</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
@@ -35,6 +37,9 @@
 				<tr>
 					<td>@student.studentId</td>
 					<td>@student.studentName</td>
+					<td>@student.parentNumber</td>
+					<td>
+						<img src="@Url.Content("~/images/" + student.Avatar)" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%;">
 					<td>
 						<a asp-controller="Course" asp-action="Edit" asp-route-id="@student.studentId" class="btn btn-secondary">Edit</a>
 						<a asp-controller="Course" asp-action="Delete" asp-route-id="@student.studentId" class="btn btn-danger">Delete</a>

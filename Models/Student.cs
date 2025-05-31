@@ -11,15 +11,14 @@ namespace CourseManagement.Models
 
         public string studentName { get; set; }
 
-        public int? parentNumber { get; set; }
+        public int parentNumber { get; set; }
 
         public string? Avatar { get; set; }
 
         [ForeignKey("teacherId")]
         public int TeacherId { get; set; }
-        public Teacher teacher { get; set; }
+        public User? teacher { get; set; }
 
-
-
+        public ICollection<Enrollment> enrollments { get; set; } = new List<Enrollment>();
     }
 }
