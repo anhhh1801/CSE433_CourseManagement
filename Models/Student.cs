@@ -9,9 +9,11 @@ namespace CourseManagement.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int studentId { get; set; }
 
+        [Required]
         public string studentName { get; set; }
 
-        public int parentNumber { get; set; }
+        
+        public int? parentNumber { get; set; }
 
         public string? Avatar { get; set; }
 

@@ -20,12 +20,19 @@ namespace CourseManagement.Models
 
         public string? avatar { get; set; }
 
-    
-
         public int? phoneNumber { get; set; }
 
         public ICollection<Course> courses { get; set; }
 
         public ICollection<Student> students { get; set; }
+
+        public ICollection<Role> Role { get; set; } = new List<Role>();
+
+
+        public User()
+        {
+            courses = new List<Course>();
+            students = new List<Student>();
+        }
     }
 }

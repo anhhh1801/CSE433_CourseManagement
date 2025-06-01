@@ -13,9 +13,11 @@ builder.Services.AddDbContext<CourseManagementDbContext>(options =>
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Authen/Login"; 
-        options.LogoutPath = "/Authen/Logout"; 
+        options.LoginPath = "/Authen/Login";
+        options.LogoutPath = "/Authen/Logout";
+        options.AccessDeniedPath = "/Authen/AccessDenied";
     });
+
 
 var app = builder.Build();
 
@@ -33,6 +35,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
