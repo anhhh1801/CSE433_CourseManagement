@@ -21,7 +21,7 @@ namespace CourseManagement.Controllers
 
             if (teacherId == null)
             {
-                return RedirectToAction("Login", "Authen");
+                return RedirectToAction("NeedLogin", "Authen");
             }
 
             int parsedId;
@@ -44,47 +44,48 @@ namespace CourseManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Student student, IFormFile avatar)
+        public async Task<IActionResult> AddUser()
         {
-            if (avatar == null || avatar.Length == 0)
-            {
-                TempData["error"] = "Please select a file";
-                return RedirectToAction("Index", "Home");
-            }
+            //if (avatar == null || avatar.Length == 0)
+            //{
+            //    TempData["error"] = "Please select a file";
+            //    return RedirectToAction("Index", "Home");
+            //}
 
-            // Kiểm tra định dạng file
-            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-            var extension = Path.GetExtension(avatar.FileName).ToLowerInvariant();
+            //// Kiểm tra định dạng file
+            //var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+            //var extension = Path.GetExtension(avatar.FileName).ToLowerInvariant();
 
-            if (!allowedExtensions.Contains(extension))
-            {
-                TempData["error"] = "Only image files are allowed!";
-                return RedirectToAction("Index", "Home");
-            }
+            //if (!allowedExtensions.Contains(extension))
+            //{
+            //    TempData["error"] = "Only image files are allowed!";
+            //    return RedirectToAction("Index", "Home");
+            //}
 
-            // Tạo thư mục nếu chưa có
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Assets", "img");
-            if (!Directory.Exists(uploadsFolder))
-            {
-                Directory.CreateDirectory(uploadsFolder);
-            }
+            //// Tạo thư mục nếu chưa có
+            //var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Assets", "img");
+            //if (!Directory.Exists(uploadsFolder))
+            //{
+            //    Directory.CreateDirectory(uploadsFolder);
+            //}
 
-            // Tạo tên file duy nhất
-            var fileName = Guid.NewGuid().ToString() + extension;
-            var filePath = Path.Combine(uploadsFolder, fileName);
+            //// Tạo tên file duy nhất
+            //var fileName = Guid.NewGuid().ToString() + extension;
+            //var filePath = Path.Combine(uploadsFolder, fileName);
 
-            // Lưu file
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await avatar.CopyToAsync(stream);
-            }
+            //// Lưu file
+            //using (var stream = new FileStream(filePath, FileMode.Create))
+            //{
+            //    await avatar.CopyToAsync(stream);
+            //}
 
-            // Giả định có biến currentTeacher và TeacherService
-            currentTeacher.AvatarImg = fileName;
-            await _teacherService.SaveAsync(currentTeacher); // hoặc Save nếu không dùng async
+            //// Giả định có biến currentTeacher và TeacherService
+            //currentTeacher.AvatarImg = fileName;
+            //await _teacherService.SaveAsync(currentTeacher); // hoặc Save nếu không dùng async
 
-            TempData["message"] = "Avatar updated!";
-            return RedirectToAction("Index");
+            //TempData["message"] = "Avatar updated!";
+            //return RedirectToAction("Index");
+            return View(); // Return the view for adding a student
         }
     }
 }
