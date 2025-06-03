@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace CourseManagement.Models
 {
@@ -18,6 +19,8 @@ namespace CourseManagement.Models
 
         public char? Performance { get; set; }
 
+        public bool isActive = true;
+
         [Required][ForeignKey("studentId")]
         public int StudentId { get; set; }
         public Student? Student { get; set; }
@@ -26,6 +29,12 @@ namespace CourseManagement.Models
         [ForeignKey("courseId")]
         public int CourseId { get; set; }
         public Course? Course { get; set; }
+
+        [Required]
+        [ForeignKey("teacherId")]
+        public int TeacherId { get; set; }
+        public User? Teacher { get; set; }
         public DateTime enrollmentDate { get; set; } = DateTime.Now;
+        public DateTime? unenrollmentDate { get; set; }
     }
 }

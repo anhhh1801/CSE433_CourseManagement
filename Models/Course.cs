@@ -18,9 +18,11 @@ namespace CourseManagement.Models
         [Required]
         public string courseName { get; set; }
 
+        public double? netIncome { get; set; }
+
         [ForeignKey("teacherId")]
         public int TeacherId { get; set; }
-        public User? teacher { get; set; }
+        public User? Teacher { get; set; }
 
         public ICollection<Enrollment> enrollments { get; set; } = new List<Enrollment>();
 

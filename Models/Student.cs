@@ -12,8 +12,8 @@ namespace CourseManagement.Models
         [Required]
         public string studentName { get; set; }
 
-        
-        public int? parentNumber { get; set; }
+        public DateTime EntryDate { get; set; }
+        public int parentNumber { get; set; }
 
         public string? Avatar { get; set; }
 

@@ -23,7 +23,19 @@ namespace CourseManagement.Controllers
             {
                 return RedirectToAction("Login", "Authen");
             }
+
             var teacher = _context.Users.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
+            var students = _context.Students
+                .Include(s => s.teacher)
+                .Where(s => s.TeacherId.ToString() == teacherId)
+                .ToList();
+            var courses = _context.Courses
+                .Include(c => c.Teacher)
+                .Where(c => c.TeacherId.ToString() == teacherId)
+                .ToList();
+            ViewData["PageName"] = "Dashboard";
+            ViewBag.Courses = courses;
+            ViewBag.Students = students;
             return View(teacher);
         }
 

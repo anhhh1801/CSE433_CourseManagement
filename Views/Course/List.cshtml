@@ -1,0 +1,57 @@
+﻿@model List<CourseManagement.Models.Course>;
+@{
+    ViewData["PageName"] = "Course List";
+}
+
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">Course List</h4>
+
+        <form asp-action="CourseList" method="get" class="mt-3">
+            <div class="input-group search">
+                <input type="text" class="form-control border border-primary" name="keyword" id="search" value="@ViewBag.Keyword" placeholder="Search for courses.." />
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="container-fluid">
+            <div class="row">
+                            @foreach (var course in Model)
+                            {
+                                <div class="col-md-2 mb-3">
+                                    <div class=" coursecard p-2">
+                                        <h5 class="card-title">@course.courseName</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">
+                                            @course.courseSubject | @course.courseCode
+                                        </h6>
+                                        <p class="card-text money">
+                                            @* <span class="@(course. > 0 ? "text-success" : "text-danger")"> *@
+                                            @*     @string.Format("{0:N0}", course.NetIncome) *@
+                                            @* </span> VND *@
+                                        </p>
+                                        <div class="d-flex gap-2">
+                                            <a class="btn btn-info btn-sm text-nowrap"
+                                               asp-controller="Course"
+                                               asp-action="ViewStudents"
+                                               asp-route-id="@course.courseId">
+                                                View Students (@course.enrollments.Count)
+                                            </a>
+                                            <a class="btn btn-info btn-sm text-nowrap"
+                                               asp-controller="Course"
+                                               asp-action="Financial"
+                                               asp-route-id="@course.courseId">
+                                                View Financial (0)
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>

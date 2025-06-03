@@ -77,6 +77,7 @@ namespace CourseManagement.Controllers
 
             user.password = hashedPassword;
             user.Role.Add(defaultRole);
+            user.avatar = "/img/avatar_default.jpg";
 
             _context.Users.Add(user);
             _context.SaveChanges();

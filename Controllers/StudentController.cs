@@ -10,14 +10,14 @@ namespace CourseManagement.Controllers
     {
         private readonly CourseManagementDbContext _context;
 
-        public StudentController (CourseManagementDbContext context)
+        public StudentController(CourseManagementDbContext context)
         {
             _context = context;
         }
 
         public IActionResult Index()
         {
-            var teacherId = User.FindFirstValue("TeacherId"); // Get logged-in Teacher ID
+            var teacherId = User.FindFirstValue("TeacherId");
 
             if (teacherId == null)
             {
@@ -44,48 +44,62 @@ namespace CourseManagement.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddUser()
+        public async Task<IActionResult> Add(Student model)
         {
-            //if (avatar == null || avatar.Length == 0)
-            //{
-            //    TempData["error"] = "Please select a file";
-            //    return RedirectToAction("Index", "Home");
-            //}
+            var teacherId = User.FindFirstValue("TeacherId");
+            if (string.IsNullOrEmpty(teacherId) || !int.TryParse(teacherId, out int parsedTeacherId))
+            {
+                return RedirectToAction("Login", "Authen"); // Redirect if teacher is not logged in
+            }
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == parsedTeacherId);
+            if (teacher == null)
+            {
+                return BadRequest("Không tìm thấy giáo viên.");
+            }
+            model.teacher = teacher;
+            model.Avatar = "/img/avatar_default.jpg";
+            _context.Students.Add(model);
+            _context.SaveChanges();
+            ViewBag.Teacher = teacher;
+            return RedirectToAction("Index");
+        }
 
-            //// Kiểm tra định dạng file
-            //var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-            //var extension = Path.GetExtension(avatar.FileName).ToLowerInvariant();
+        public IActionResult Delete(int id)
+        {
+            var student = _context.Students.SingleOrDefault(s => s.studentId == id);
+            if (student != null)
+            {
+                _context.Students.Remove(student);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
 
-            //if (!allowedExtensions.Contains(extension))
-            //{
-            //    TempData["error"] = "Only image files are allowed!";
-            //    return RedirectToAction("Index", "Home");
-            //}
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var student = _context.Students.SingleOrDefault(s => s.studentId == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
 
-            //// Tạo thư mục nếu chưa có
-            //var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Assets", "img");
-            //if (!Directory.Exists(uploadsFolder))
-            //{
-            //    Directory.CreateDirectory(uploadsFolder);
-            //}
-
-            //// Tạo tên file duy nhất
-            //var fileName = Guid.NewGuid().ToString() + extension;
-            //var filePath = Path.Combine(uploadsFolder, fileName);
-
-            //// Lưu file
-            //using (var stream = new FileStream(filePath, FileMode.Create))
-            //{
-            //    await avatar.CopyToAsync(stream);
-            //}
-
-            //// Giả định có biến currentTeacher và TeacherService
-            //currentTeacher.AvatarImg = fileName;
-            //await _teacherService.SaveAsync(currentTeacher); // hoặc Save nếu không dùng async
-
-            //TempData["message"] = "Avatar updated!";
-            //return RedirectToAction("Index");
-            return View(); // Return the view for adding a student
+        [HttpPost]
+        public IActionResult Edit(Student model)
+        {
+            var student = _context.Students.SingleOrDefault(s => s.studentId == model.studentId);
+            if (student != null)
+            {
+                student.studentName = model.studentName;
+                student.EntryDate = model.EntryDate;
+                student.parentNumber = model.parentNumber;
+                _context.Students.Update(student);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index");
         }
     }
 }
+
