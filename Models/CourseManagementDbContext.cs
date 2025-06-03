@@ -39,6 +39,12 @@ namespace CourseManagement.Models
                 .HasForeignKey(e => e.CourseId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<Enrollment>()
+                .HasOne(e => e.Teacher)
+                .WithMany(u => u.enrollments)
+                .HasForeignKey(e => e.TeacherId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             modelBuilder.Entity<Role>().HasData(
                 new Role
                 {

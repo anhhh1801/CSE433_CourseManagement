@@ -1,0 +1,82 @@
+﻿
+@{
+    var course = ViewBag.course;
+
+    ViewData["PageName"] = $"{course.courseName} - Students";
+}
+@model List<CourseManagement.Models.Enrollment>
+
+<div class="card">
+    <div class="card-header border-0 p-3 d-flex justify-content-between align-items-center">
+        <div>
+            <h3 class="heading mb-1">@course.courseName</h3>
+            <h4 class="mb-0">Student List</h4>
+        </div>
+        <div>
+            <a asp-controller="Course" asp-action="Index" class="btn btn-warning">
+                <i class="fas fa-arrow-left"></i> Go Back
+            </a>
+        </div>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="table-responsive basic-tbl">
+            <table class="table table-bordered showlist">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Full Name</th>
+                        <th>Parent Number</th>
+                        <th>Entry Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        var index = 1;
+                    }
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var enrollment in Model)
+                        {
+                            <tr>
+                                <td>@index</td>
+                                <td>@enrollment.Student.studentName</td>
+                                <td>@enrollment.Student.parentNumber</td>
+                                <td>@enrollment.enrollmentDate.ToString("dd-MM-yyyy")</td>
+                                <td>
+                                    <form asp-controller="Course"
+                                    asp-action="RemoveStudent"
+                                    method="post"
+                                    asp-route-courseId="@course.courseId"
+                                    asp-route-studentId="@enrollment.Student.studentId"
+                                    onsubmit="return confirm('Are you sure you want to remove this student from the course?');">
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        index++;
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center">No students enrolled in this course.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="text-center m-3">
+                <a class="btn btn-primary"
+                    asp-controller="Course"
+                    asp-action="Enroll"
+                    asp-route-id="@course.courseId">
+                    Add New Student
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

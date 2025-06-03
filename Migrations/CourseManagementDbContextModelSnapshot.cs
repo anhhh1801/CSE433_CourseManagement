@@ -45,6 +45,9 @@ namespace CourseManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double?>("netIncome")
+                        .HasColumnType("float");
+
                     b.HasKey("courseId");
 
                     b.HasIndex("TeacherId");
@@ -75,10 +78,16 @@ namespace CourseManagement.Migrations
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
                     b.Property<double?>("TestScore")
                         .HasColumnType("float");
 
                     b.Property<DateTime>("enrollmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("unenrollmentDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("enrollmentId");
@@ -86,6 +95,8 @@ namespace CourseManagement.Migrations
                     b.HasIndex("CourseId");
 
                     b.HasIndex("StudentId");
+
+                    b.HasIndex("TeacherId");
 
                     b.ToTable("Enrollments");
                 });
@@ -179,10 +190,13 @@ namespace CourseManagement.Migrations
                     b.Property<string>("Avatar")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("parentNumber")
+                    b.Property<int>("parentNumber")
                         .HasColumnType("int");
 
                     b.Property<string>("studentName")
@@ -267,9 +281,17 @@ namespace CourseManagement.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("CourseManagement.Models.User", "Teacher")
+                        .WithMany("enrollments")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Course");
 
                     b.Navigation("Student");
+
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("CourseManagement.Models.Expense", b =>
@@ -333,6 +355,8 @@ namespace CourseManagement.Migrations
             modelBuilder.Entity("CourseManagement.Models.User", b =>
                 {
                     b.Navigation("courses");
+
+                    b.Navigation("enrollments");
 
                     b.Navigation("students");
                 });

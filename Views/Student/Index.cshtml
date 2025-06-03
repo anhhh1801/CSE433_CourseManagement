@@ -1,53 +1,120 @@
-﻿@{
+﻿@model List<CourseManagement.Models.Student>
+@{
+    ViewData["PageName"] = "Student Management";
 
-	ViewData["Title"] = "Course Management Page";
-	@model List<CourseManagement.Models.Student>;
-
+    var teacher = ViewBag.Teacher;
 }
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-5">
-			<h2>Student Management</h2>
-			<p>Manage student here.</p>
-		</div>
-		<div class="col-5">
-			<div class="search-container">
-				<input type="text" placeholder="Search....">
-				<button>Search</button>
-			</div>
-		</div>
-		<div class="col-2">
-			<a asp-controller="Student" asp-action="Add" class="btn btn-primary">Add</a>
-		</div>
-	</div>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Student ID</th>
-				<th>Student Name</th>
-				<th>Parent Number</th>
-				<th>Avatar</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var student in Model)
-			{
-				<tr>
-					<td>@student.studentId</td>
-					<td>@student.studentName</td>
-					<td>@student.parentNumber</td>
-					<td>
-						<img src="@Url.Content("~/images/" + student.Avatar)" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%;">
-					<td>
-						<a asp-controller="Course" asp-action="Edit" asp-route-id="@student.studentId" class="btn btn-secondary">Edit</a>
-						<a asp-controller="Course" asp-action="Delete" asp-route-id="@student.studentId" class="btn btn-danger">Delete</a>
-					</td>
-				</tr>
-			}
-		</tbody>
-	</table>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success m-3" role="alert">
+        @TempData["Message"]
+    </div>
+}
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">Manage Student</h4>
+        <form asp-action="Index" asp-controller="Student" method="get" class="mt-3">
+            <div class="input-group search">
+                <input type="text" class="form-control border border-primary"
+                name="keyword" id="search" value="@ViewBag.Keyword"
+                placeholder="Search for student..">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive basic-tbl">
+            <table class="table showlist">
+                <thead class="bg-info-subtle">
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Parent Number</th>
+                        <th>Teacher</th>
+                        <th>Avatar</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var index = 1;
+                    }
+                    @foreach (var student in Model)
+                    {
+
+                        <tr>
+                            <td>@index</td>
+                            <td>@student.studentName</td>
+                            <td>@student.parentNumber.ToString()</td>
+                            <td>@student.EntryDate.ToShortDateString()</td>
+                            <td>
+                                <img src="@(!string.IsNullOrEmpty(student.Avatar) ? Url.Content(student.Avatar) : Url.Content("/img/kimco.jpg"))"
+                                class="rounded-circle" width="50" height="50" style="object-fit: cover;">
+                            </td>
+                            <td>
+                                <a asp-controller="Student" asp-action="Edit" asp-route-id="@student.studentId"
+                                class="btn btn-secondary btn-sm">Update</a>
+                                <a asp-controller="Student" asp-action="Delete" asp-route-id="@student.studentId"
+                                class="btn btn-danger btn-sm">Delete</a>
+                                <button class="btn btn-info btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#uploadAvatarModal-@student.studentId">
+                                    Change Avatar
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="uploadAvatarModal-@student.studentId" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <form asp-action="UploadAvatar" asp-controller="Student"
+                                            asp-route-id="@student.studentId" method="post"
+                                            enctype="multipart/form-data">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Upload Avatar for @student.studentName</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Choose Image</label>
+                                                        <input type="file" class="form-control" name="avatar"
+                                                        accept="image/png,image/jpeg" required />
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="m-3 text-center">
+            <a asp-controller="Student" asp-action="Add" class="btn btn-primary">Add New Student</a>
+        </div>
+    </div>
 </div>
 
+@section Scripts {
+    <script>
+        document.getElementById('search')?.addEventListener('keyup', function () {
+            let searchText = this.value.toLowerCase();
+            let rows = document.querySelectorAll('.showlist tbody tr');
 
+            rows.forEach(row => {
+                const cells = Array.from(row.getElementsByTagName('td'));
+                const match = cells.some(td => td.textContent.toLowerCase().includes(searchText));
+                row.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
+}

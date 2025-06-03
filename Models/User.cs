@@ -22,11 +22,15 @@ namespace CourseManagement.Models
 
         public int? phoneNumber { get; set; }
 
+        public bool isActive = true;
+
         public ICollection<Course> courses { get; set; }
 
         public ICollection<Student> students { get; set; }
 
         public ICollection<Role> Role { get; set; } = new List<Role>();
+
+        public ICollection<Enrollment> enrollments { get; set; } = new List<Enrollment>();
 
 
         public User()

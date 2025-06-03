@@ -1,0 +1,75 @@
+﻿@{
+    var course = ViewBag.Course;
+    ViewData["PageName"] = $"Enroll Student to {course.courseName}";
+	@model List<CourseManagement.Models.Student>;
+    }
+
+
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">Enroll Student to @course.courseName</h4>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive basic-tbl">
+            <table class="table table-bordered showlist">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Full Name</th>
+                        <th>Parent Number</th>
+                        <th>Entry Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        var index = 0;
+                    }
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>@index</td>
+                                <td>@student.studentName</td>
+                                <td>@student.parentNumber</td>
+                                <td>@student.EntryDate.ToString("dd-MM-yyyy")</td>
+                                <td>
+                                    <form asp-controller="Course"
+                                    asp-action="Enroll"
+                                    method="post"
+                                    asp-route-courseId="@course.courseId"
+                                    asp-route-studentId="@student.studentId">
+                                        <button type="submit" class="btn btn-primary btn-sm">Enroll</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        index++;
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center">No available students to enroll.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="text-center m-2">
+                <a class="btn btn-secondary"
+                    asp-controller="Course"
+                    asp-action="Student"
+                    asp-route-id="@course.courseId">
+                    Back
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer footer-outer mt-4">
+    <div class="copyright text-center">
+        <p>Project CSE310 - Home Tutor Management</p>
+    </div>
+</div>
