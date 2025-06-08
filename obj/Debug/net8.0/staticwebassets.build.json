@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3efxIIfHfbJe3VofBSBrWPvS0sFuSK6LUu9bkBljx+c=",
+  "Hash": "lpiwRA3if69xL5Nl9ydhVORGf2YP2aHQ5080CwLKU90=",
   "Source": "CourseManagement",
   "BasePath": "_content/CourseManagement",
   "Mode": "Default",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ApplicationBundle",
-      "Fingerprint": "o7xul9dzjy",
-      "Integrity": "pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=",
+      "Fingerprint": "lphk7ldq98",
+      "Integrity": "qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CourseManagement.styles.css"
@@ -52,8 +52,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "ScopedCss",
       "AssetTraitValue": "ProjectBundle",
-      "Fingerprint": "o7xul9dzjy",
-      "Integrity": "pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=",
+      "Fingerprint": "lphk7ldq98",
+      "Integrity": "qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseManagement.bundle.scp.css"
@@ -204,6 +204,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\login-pic.png"
+    },
+    {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "img/Picture1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4luycx1zo0",
+      "Integrity": "WE+lrCSG2C4rlcihcbNvbjrcSAWtj4UgZ2EiPseP7lg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Picture1.png"
+    },
+    {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "img/Picture6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o1agno4fxq",
+      "Integrity": "3G1TAGdegKVSkI7lUcq7/STrih1U32a7A+Dlmd28KF0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Picture6.jpg"
+    },
+    {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "img/Picture7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oyxh1w7vch",
+      "Integrity": "0OhRZIwc8gm8BmFKxpqIET9Lu2NATR7J3Q3jh+kb7Sg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Picture7.jpg"
+    },
+    {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "img/Picture8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6uy8lb88ta",
+      "Integrity": "otyKd+TIvPz/ZmBRIkvmj80j3m4AJL/C7PsuV9f0+ZM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Picture8.jpg"
     },
     {
       "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\js\\custom.min.js",
@@ -1499,7 +1583,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "72"
+          "Value": "149"
         },
         {
           "Name": "Content-Type",
@@ -1507,11 +1591,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=\""
+          "Value": "\"qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:03:09 GMT"
+          "Value": "Wed, 04 Jun 2025 10:20:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1521,12 +1605,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo="
+          "Value": "sha256-qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs="
         }
       ]
     },
     {
-      "Route": "CourseManagement.o7xul9dzjy.bundle.scp.css",
+      "Route": "CourseManagement.lphk7ldq98.bundle.scp.css",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseManagement.bundle.scp.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1536,7 +1620,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "72"
+          "Value": "149"
         },
         {
           "Name": "Content-Type",
@@ -1544,11 +1628,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=\""
+          "Value": "\"qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:03:09 GMT"
+          "Value": "Wed, 04 Jun 2025 10:20:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1558,7 +1642,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o7xul9dzjy"
+          "Value": "lphk7ldq98"
         },
         {
           "Name": "label",
@@ -1566,12 +1650,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo="
+          "Value": "sha256-qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs="
         }
       ]
     },
     {
-      "Route": "CourseManagement.o7xul9dzjy.styles.css",
+      "Route": "CourseManagement.lphk7ldq98.styles.css",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CourseManagement.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1581,7 +1665,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "72"
+          "Value": "149"
         },
         {
           "Name": "Content-Type",
@@ -1589,11 +1673,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=\""
+          "Value": "\"qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:03:09 GMT"
+          "Value": "Wed, 04 Jun 2025 10:20:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1603,7 +1687,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "o7xul9dzjy"
+          "Value": "lphk7ldq98"
         },
         {
           "Name": "label",
@@ -1611,7 +1695,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo="
+          "Value": "sha256-qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs="
         }
       ]
     },
@@ -1626,7 +1710,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "72"
+          "Value": "149"
         },
         {
           "Name": "Content-Type",
@@ -1634,11 +1718,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo=\""
+          "Value": "\"qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:03:09 GMT"
+          "Value": "Wed, 04 Jun 2025 10:20:10 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1648,7 +1732,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pIyhr6l3adBbSZp5ZRW2ee8Rp5xH3M5cfXiF5u1NJBo="
+          "Value": "sha256-qcGgSzfQMoUfm7zOA4vWKgAF2ZPTSxp3MG5H3Sm9SPs="
         }
       ]
     },
@@ -1675,7 +1759,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 10:46:46 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1720,7 +1804,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 10:46:46 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1757,7 +1841,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:41:55 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1794,7 +1878,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:41:55 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2085,7 +2169,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 14:56:06 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2130,7 +2214,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 14:56:06 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2227,6 +2311,334 @@
       ]
     },
     {
+      "Route": "img/Picture1.4luycx1zo0.png",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "272167"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WE+lrCSG2C4rlcihcbNvbjrcSAWtj4UgZ2EiPseP7lg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4luycx1zo0"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Picture1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WE+lrCSG2C4rlcihcbNvbjrcSAWtj4UgZ2EiPseP7lg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture1.png",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "272167"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WE+lrCSG2C4rlcihcbNvbjrcSAWtj4UgZ2EiPseP7lg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:22:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WE+lrCSG2C4rlcihcbNvbjrcSAWtj4UgZ2EiPseP7lg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture6.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3G1TAGdegKVSkI7lUcq7/STrih1U32a7A+Dlmd28KF0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:20:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3G1TAGdegKVSkI7lUcq7/STrih1U32a7A+Dlmd28KF0="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture6.o1agno4fxq.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56630"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3G1TAGdegKVSkI7lUcq7/STrih1U32a7A+Dlmd28KF0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:20:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o1agno4fxq"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Picture6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3G1TAGdegKVSkI7lUcq7/STrih1U32a7A+Dlmd28KF0="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture7.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45015"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0OhRZIwc8gm8BmFKxpqIET9Lu2NATR7J3Q3jh+kb7Sg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:23:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0OhRZIwc8gm8BmFKxpqIET9Lu2NATR7J3Q3jh+kb7Sg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture7.oyxh1w7vch.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45015"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0OhRZIwc8gm8BmFKxpqIET9Lu2NATR7J3Q3jh+kb7Sg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 10:23:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oyxh1w7vch"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Picture7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0OhRZIwc8gm8BmFKxpqIET9Lu2NATR7J3Q3jh+kb7Sg="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture8.6uy8lb88ta.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"otyKd+TIvPz/ZmBRIkvmj80j3m4AJL/C7PsuV9f0+ZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 15:30:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6uy8lb88ta"
+        },
+        {
+          "Name": "label",
+          "Value": "img/Picture8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-otyKd+TIvPz/ZmBRIkvmj80j3m4AJL/C7PsuV9f0+ZM="
+        }
+      ]
+    },
+    {
+      "Route": "img/Picture8.jpg",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "64631"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"otyKd+TIvPz/ZmBRIkvmj80j3m4AJL/C7PsuV9f0+ZM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 15:30:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-otyKd+TIvPz/ZmBRIkvmj80j3m4AJL/C7PsuV9f0+ZM="
+        }
+      ]
+    },
+    {
       "Route": "js/custom.min.js",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\js\\custom.min.js",
       "Selectors": [],
@@ -2249,7 +2661,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2286,7 +2698,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2331,7 +2743,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2376,7 +2788,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2413,7 +2825,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2458,7 +2870,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 16 May 2025 12:03:11 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2495,7 +2907,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:31:36 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2532,7 +2944,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 02 Jun 2025 11:31:36 GMT"
+          "Value": "Tue, 03 Jun 2025 15:11:45 GMT"
         },
         {
           "Name": "Cache-Control",

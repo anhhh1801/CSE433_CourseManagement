@@ -19,9 +19,10 @@ namespace CourseManagement.Models
 
         public char? Performance { get; set; }
 
-        public bool isActive = true;
+        public bool isActive { get; set; } = true;
 
-        [Required][ForeignKey("studentId")]
+        [Required]
+        [ForeignKey("studentId")]
         public int StudentId { get; set; }
         public Student? Student { get; set; }
 
@@ -36,5 +37,36 @@ namespace CourseManagement.Models
         public User? Teacher { get; set; }
         public DateTime enrollmentDate { get; set; } = DateTime.Now;
         public DateTime? unenrollmentDate { get; set; }
+
+        public void updatePerformance()
+        {
+            double? finalScore = this.FinalScore;
+            if (finalScore == null)
+            {
+                this.Performance = 'F';
+                return;
+            }
+
+            float[] scoreRanges = { 0, 3.5f, 5, 6.5f, 8 };
+            char[] performanceRanges = { 'F', 'D', 'C', 'B', 'A' };
+
+            for (int i = 0; i < scoreRanges.Length; i++)
+            {
+                if (finalScore >= scoreRanges[i])
+                {
+                    this.Performance = performanceRanges[i];
+                }
+            }
+        }
+
+        public void setFinalScore()
+        {
+            if (this.ProgressScore == null || this.TestScore == null)
+            {
+                this.FinalScore = null;
+                return;
+            }
+            this.FinalScore = (this.ProgressScore + (this.TestScore * 2)) / 3;
+        }
     }
 }

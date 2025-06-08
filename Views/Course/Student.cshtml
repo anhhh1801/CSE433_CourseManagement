@@ -49,8 +49,8 @@
                                     <form asp-controller="Course"
                                     asp-action="RemoveStudent"
                                     method="post"
-                                    asp-route-courseId="@course.courseId"
-                                    asp-route-studentId="@enrollment.Student.studentId"
+                                    asp-route-enrollId="@enrollment.enrollmentId"
+                                          asp-route-courseId="@course.courseId"
                                     onsubmit="return confirm('Are you sure you want to remove this student from the course?');">
                                         <button type="submit" class="btn btn-danger btn-sm">Remove</button>
                                     </form>

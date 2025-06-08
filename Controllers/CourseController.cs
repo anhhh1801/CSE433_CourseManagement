@@ -20,7 +20,7 @@ namespace CourseManagement.Controllers
         }
         public IActionResult Index(int id)
         {
-            var teacherId = User.FindFirstValue("TeacherId"); // Get logged-in Teacher ID
+            var teacherId = User.FindFirstValue("TeacherId");
 
             if (teacherId == null)
             {
@@ -59,7 +59,7 @@ namespace CourseManagement.Controllers
         }
 
         public IActionResult Add()
-        { 
+        {
             return View();
         }
 
@@ -107,7 +107,7 @@ namespace CourseManagement.Controllers
             {
                 return BadRequest("Không tìm thấy giáo viên.");
             }
-            model.Teacher = teacher; 
+            model.Teacher = teacher;
             _context.Courses.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
@@ -120,6 +120,7 @@ namespace CourseManagement.Controllers
             var enrollments = _context.Enrollments
                 .Include(e => e.Student)
                 .Where(e => e.CourseId == id)
+                .Where(e => e.isActive)
                 .ToList();
 
             var course = _context.Courses.FirstOrDefault(c => c.courseId == id);
@@ -153,6 +154,7 @@ namespace CourseManagement.Controllers
 
             var enrollments = _context.Enrollments
                 .Where(e => e.CourseId == id)
+                .Where(e => e.isActive)
                 .ToList();
 
             var unenrolledStudents = students
@@ -166,7 +168,7 @@ namespace CourseManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Enroll (int courseId, int studentId)
+        public IActionResult Enroll(int courseId, int studentId)
         {
             var course = _context.Courses.FirstOrDefault(c => c.courseId == courseId);
             var student = _context.Students.FirstOrDefault(s => s.studentId == studentId);
@@ -187,6 +189,8 @@ namespace CourseManagement.Controllers
             enrollment.Student = student;
             enrollment.TeacherId = parsedTeacherId;
             enrollment.Teacher = teacher;
+            enrollment.enrollmentDate = DateTime.Now;
+            enrollment.isActive = true;
 
             course.enrollments.Add(enrollment);
             student.enrollments.Add(enrollment);
@@ -197,6 +201,96 @@ namespace CourseManagement.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult ViewStudents(int id)
+        {
+            var course = _context.Courses
+                .Include(c => c.enrollments)
+                .ThenInclude(e => e.Student)
+                .FirstOrDefault(c => c.courseId == id);
 
+            var enrollments = course?.enrollments
+                .Where(e => e.isActive)
+                .ToList();
+
+            if (course == null || enrollments == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.Course = course;
+            return View(enrollments);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateScores(int CourseId, int StudentId, int EnrollmentId, double ProgressScore, double TestScore)
+        {
+            var enrollment = _context.Enrollments.FirstOrDefault(e => e.enrollmentId == EnrollmentId);
+            if (enrollment == null)
+            {
+                return NotFound();
+            }
+
+            enrollment.ProgressScore = ProgressScore;
+            enrollment.TestScore = TestScore;
+            enrollment.setFinalScore();
+            enrollment.updatePerformance();
+
+            _context.SaveChanges();
+
+            return RedirectToAction("ViewStudents", new { id = CourseId });
+        }
+
+        [HttpPost]
+        public IActionResult RemoveStudent(int enrollId, int courseId)
+        {
+            var enrollment = _context.Enrollments.FirstOrDefault(e => e.enrollmentId == enrollId);
+            enrollment.isActive = false;
+            enrollment.unenrollmentDate = DateTime.Now;
+
+            _context.Enrollments.Update(enrollment);
+            _context.SaveChanges();
+            return RedirectToAction("Student", new { id = courseId });
+        }
+
+
+
+        [HttpGet]
+        public IActionResult Financial(int id)
+        {
+            var course = _context.Courses
+                .Include(c => c.enrollments)
+                .ThenInclude(e => e.Student)
+                .FirstOrDefault(c => c.courseId == id);
+            var revenues = _context.Revenues
+                .Where(r => r.CourseId == id)
+                .ToList();
+            var expenses = _context.Expenses
+                .Where(e => e.CourseId == id)
+                .ToList();
+            if (course == null || revenues == null || expenses == null)
+            {
+                return NotFound();
+            }
+            double totalRevenue = 0;
+            double totalExpense = 0;
+            foreach (var revenue in revenues)
+            {
+                totalRevenue += revenue.amount;
+            }
+            foreach (var expense in expenses)
+            {
+                totalExpense += expense.amount;
+            }
+            double netIncome = totalRevenue - totalExpense;
+            ViewBag.Course = course;
+            ViewBag.Revenues = revenues;
+            ViewBag.Expenses = expenses;
+            ViewBag.TotalRevenue = totalRevenue;
+            ViewBag.TotalExpense = totalExpense;
+            ViewBag.NetIncome = netIncome;
+            return View();
+
+        }
     }
 }

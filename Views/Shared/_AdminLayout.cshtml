@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Home Tutor Management</title>
+    <title>@ViewData["PageName"] - Home Tutor Management</title>
     <link rel="icon" type="image/png" href="/img/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
@@ -36,12 +36,12 @@
                             <li><a asp-controller="Course" asp-action="Index">Manage Course</a></li>
                         </ul>
                     </li>
-						<li>
-							<a asp-controller="Admin" asp-action="Index">
-								<i class="material-symbols-outlined">manage_accounts</i>
-								<span class="nav-text">Admin</span>
-							</a>
-						</li>
+					<li>
+						<a asp-controller="Home" asp-action="Index">
+							<i class="material-symbols-outlined">manage_accounts</i>
+							<span class="nav-text">User View</span>
+						</a>
+					</li>
                 </ul>
                 <div class="davcopyright">
                     <p>Helping teachers manage their work.</p>
@@ -93,9 +93,6 @@
                 </div>
             </div>
         </div>
-
-        @* Edit Profile Modal (chỉnh sửa nếu cần) *@
-        <!-- Modal omitted for brevity, you can reuse the original code -->
 
     </div>
 
