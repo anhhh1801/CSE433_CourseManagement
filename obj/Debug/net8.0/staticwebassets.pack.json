@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseManagement.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CourseManagement.o7xul9dzjy.bundle.scp.css"
+      "PackagePath": "staticwebassets\\CourseManagement.lphk7ldq98.bundle.scp.css"
     },
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\css\\site.css",
@@ -23,6 +23,22 @@
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
+      "PackagePath": "staticwebassets\\img\\Picture1.png"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
+      "PackagePath": "staticwebassets\\img\\Picture6.jpg"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
+      "PackagePath": "staticwebassets\\img\\Picture7.jpg"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
+      "PackagePath": "staticwebassets\\img\\Picture8.jpg"
     },
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\avatar_default.jpg",

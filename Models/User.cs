@@ -22,7 +22,7 @@ namespace CourseManagement.Models
 
         public int? phoneNumber { get; set; }
 
-        public bool isActive = true;
+        public bool isActive { get; set; } = true;
 
         public ICollection<Course> courses { get; set; }
 

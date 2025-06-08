@@ -1,5 +1,127 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CourseManagement.Models.User;
 @{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var listStudents = ViewBag.Students;
+    var listCourses = ViewBag.Courses;
+    var listUsers = ViewBag.Users;
+    var listEnrollments = ViewBag.Enrollments;
 }
+
+
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <div>
+            <h1>Welcome to Home Tutor Website</h1>
+            <h2 class="heading mb-0">Hello Admin @Model.teacherName, have a great day!</h2>
+            <p>Today is: @DateTime.Now.ToString("dddd, MMMM dd, yyyy")</p>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <div class="teacher-profile">
+                    <h2 class="text-center">Admin's Profile</h2>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <img src="@Model.avatar" alt="Profile picture"
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
+                                Change Avatar
+                            </button>
+
+                            <div class="modal fade" id="uploadAvatarModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form asp-controller="Admin" asp-action="UploadAvatar" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Upload Avatar</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Choose Image</label>
+                                                    <input type="file" class="form-control" name="avatar" accept="image/*" required />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Upload</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3">
+                            <h3>@Model.teacherName</h3>
+                            <p><strong>Email:</strong> @Model.email</p>
+                            <p><strong>Phone Number:</strong> @Model.phoneNumber</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Student Table -->
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="teacher-profile">
+                            <h4>Total Students</h4>
+                            <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <div class=" teacher-profile">
+                            <h4>Total Courses</h4>
+                            <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class=" teacher-profile">
+                            <h4>Total Enrollments</h4>
+                            <p class="fs-2 fw-bold text-primary">@listEnrollments.Count</p>
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <div class=" teacher-profile">
+                            <h4>Total Active Users</h4>
+                            <p class="fs-2 fw-bold text-primary">@listUsers.Count</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notifications -->
+@* <div class="position-fixed end-0 p-3" style="z-index: 1055; top: 60px;"> *@
+@*     @if (!string.IsNullOrEmpty(message)) *@
+@*     { *@
+@*         <div class="toast align-items-center text-white bg-success border-0 show" role="alert"> *@
+@*             <div class="d-flex"> *@
+@*                 <div class="toast-body">@message</div> *@
+@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@*     @if (!string.IsNullOrEmpty(error)) *@
+@*     { *@
+@*         <div class="toast align-items-center text-white bg-danger border-0 show" role="alert"> *@
+@*             <div class="d-flex"> *@
+@*                 <div class="toast-body">@error</div> *@
+@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@* </div> *@

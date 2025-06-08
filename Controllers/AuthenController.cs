@@ -34,8 +34,9 @@ namespace CourseManagement.Controllers
                 .Include(t => t.Role)
                 .FirstOrDefault(t => t.email == email);
             bool isValid = BCrypt.Net.BCrypt.Verify(password, teacher.password);
+            bool isActive = teacher.isActive;
 
-            if (teacher == null || !isValid)
+            if (teacher == null || !isValid || !isActive)
             {
                 ViewBag.ErrorMessage = "Email hoặc mật khẩu không đúng.";
                 return View();
@@ -78,6 +79,7 @@ namespace CourseManagement.Controllers
             user.password = hashedPassword;
             user.Role.Add(defaultRole);
             user.avatar = "/img/avatar_default.jpg";
+            user.isActive = true;
 
             _context.Users.Add(user);
             _context.SaveChanges();

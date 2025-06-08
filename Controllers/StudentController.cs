@@ -37,6 +37,28 @@ namespace CourseManagement.Controllers
             return View(students);
         }
 
+        public IActionResult List()
+        {
+            var teacherId = User.FindFirstValue("TeacherId");
+
+            if (teacherId == null)
+            {
+                return RedirectToAction("NeedLogin", "Authen");
+            }
+
+            int parsedId;
+            if (!int.TryParse(teacherId, out parsedId))
+            {
+                return RedirectToAction("Login", "Authen");
+            }
+
+            var students = _context.Students
+                .Where(s => s.teacher != null && s.teacher.teacherId == parsedId)
+                .ToList();
+
+            return View(students);
+        }
+
         [HttpGet]
         public async Task<IActionResult> Add()
         {
@@ -99,6 +121,65 @@ namespace CourseManagement.Controllers
                 _context.SaveChanges();
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadAvatar(int id, IFormFile avatar)
+        {
+            if (avatar == null || avatar.Length == 0)
+            {
+                TempData["Error"] = "Please select a file.";
+                return RedirectToAction("Index");
+            }
+
+            try
+            {
+                var student = await _context.Students.FirstOrDefaultAsync(s => s.studentId == id);
+                if (student == null)
+                {
+                    TempData["Error"] = "Student not found.";
+                    return RedirectToAction("Index");
+                }
+
+                // Đường dẫn lưu file avatar
+                var uploadDir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img");
+                if (!Directory.Exists(uploadDir))
+                {
+                    Directory.CreateDirectory(uploadDir);
+                }
+
+                var fileName = Path.GetFileName(avatar.FileName);
+                var filePath = Path.Combine(uploadDir, fileName);
+
+                // Ghi file vào thư mục
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await avatar.CopyToAsync(stream);
+                }
+
+                // Cập nhật tên file avatar cho học sinh
+                student.Avatar = "/img/" + avatar.FileName;
+                _context.Students.Update(student);
+                _context.SaveChanges();
+
+                TempData["Message"] = $"Avatar updated successfully for {student.studentName}.";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Could not upload avatar: {ex.Message}";
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Courses(int id)
+        {
+            var course =_context.Courses
+                .Where(c => c.enrollments.Any(e => e.StudentId == id))
+                .ToList();
+            return View(course);
+
         }
     }
 }

@@ -5,6 +5,10 @@ wwwroot\css\style-signup.css
 wwwroot\favicon.ico
 wwwroot\img\avatar_default.jpg
 wwwroot\img\login-pic.png
+wwwroot\img\Picture1.png
+wwwroot\img\Picture6.jpg
+wwwroot\img\Picture7.jpg
+wwwroot\img\Picture8.jpg
 wwwroot\js\custom.min.js
 wwwroot\js\dlabnav-init.js
 wwwroot\js\global.min.js
