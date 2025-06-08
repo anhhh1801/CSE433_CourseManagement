@@ -1,0 +1,177 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["PageName"] = "Financial Report";
+	var listExpense = ViewBag.Expenses;
+	var listRevenue = ViewBag.Revenues;
+	var course = ViewBag.Course;
+    var totalRevenue = ViewBag.TotalRevenue;
+	var totalExpense = ViewBag.TotalExpense;
+	var netIncome = ViewBag.NetIncome;
+}
+
+<div class="modal fade" id="addExpenseModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddExpense" asp-route-courseId="@course.courseId" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Expense</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Description</label>
+                        <input type="text" name="Description" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Amount (VND)</label>
+                        <input type="number" name="Amount" class="form-control" required min="0" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Add Revenue Modal -->
+<div class="modal fade" id="addRevenueModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddRevenue" asp-route-courseId="@course.courseId" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Revenue</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>Description</label>
+                        <input type="text" name="Description" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Amount (VND)</label>
+                        <input type="number" name="Amount" class="form-control" required min="0" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save Revenue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Summary -->
+<div class="col-12">
+    <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header border-0 p-3 d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="mb-0">Financial Management</h2>
+                <p class="money">
+                    Total Income of @course.courseName:
+                    <span class="@(netIncome > 0 ? "text-success" : "text-danger")">
+                        @netIncome.ToString("N0")
+                    </span> VND
+                </p>
+            </div>
+            <div class="text-end m-3">
+                <a asp-controller="Course" asp-action="List" class="btn btn-warning">
+                    <i class="fas fa-arrow-left"></i> Go Back
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Expenses and Revenues -->
+<div class="row align-items-start">
+    <!-- Expenses -->
+    <div class="col-6">
+        <div class="card" style="margin-top:0px">
+            <div class="card-header border-0 p-3 d-flex justify-content-between">
+                <h3 class="mb-0">Expenses for @course.courseName</h3>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
+                    Add New Expense
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive basic-tbl">
+                    <table class="table table-bordered showlist">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount (VND)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var expense in listExpense)
+                            {
+                                <tr>
+                                    <td>@expense.description</td>
+                                    <td>@expense.amount.ToString("N0") VND</td>
+                                    <td>
+                                        <form asp-action="DeleteExpense" asp-route-courseId="@course.courseId" asp-route-id="@expense.expenseId" method="post" style="display:inline;">
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                            <tr class="table-active">
+                                <td><strong>Total Expense</strong></td>
+                                <td colspan="2"><strong class="text-danger">@totalExpense.ToString("N0") VND</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Revenues -->
+    <div class="col-6">
+        <div class="card" style="margin-top:0px">
+            <div class="card-header border-0 p-3 d-flex justify-content-between">
+                <h3 class="mb-0">Revenue of @course.courseName</h3>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRevenueModal">
+                    Add New Revenue
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive basic-tbl">
+                    <table class="table table-bordered showlist">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount (VND)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var revenue in listRevenue)
+                            {
+                                <tr>
+                                    <td>@revenue.description</td>
+                                    <td>@revenue.amount.ToString("N0") VND</td>
+                                    <td>
+                                        <form asp-action="DeleteRevenue" asp-route-courseId="@course.courseId" asp-route-id="@revenue.revenueId" method="post" style="display:inline;">
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                            <tr class="table-active">
+                                <td><strong>Total Revenue</strong></td>
+                                <td colspan="2"><strong class="text-success">@totalRevenue.ToString("N0") VND</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
