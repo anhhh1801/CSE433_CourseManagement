@@ -8,7 +8,7 @@
 
 
 <div class="card">
-    <div class="card-header border-0 p-3">
+    <div class=" border-0 p-3">
         <div>
             <h1>Welcome to Home Tutor Website</h1>
             <h2 class="heading mb-0">Hello @Model.teacherName, have a great day!</h2>
@@ -24,7 +24,7 @@
                     <div class="d-flex justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="@Model.avatar" alt="Profile picture"
-                            class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
                                 Change Avatar
                             </button>
@@ -136,7 +136,8 @@
                                         </tr>
                                     }
                                 }
-                                @for(; row <= 10;){
+                                @for (; row < 5;)
+                                {
                                     var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
                                     row++;
                                     <tr class="@rankClass">

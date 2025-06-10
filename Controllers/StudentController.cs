@@ -91,8 +91,16 @@ namespace CourseManagement.Controllers
         public IActionResult Delete(int id)
         {
             var student = _context.Students.SingleOrDefault(s => s.studentId == id);
+            var enrollments = _context.Enrollments
+                .Where(e => e.StudentId == id)
+                .ToList();
             if (student != null)
             {
+                foreach(var enroll in enrollments)
+                {
+                    _context.Enrollments.Remove(enroll);
+                    _context.SaveChanges();
+                }
                 _context.Students.Remove(student);
                 _context.SaveChanges();
             }

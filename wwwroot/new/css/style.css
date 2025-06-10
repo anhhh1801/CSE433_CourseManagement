@@ -1,0 +1,399 @@
+﻿/*# sourceMappingURL=style.css.map */
+
+table td {
+    padding: 10px 20px;
+    color: #000;
+}
+
+    table td a:hover {
+        text-decoration: underline;
+    }
+
+    table td a {
+        margin-right: 10px;
+        color: red;
+    }
+
+.showlist td {
+    font-size: 18px;
+    color: #000;
+}
+
+.btn-info {
+    text-align: right;
+}
+
+body {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+}
+
+.alert {
+    font-size: 24;
+    font-weight: bold;
+}
+
+.table thead th {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+tr td:first-child {
+    font-weight: 600;
+}
+
+.footer-outer {
+    background-color: #FB7D5B;
+    width: 100%;
+    margin-top: 0 !important;
+}
+
+body {
+    height: 100%;
+}
+
+.footer-outer .copyright p {
+    color: #413a9a;
+}
+
+.text-green {
+    color: green;
+}
+
+.text-red {
+    color: red;
+}
+
+.money {
+    font-weight: bold;
+}
+
+.davcopyright {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
+
+    .davcopyright p:first-child {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+.header .header-content {
+    font-size: 30px;
+    background-color: #FB7D5B;
+    color: #fff;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.logout {
+    padding-left: 50px;
+    padding-right: 15px;
+    background-color: #8c0615;
+}
+
+.edit {
+    padding-right: 50px;
+    padding-left: 15px;
+    background-color: #413a9a;
+}
+
+/* Optional hover effects */
+.navbtn {
+    display: inline-block;
+    padding: 2px 8px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 4px;
+    text-align: center;
+}
+
+    .navbtn:hover {
+        border: 2px solid #413a9a;
+        background-color: #fff;
+        color: #413a9a;
+    }
+
+.nav-header .logo {
+    font-size: 33px;
+    color: #FB7D5B;
+}
+
+a.brand-logo.logo {
+    font-size: 2.45em;
+}
+
+.page-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    color: #4D44B5;
+    padding: 0px 20px;
+    margin: 5px;
+}
+
+.rank1 td {
+    background-color: #f1c40f !important;
+    color: #fff !important;
+    font-size: 30px !important;
+    font-weight: bold;
+}
+
+.rank2 td {
+    background-color: #566573 !important;
+    color: #fff !important;
+    font-size: 25px !important;
+    font-weight: bold;
+}
+
+.rank3 td {
+    background-color: #ba4a00 !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+.profit {
+    background-color: #a2d9ce;
+}
+
+.loss {
+    background-color: #fadbd8;
+}
+
+.text-profit {
+    color: #196f3d !important;
+}
+
+.text-loss {
+    color: #943126 !important;
+}
+
+.showlist tbody tr:nth-of-type(odd) {
+    background-color: #fef9e7;
+}
+
+.showlist tbody tr:nth-of-type(even) {
+    background-color: #eaeded;
+}
+
+.scoreshow p:first-of-type {
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    padding-left:60px;
+    padding-right: 60px;
+    border: none;
+}
+
+.display-none {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+.studentcard {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coursecard {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.teacher-profile {
+    background-color: #fff !important;
+    border-radius: 10px !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.menu-aside-button {
+    display: none;
+}
+
+.dlabnav {
+    position: fixed !important;
+    background-color: #4D44B5;
+}
+
+.nav-header .brand-logo {
+    background-color: #4D44B5;
+}
+
+.nav-header {
+    position: fixed;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+}
+
+.metismenu a, i {
+    color: #fff !important;
+}
+
+.metismenu a {
+    font-size: 15px !important;
+}
+
+
+@media (max-width: 767.98px) {
+    .none-display {
+        display: none;
+    }
+
+    .footer-outer {
+        width: 100% !important;
+        margin-right: 0px !important;
+    }
+
+    .dlabnav {
+        position: relative !important;
+        background-color: #4D44B5;
+    }
+
+    .davcopyright {
+        position: relative !important;
+        padding: 10px;
+    }
+
+    .menu-aside-button {
+        display: block;
+    }
+
+    .header .header-content {
+        padding-left: 20px;
+        padding-right: 10px;
+    }
+
+    .content-body {
+        margin-left: 0;
+    }
+
+    .nav-header {
+        width: 250px;
+    }
+
+    .dlabnav {
+        width: 250px;
+    }
+
+    .header {
+        padding-left: 0;
+    }
+
+    .logout {
+        margin-right: 20px !important;
+    }
+
+    .open {
+        display: block !important;
+    }
+
+    .header-profile {
+        display: none !important;
+    }
+
+    .search {
+        width: 150px !important;
+    }
+
+    .row {
+        display: block !important;
+    }
+}
+
+.container-fluid {
+    overflow-x: hidden;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+    /* Position and style the close button (top right corner) */
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+.open {
+    display: none;
+}
+
+body.modal-open-overlay {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    transition: background-color 0.3s;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+.brand-logo {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+}
+
+.page-name {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 28px !important;
+}
+
+.table-responsive {
+    margin-bottom: 30px;
+}
