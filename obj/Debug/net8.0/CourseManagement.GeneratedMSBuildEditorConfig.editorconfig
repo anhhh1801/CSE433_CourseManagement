@@ -100,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Home/UnLoginHomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVbkxvZ2luSG9tZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -151,3 +155,7 @@ build_metadata.AdditionalFiles.CssScope = b-uiaqiaonk9
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6q92l2lvqu
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Shared/_UnLoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9VbkxvZ2luTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-6hu49bkpaq

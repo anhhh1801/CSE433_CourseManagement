@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Grad School</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" />
+    <link rel="stylesheet" href="~/new/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/new/css/templatemo-grad-school.css" />
+    <link rel="stylesheet" href="~/new/css/owl.css" />
+    <link rel="stylesheet" href="~/new/css/lightbox.css" />
+
+    <base href="~/" />
+</head>
+<body>
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>Tutor</em> Management</a>
+        </div>
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a asp-action="Login" asp-controller="Authen">Login</a></li>
+                <li><a asp-action="SignUp" asp-controller="Authen">Sign Up</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    @RenderBody()
+
+    <script src="~/new/vendor/jquery/jquery.min.js"></script>
+    <script src="~/new/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/new/js/owl-carousel.js"></script>
+    <script src="~/new/js/video.js"></script>
+    <script src="~/new/js/slick-slider.js"></script>
+    <script src="~/new/js/custom.js"></script>
+</body>
+</html>

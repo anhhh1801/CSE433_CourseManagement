@@ -16,6 +16,10 @@ namespace CourseManagement.Controllers
             _context = context;
         }
 
+        public IActionResult UnLoginHomePage()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             var teacherId = User.FindFirst("TeacherId")?.Value;

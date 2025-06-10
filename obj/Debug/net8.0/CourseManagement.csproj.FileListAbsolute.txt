@@ -346,3 +346,4 @@ D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\ref\CourseManagement.dll
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\scopedcss\Views\Shared\_UnLoginLayout.cshtml.rz.scp.css

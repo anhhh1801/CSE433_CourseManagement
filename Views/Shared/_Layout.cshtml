@@ -1,130 +1,56 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Home Tutor Management</title>
-    <link rel="icon" type="image/png" href="/img/logo.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Grad School</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" />
+    <link rel="stylesheet" href="~/new/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/new/css/templatemo-grad-school.css" />
+    <link rel="stylesheet" href="~/new/css/owl.css" />
+    <link rel="stylesheet" href="~/new/css/lightbox.css" />
+
+    <base href="~/" />
 </head>
-
 <body>
-    <div class="container-fluid">
-        <div class="nav-header">
-            <a asp-controller="Home" asp-action="Index" class="brand-logo logo">HOME TUTOR</a>
+    <header class="main-header clearfix" role="header">
+        <div class="logo">
+            <a href="#"><em>Tutor</em> Management</a>
         </div>
-        <div class="dlabnav">
-            <div class="dlabnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li>
-                        <a><i class="material-symbols-outlined">person</i><span class="nav-text">Student</span></a>
-                        <ul class="sub-student">
-                            <li><a asp-controller="Student" asp-action="List">Student List</a></li>
-                            <li><a asp-controller="Student" asp-action="Index">Manage Student</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a><i class="material-symbols-outlined">school</i><span class="nav-text">Course</span></a>
-                        <ul class="sub-course">
-                            <li><a asp-controller="Course" asp-action="List">Course List</a></li>
-                            <li><a asp-controller="Course" asp-action="Index">Manage Course</a></li>
-                        </ul>
-                    </li>
-						<li>
-							<a asp-controller="Admin" asp-action="Index">
-                            <i class="material-symbols-outlined">admin_panel_settings</i>
-								<span class="nav-text">Admin</span>
-							</a>
-						</li>
-                </ul>
-                <div class="davcopyright">
-                    <p>Helping teachers manage their work.</p>
-                    <p class="fs-12">A small project by IT students</p>
-                </div>
-            </div>
-        </div>
-        <div id="mySidenav" class="sidenav">
+        <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+        <nav id="menu" class="main-nav" role="navigation">
+            <ul class="main-menu">
+                <li><a href="#section1">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#section2">Student</a>
+                    <ul class="sub-menu">
+                        <li><a href="#section2">List</a></li>
+                        <li><a href="#section3">Management</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#section2">Course</a>
+                    <ul class="sub-menu">
+                        <li><a href="#section2">List</a></li>
+                        <li><a href="#section3">Management</a></li>
+                    </ul>
+                </li>
+                <li><a href="#section4">Admin</a></li>
+                <li><a href="#section4">Logout</a></li>
+            </ul>
             
-        </div>
+        </nav>
+    </header>
 
-        <div class="pageBody" id="main">
-            <div class="header">
-                <div class="header-content">
-                    <nav class="navbar navbar-expand">
-                        <div class="collapse navbar-collapse justify-content-between">
-                            <div class="header-left">
-                                <i onclick="toggleNav()" class="fa-solid fa-bars open"></i>
-                                <div class="dashboard_bar">
-                                    <p class="page-name">@ViewData["PageName"]</p>
-                                </div>
-                            </div>
+    @RenderBody()
 
-                            <div class="navbar-nav header-right">
-                                <div class="nav-item dropdown header-profile">
-                                    <span class="small"></span>
-                                </div>
-
-                                <button class="navbtn edit" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit</button>
-
-                                <form asp-controller="Authen" asp-action="Logout" method="post" class="logoutform" style="display: inline;">
-                                    <button type="submit" class="navbtn logout">Log Out</button>
-                                </form>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="content-body">
-                <div class="container-fluid">
-                    @RenderBody()
-                </div>
-                @* <div class="footer footer-outer"> *@
-                @*     <div class="copyright"> *@
-                @*         <p>Project CSE310 - Home Tutor Management</p> *@
-                @*     </div> *@
-                @* </div> *@
-            </div>
-
-            
-        </div>
-
-        @* Edit Profile Modal (chỉnh sửa nếu cần) *@
-        <!-- Modal omitted for brevity, you can reuse the original code -->
-
-    </div>
-
-    <script>
-        function toggleNav() {
-            const sidenav = document.getElementById("mySidenav");
-            const main = document.getElementById("main");
-            const isOpen = sidenav.style.width === "250px";
-            const content_body = document.querySelector(".content-body");
-
-            if (isOpen) {
-                sidenav.style.width = "0";
-                main.style.marginLeft = "0";
-                content_body.style.position = "relative";
-                document.body.classList.remove("modal-open-overlay");
-            } else {
-                sidenav.style.width = "250px";
-                main.style.marginLeft = "250px";
-                content_body.style.position = "fixed";
-                document.body.classList.add("modal-open-overlay");
-            }
-        }
-    </script>
-
-    <script src="~/js/global.min.js"></script>
-    <script src="~/js/dlabnav-init.js"></script>
-    <script src="~/js/custom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/new/vendor/jquery/jquery.min.js"></script>
+    <script src="~/new/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/new/js/owl-carousel.js"></script>
+    <script src="~/new/js/video.js"></script>
+    <script src="~/new/js/slick-slider.js"></script>
+    <script src="~/new/js/custom.js"></script>
 </body>
 </html>
