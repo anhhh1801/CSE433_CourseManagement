@@ -38,7 +38,7 @@
                     </li>
 						<li>
 							<a asp-controller="Admin" asp-action="Index">
-								<i class="material-symbols-outlined">manage_accounts</i>
+                            <i class="material-symbols-outlined">admin_panel_settings</i>
 								<span class="nav-text">Admin</span>
 							</a>
 						</li>
@@ -85,13 +85,14 @@
                 <div class="container-fluid">
                     @RenderBody()
                 </div>
+                @* <div class="footer footer-outer"> *@
+                @*     <div class="copyright"> *@
+                @*         <p>Project CSE310 - Home Tutor Management</p> *@
+                @*     </div> *@
+                @* </div> *@
             </div>
 
-            <div class="footer footer-outer">
-                <div class="copyright">
-                    <p>Project CSE310 - Home Tutor Management</p>
-                </div>
-            </div>
+            
         </div>
 
         @* Edit Profile Modal (chỉnh sửa nếu cần) *@

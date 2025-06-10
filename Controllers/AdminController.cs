@@ -1,4 +1,5 @@
-﻿using CourseManagement.Models;
+﻿using System.Security.Claims;
+using CourseManagement.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -29,19 +30,22 @@ namespace CourseManagement.Controllers
             var admin = _context.Users.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
             var students = _context.Students.ToList();
             var courses = _context.Courses.ToList();
-            var enrollments = _context.Enrollments.ToList();
+            var admins = _context.Users
+                .Include(t => t.Role)
+                .Where(t => t.isActive && t.Role.Any(r => r.Name == "Admin"))
+                .ToList();
             var users = _context.Users
                 .Where(u => u.isActive).ToList();
 
             ViewData["PageName"] = "Admin Dashboard";
             ViewBag.Courses = courses;
             ViewBag.Students = students;
-            ViewBag.Enrollments = enrollments;
             ViewBag.Users = users;
+            ViewBag.Admins = admins;
 
             return View(admin);
         }
-
+        //Admin
         [HttpPost]
         public async Task<IActionResult> UploadAvatar(int id, IFormFile avatar)
         {
@@ -86,6 +90,95 @@ namespace CourseManagement.Controllers
             }
 
             return RedirectToAction("Index", "Admin");
+        }
+
+
+        //Student
+        [HttpGet]
+        public async Task<IActionResult> StudentList()
+        {
+            ViewData["PageName"] = "Student List";
+            var teachers = await _context.Users
+                .Include(t => t.students)
+                .Where(t => t.isActive)
+                .ToListAsync();
+
+            return View(teachers);
+        }
+
+        
+
+        //Course
+        [HttpGet]
+        public async Task<IActionResult> CourseList()
+        {
+            ViewData["PageName"] = "Course List";
+            var teachers = await _context.Users
+                .Include(t => t.courses)
+                .Include(t => t.enrollments)
+                .Where(t => t.isActive)
+                .ToListAsync();
+
+            return View(teachers);
+        }
+
+        //Enrollment
+        public async Task<IActionResult> EnrollmentList()
+        {
+            ViewData["PageName"] = "Enrollment List";
+            var teachers = await _context.Users
+                .Include(t => t.courses)
+                .Include(t => t.enrollments)
+                .Where(t => t.isActive)
+                .ToListAsync();
+
+            return View(teachers);
+        }
+
+        //User
+        public async Task<IActionResult> UserList()
+        {
+            ViewData["PageName"] = "User List";
+            var teachers = await _context.Users
+                .Include(t => t.Role)
+                .Where(t => t.isActive)
+                .ToListAsync();
+
+            var users = teachers.Where(t => t.Role.Any(r => r.Name == "User")).ToList();
+
+            var admins = teachers.Where(t => t.Role.Any(r => r.Name == "Admin")).ToList();
+
+            ViewBag.Users = users;
+            ViewBag.Admins = admins;
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ToggleAdmin(int userId, bool isAdmin)
+        {
+            var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.teacherId == userId);
+            if (user == null) return NotFound();
+
+            var adminRole = _context.Roles.FirstOrDefault(r => r.Name == "Admin");
+            if (adminRole == null) return BadRequest();
+
+            if (isAdmin)
+            {
+                if (!user.Role.Any(r => r.Name == "Admin"))
+                    user.Role.Add(adminRole);
+            }
+            else
+            {
+                var roleToRemove = user.Role.FirstOrDefault(r => r.Name == "Admin");
+                if (roleToRemove != null)
+                    user.Role.Remove(roleToRemove);
+            }
+            _context.Users.Update(user);
+            _context.SaveChanges();
+
+            return RedirectToAction("UserList"); // hoặc tên Action bạn dùng để hiển thị danh sách
         }
     }
 }

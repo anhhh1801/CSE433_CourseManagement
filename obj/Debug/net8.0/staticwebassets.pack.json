@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\DRAW 3.PNG",
+      "PackagePath": "staticwebassets\\img\\DRAW 3.PNG"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\DRAW8.PNG",
+      "PackagePath": "staticwebassets\\img\\DRAW8.PNG"
+    },
+    {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
       "PackagePath": "staticwebassets\\img\\Picture1.png"
     },

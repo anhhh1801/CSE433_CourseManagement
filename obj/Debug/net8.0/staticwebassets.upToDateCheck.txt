@@ -4,6 +4,8 @@ wwwroot\css\style-login.css
 wwwroot\css\style-signup.css
 wwwroot\favicon.ico
 wwwroot\img\avatar_default.jpg
+wwwroot\img\DRAW 3.PNG
+wwwroot\img\DRAW8.PNG
 wwwroot\img\login-pic.png
 wwwroot\img\Picture1.png
 wwwroot\img\Picture6.jpg

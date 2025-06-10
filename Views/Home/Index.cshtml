@@ -99,7 +99,7 @@
                                     row++;
                                     var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
 
-                                    if (enrollment != null && enrollment.Student != null && enrollment.Course != null)
+                                    if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
                                     {
                                         <tr class="@rankClass">
                                             <td>@row</td>

@@ -44407,10 +44407,8 @@ tr td:first-child {
 
 .footer-outer {
     background-color: #FB7D5B;
-    position: fixed;
-    bottom: 0;
-    right: 0;
     width: 100%;
+    margin-top: 0 !important;
 }
 
 body {

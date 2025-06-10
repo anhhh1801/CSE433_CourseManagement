@@ -1,0 +1,114 @@
+﻿@model List<CourseManagement.Models.User>
+@{
+    ViewData["PageName"] = "Student Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@* @if (TempData["Message"] != null) *@
+@* { *@
+@*     <div class="alert alert-success m-3" role="alert"> *@
+@*         @TempData["Message"] *@
+@*     </div> *@
+@* } *@
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">Student List</h4>
+        <form asp-action="Index" asp-controller="Student" method="get" class="mt-3">
+            <div class="input-group search">
+                <input type="text" class="form-control border border-primary"
+                       name="keyword" id="search" value="@ViewBag.Keyword"
+                       placeholder="Search for student..">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body p-0">
+        
+        @foreach (var teacher in Model)
+        {
+            <div class="studentcard">
+            <div class="table-responsive basic-tbl">
+                <table class="table showlist">
+                    <thead class="bg-info-subtle">
+                        <tr>
+                            <th>Teacher</th>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Avatar</th>
+                            <th>Parent Number</th>
+                            <th>Entry Date</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var index = 1;
+						    var row = teacher.students.Count();
+                        }
+                        @if(teacher.students.Count() == 0){
+                            <tr>
+                                <td rowspan="@row" style="padding: 10px;">
+                                    <div class="text-center">
+                                        <img src="@(!string.IsNullOrEmpty(teacher.avatar) ? Url.Content(teacher.avatar) : Url.Content("/img/avatar_default.jpg"))"
+                                             class="rounded-circle" width="60" height="60" style="object-fit: cover; margin: 10px;">
+                                    </div>
+                                    <p class="text-center">@teacher.teacherName</p>
+                                </td>
+                                <td colspan="6" class="text-center">No Student</td>
+                            </tr>
+                        } else {
+                                @foreach (var student in teacher.students)
+                                {
+                                    <tr>
+                                        @if (index == 1)
+                                        {
+                                            <td rowspan="@row" style="padding: 10px;">
+                                                <div class="text-center">
+                                                    <img src="@(!string.IsNullOrEmpty(teacher.avatar) ? Url.Content(teacher.avatar) : Url.Content("/img/avatar_default.jpg"))"
+                                                         class="rounded-circle" width="60" height="60" style="object-fit: cover; margin: 10px;">
+                                                </div>
+                                                <p class="text-center">@teacher.teacherName</p>
+                                            </td>
+                                        }
+
+                                        <td>@index</td>
+                                        <td>@student.studentName</td>
+                                        <td>
+                                            <img src="@(!string.IsNullOrEmpty(student.Avatar) ? Url.Content(student.Avatar) : Url.Content("/img/avatar_default.jpg"))"
+                                                 class="rounded-circle" width="50" height="50" style="object-fit: cover;">
+                                        </td>
+                                        <td>@student.parentNumber.ToString()</td>
+                                        <td>@student.EntryDate.ToShortDateString()</td>
+                                        
+
+                                    </tr>
+                                    index++;
+                                }
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+                
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('search')?.addEventListener('keyup', function () {
+            let searchText = this.value.toLowerCase();
+            let rows = document.querySelectorAll('.showlist tbody tr');
+
+            rows.forEach(row => {
+                const cells = Array.from(row.getElementsByTagName('td'));
+                const match = cells.some(td => td.textContent.toLowerCase().includes(searchText));
+                row.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
+}
+

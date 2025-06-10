@@ -80,6 +80,8 @@ namespace CourseManagement.Controllers
             }
             model.teacher = teacher;
             model.Avatar = "/img/avatar_default.jpg";
+            teacher.students.Add(model);
+            _context.Users.Update(teacher);
             _context.Students.Add(model);
             _context.SaveChanges();
             ViewBag.Teacher = teacher;

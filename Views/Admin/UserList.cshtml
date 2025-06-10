@@ -1,0 +1,258 @@
+﻿@model List<CourseManagement.Models.User>
+@{
+    ViewData["PageName"] = "User Management";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	var listUsers = ViewBag.Users;
+    var listAdmin = ViewBag.Admins;
+}
+
+
+@* @if (TempData["Message"] != null) *@
+@* { *@
+@*     <div class="alert alert-success m-3" role="alert"> *@
+@*         @TempData["Message"] *@
+@*     </div> *@
+@* } *@
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">User List</h4>
+        <form asp-action="Index" asp-controller="Student" method="get" class="mt-3">
+            <div class="input-group search">
+                <input type="text" class="form-control border border-primary"
+                       name="keyword" id="search" value="@ViewBag.Keyword"
+                       placeholder="Search for student..">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="card-body p-0">
+
+            <div class="studentcard">
+                <div class="table-responsive basic-tbl">
+                    <table class="table showlist">
+                        <thead class="bg-info-subtle">
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Avatar</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var index = 1;
+                                var row = listAdmin != null ? listAdmin.Count : 0;
+                            }
+                            @if (listAdmin == null || listAdmin.Count == 0)
+                            {
+                                <tr>
+                                    <td colspan="8" class="text-center">No Admin</td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @foreach (var admin in listAdmin)
+                                {
+                                    <tr>
+                                        <td>@index</td>
+                                        <td>@admin.teacherName</td>
+                                        <td>
+                                            <img src="@(!string.IsNullOrEmpty(admin.avatar) ? Url.Content(admin.avatar) : Url.Content("/img/avatar_default.jpg"))"
+                                                 class="rounded-circle" width="50" height="50" style="object-fit: cover;">
+                                        </td>
+										<td>@admin.email</td>
+                                        <td>@admin.phoneNumber</td>
+                                        <td>@if(admin.isActive)
+                                            {
+												<span class="badge bg-success">Active</span>
+											}
+											else
+											{
+												<span class="badge bg-danger">Inactive</span>
+											}
+                                        </td>
+
+
+                                    </tr>
+                                    index++;
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        <div class="studentcard">
+            <div class="table-responsive basic-tbl">
+                <table class="table showlist">
+                    <thead class="bg-info-subtle">
+                        <tr>
+                            <th>#</th>
+                            <th>Full Name</th>
+                            <th>Avatar</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Status</th>
+                            <th>Admin</th>
+							<th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var index2 = 1;
+                            var row2 = listUsers != null ? listUsers : 0;
+                        }
+                        @if (listUsers == null || listUsers.Count == 0)
+                        {
+                            <tr>
+                                <td colspan="8" class="text-center">No Admin</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (var user in listUsers)
+                            {
+                                <tr>
+                                    <td>@index2</td>
+                                    <td>@user.teacherName</td>
+                                    <td>
+                                        <img src="@(!string.IsNullOrEmpty(user.avatar) ? Url.Content(user.avatar) : Url.Content("/img/avatar_default.jpg"))"
+                                             class="rounded-circle" width="50" height="50" style="object-fit: cover;">
+                                    </td>
+                                    <td>@user.email</td>
+                                    <td>@user.phoneNumber</td>
+                                    <td>
+                                        @if (user.isActive)
+                                        {
+                                            <span class="badge bg-success">Active</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">Inactive</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+											bool isAdmin = false;
+                                        }
+										@foreach (var role in user.Role)
+										{
+											if (role.Name == "Admin")
+											{
+												isAdmin = true;
+												break;
+											}
+										}
+                                        <form asp-controller="Admin" asp-action="ToggleAdmin" method="post">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="userId" value="@user.teacherId" />
+                                            <input type="hidden" name="isAdmin" id="isAdmin-@user.teacherId" value="@(isAdmin ? "false" : "true")" />
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       name="adminSwitch"
+                                                       id="checkbox-@user.teacherId"
+                                                @(isAdmin ? "checked" : "")
+                                                       onchange="onAdminToggle(this, @user.teacherId, @isAdmin.ToString().ToLower())" />
+                                                <label class="form-check-label"></label>
+                                            </div>
+                                        </form>
+                                    </td>
+									<td>
+										<a asp-controller="User" asp-action="Edit" asp-route-id="@user.teacherId"
+										   class="btn btn-secondary btn-sm">Update</a>
+                                        <a asp-controller="User" asp-action="Delete" asp-route-id="@user.teacherId"
+										   class="btn btn-danger btn-sm">Delete</a>
+									</td>
+
+
+                                </tr>
+                                index2++;
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Xác nhận thay đổi quyền Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+                <div class="modal-body" id="confirmModalMessage">
+                    Bạn có chắc muốn thay đổi quyền Admin cho người dùng này?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="confirmModalOkBtn">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script>
+            document.getElementById('search')?.addEventListener('keyup', function () {
+                let searchText = this.value.toLowerCase();
+                let rows = document.querySelectorAll('.showlist tbody tr');
+
+                rows.forEach(row => {
+                    const cells = Array.from(row.getElementsByTagName('td'));
+                    const match = cells.some(td => td.textContent.toLowerCase().includes(searchText));
+                    row.style.display = match ? '' : 'none';
+                });
+            });
+
+                          
+            let currentCheckbox = null;
+            let currentUserId = null;
+
+                        const confirmModal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            const confirmModalMessage = document.getElementById("confirmModalMessage");
+            const confirmModalOkBtn = document.getElementById("confirmModalOkBtn");
+
+            // Bắt sự kiện toggle checkbox
+            function onAdminToggle(checkbox, userId, wasAdmin) {
+                currentCheckbox = checkbox;
+                currentUserId = userId;
+
+                const newState = checkbox.checked;
+                const action = newState ? "cấp quyền Admin" : "hủy quyền Admin";
+
+                confirmModalMessage.innerText = `Bạn có chắc chắn muốn ${action} cho người dùng này không?`;
+
+                // Hiện modal
+                confirmModal.show();
+            }
+
+            // Đảm bảo sự kiện submit chỉ gán 1 lần
+            confirmModalOkBtn.addEventListener("click", function () {
+                if (currentCheckbox && currentUserId) {
+                    const hiddenInput = document.getElementById(`isAdmin-${currentUserId}`);
+                    hiddenInput.value = currentCheckbox.checked ? "true" : "false";
+                    currentCheckbox.closest("form").submit();
+                }
+            });
+
+            // Khôi phục trạng thái nếu đóng modal mà không xác nhận
+            document.getElementById("confirmModal").addEventListener("hidden.bs.modal", function () {
+                if (currentCheckbox) {
+                    currentCheckbox.checked = currentCheckbox.dataset.wasadmin === "true";
+                    currentCheckbox = null;
+                    currentUserId = null;
+                }
+            });
+        </script>
+        
+    }
+

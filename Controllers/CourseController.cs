@@ -34,6 +34,7 @@ namespace CourseManagement.Controllers
             }
 
             var courses = _context.Courses
+                .Include(c => c.enrollments)
                 .Where(c => c.Teacher.teacherId == parsedId)
                 .ToList();
 
@@ -53,6 +54,7 @@ namespace CourseManagement.Controllers
                 return RedirectToAction("Login", "Authen");
             }
             var courses = _context.Courses
+                .Include(c => c.enrollments)
                 .Where(c => c.Teacher.teacherId == parsedId)
                 .ToList();
             return View(courses);
@@ -107,7 +109,9 @@ namespace CourseManagement.Controllers
             {
                 return BadRequest("Không tìm thấy giáo viên.");
             }
+            teacher.courses.Add(model);
             model.Teacher = teacher;
+            _context.Users.Update(teacher);
             _context.Courses.Add(model);
             _context.SaveChanges();
             return RedirectToAction("Index");
@@ -194,7 +198,9 @@ namespace CourseManagement.Controllers
 
             course.enrollments.Add(enrollment);
             student.enrollments.Add(enrollment);
+            teacher.enrollments.Add(enrollment);
 
+            _context.Users.Update(teacher);
             _context.Enrollments.Add(enrollment);
             _context.SaveChanges();
             return RedirectToAction("Enroll");

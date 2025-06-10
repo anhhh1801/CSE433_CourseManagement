@@ -17,24 +17,22 @@
 <body>
     <div class="container-fluid">
         <div class="nav-header">
-            <a asp-controller="Home" asp-action="Index" class="brand-logo logo">HOME TUTOR</a>
+            <a asp-controller="Admin" asp-action="Index" class="brand-logo logo">HOME TUTOR</a>
         </div>
         <div class="dlabnav">
             <div class="dlabnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li>
-                        <a><i class="material-symbols-outlined">person</i><span class="nav-text">Student</span></a>
-                        <ul class="sub-student">
-                            <li><a asp-controller="Student" asp-action="List">Student List</a></li>
-                            <li><a asp-controller="Student" asp-action="Index">Manage Student</a></li>
-                        </ul>
+                        <a asp-controller="Admin" asp-action="StudentList"><i class="material-symbols-outlined">person</i><span class="nav-text">Student</span></a>
                     </li>
                     <li>
-                        <a><i class="material-symbols-outlined">school</i><span class="nav-text">Course</span></a>
-                        <ul class="sub-course">
-                            <li><a asp-controller="Course" asp-action="List">Course List</a></li>
-                            <li><a asp-controller="Course" asp-action="Index">Manage Course</a></li>
-                        </ul>
+                        <a asp-controller="Admin" asp-action="CourseList"><i class="material-symbols-outlined">school</i><span class="nav-text">Course</span></a>
+                    </li>
+                    <li>
+                        <a asp-controller="Admin" asp-action="EnrollmentList"><i class="material-symbols-outlined">app_registration</i><span class="nav-text">Enrollment</span></a>
+                    </li>
+                    <li>
+                        <a asp-controller="Admin" asp-action="UserList"><i class="material-symbols-outlined">groups</i><span class="nav-text">User</span></a>
                     </li>
 					<li>
 						<a asp-controller="Home" asp-action="Index">

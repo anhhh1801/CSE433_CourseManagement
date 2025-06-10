@@ -4,7 +4,7 @@
     var listStudents = ViewBag.Students;
     var listCourses = ViewBag.Courses;
     var listUsers = ViewBag.Users;
-    var listEnrollments = ViewBag.Enrollments;
+	var listAdmins = ViewBag.Admins;
 }
 
 
@@ -68,16 +68,20 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col text-center">
+                            <a asp-action="StudentList" asp-controller="Admin">
                             <div class="teacher-profile">
                             <h4>Total Students</h4>
                             <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
                             </div>
+                            </a>
                         </div>
                         <div class="col text-center">
+                            <a asp-action="CourseList" asp-controller="Admin">
                             <div class=" teacher-profile">
                             <h4>Total Courses</h4>
                             <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -86,16 +90,20 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col text-center">
-                            <div class=" teacher-profile">
-                            <h4>Total Enrollments</h4>
-                            <p class="fs-2 fw-bold text-primary">@listEnrollments.Count</p>
-                            </div>
+                            <a asp-action="UserList" asp-controller="Admin">
+                                <div class=" teacher-profile">
+                                    <h4>Total Active Teachers</h4>
+                                    <p class="fs-2 fw-bold text-primary">@listAdmins.Count</p>
+                                </div>
+                            </a>
                         </div>
                         <div class="col text-center">
+                            <a asp-action="UserList" asp-controller="Admin">
                             <div class=" teacher-profile">
-                            <h4>Total Active Users</h4>
+                            <h4>Total Active Teachers</h4>
                             <p class="fs-2 fw-bold text-primary">@listUsers.Count</p>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
