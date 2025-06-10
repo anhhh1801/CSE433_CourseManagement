@@ -20,6 +20,7 @@ namespace CourseManagement.Controllers
         {
             return View();
         }
+
         public IActionResult Index()
         {
             var teacherId = User.FindFirst("TeacherId")?.Value;
@@ -41,7 +42,7 @@ namespace CourseManagement.Controllers
                 .Include(e => e.Student)
                 .OrderByDescending(e => e.FinalScore)
                 .Where(e => e.isActive)
-                .Take(10);
+                .Take(5);
             ViewData["PageName"] = "Dashboard";
             ViewBag.Courses = courses;
             ViewBag.Students = students;

@@ -154,8 +154,10 @@
                                             <input type="hidden" name="isAdmin" id="isAdmin-@user.teacherId" value="@(isAdmin ? "false" : "true")" />
 
                                             <div class="form-check form-switch">
+
                                                 <input class="form-check-input"
                                                        type="checkbox"
+                                                       role="switch"
                                                        name="adminSwitch"
                                                        id="checkbox-@user.teacherId"
                                                 @(isAdmin ? "checked" : "")

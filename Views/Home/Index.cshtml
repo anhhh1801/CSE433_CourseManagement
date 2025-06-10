@@ -1,70 +1,217 @@
-﻿@{
-    ViewData["Title"] = "Home";
-    Layout = "_Layout";
+﻿@model CourseManagement.Models.User;
+@{
+    ViewData["PageName"] = "Dash Board";
+    var listStudents = ViewBag.Students;
+    var listCourses = ViewBag.Courses;
+    var listEnrollment = ViewBag.Enrollments;
 }
 
 
+<div class="card">
+    <div class=" border-0 p-3">
+        <div>
+            <h1>Welcome to Home Tutor Website</h1>
+            <h2 class="heading mb-0">Hello @Model.teacherName, have a great day!</h2>
+            <p>Today is: @DateTime.Now.ToString("dddd, MMMM dd, yyyy")</p>
+        </div>
+    </div>
 
-<section class="section main-banner" id="top" data-section="section1">
-    <video autoplay muted loop id="bg-video">
-        <source src="~/new/assets/images/course-video.mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay header-text">
-        <div class="caption">
-            <h6>Graduate School of Management</h6>
-            <h2><em>Your</em> Classroom</h2>
-            <div class="main-button">
-                <div class="scroll-to-section"><a href="#section2">Discover more</a></div>
+    <div class="card-body">
+        <div class="row align-items-start">
+            <div class="col-md-4">
+                <div class="teacher-profile">
+                    <h2 class="text-center">Teacher's Profile</h2>
+                    <div class="d-flex justify-content-center">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <img src="@Model.avatar" alt="Profile picture"
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
+                                Change Avatar
+                            </button>
+
+                            <div class="modal fade" id="uploadAvatarModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form asp-controller="Home" asp-action="UploadAvatar" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Upload Avatar</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Choose Image</label>
+                                                    <input type="file" class="form-control" name="avatar" accept="image/*" required />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Upload</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-3">
+                            <h3>@Model.teacherName</h3>
+                            <p><strong>Email:</strong> @Model.email</p>
+                            <p><strong>Phone Number:</strong> @Model.phoneNumber</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center border-top mt-3 pt-3">
+                        <div class="row">
+                            <div class="col">
+                                <h4>Total Students</h4>
+                                <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
+                            </div>
+                            <div class="col">
+                                <h4>Total Courses</h4>
+                                <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Student Table -->
+            <div class="col-md-8">
+                <div class="col-md-12">
+                    <h3 class="bg-primary p-2 text-white">Top Student</h3>
+                    <div class="table-responsive">
+                        <table class="table showlist table-bordered">
+                            <thead class="bg-info-subtle">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Student Name</th>
+                                    <th>Final Score</th>
+                                    <th>Course</th>
+                                    <th>Performance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    var row = 0;
+                                }
+                                @foreach (var enrollment in listEnrollment)
+                                {
+                                    row++;
+                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+
+                                    if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
+                                    {
+                                        <tr class="@rankClass">
+                                            <td>@row</td>
+                                            <td>@enrollment.Student.studentName</td>
+                                            <td>
+                                                @{
+                                                    var score = enrollment?.FinalScore;
+                                                    var badgeClass = score == null ? "bg-secondary" :
+                                                    score >= 8 ? "bg-success" :
+                                                    score >= 6.5 ? "bg-info" :
+                                                    score >= 5 ? "bg-warning" :
+                                                    score >= 3.5 ? "bg-danger" : "bg-dark";
+                                                }
+                                                <span class="badge @badgeClass">@score?.ToString("0.##")</span>
+                                            </td>
+                                            <td>@enrollment.Course.courseName</td>
+                                            <td>
+                                                @{
+                                                    var perf = enrollment.Performance;
+                                                    var perfClass = perf == 'A' ? "bg-success" :
+                                                    perf == 'B' ? "bg-info" :
+                                                    perf == 'C' ? "bg-warning" :
+                                                    perf == 'D' ? "bg-danger" : "bg-dark";
+                                                }
+                                                <span class="badge @perfClass">@enrollment.Performance</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="@rankClass">
+                                            <td>@row</td>
+                                            <td colspan="4" class="text-center">#</td>
+                                        </tr>
+                                    }
+                                }
+                                @for (; row < 5;)
+                                {
+                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+                                    row++;
+                                    <tr class="@rankClass">
+                                        <td>@row</td>
+                                        <td colspan="4" class="text-center">#</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Income Overview -->
+                <div class="col-md-12">
+                    <h3 class="p-2 @(0 > 0 ? "bg-success" : "bg-danger")">Income Overview</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="bg-info-subtle">
+                                <tr>
+                                    <th>Course ID</th>
+                                    <th>Course Name</th>
+                                    <th>Revenues</th>
+                                    <th>Expenses</th>
+                                    <th>Net Income</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @* @foreach (var course in listCourses)
+                                @* {
+                                @*     <tr class="@(course.netIncome >= 0 ? "profit" : "loss")"> *@
+                                @*         <td>@course.courseId</td> *@
+                                @*         <td>@course.courseName</td> *@
+                                @*         <td class="text-profit">+@course.TotalRevenues.ToString("N0") VND</td> *@
+                                @*         <td class="text-loss">-@course.TotalExpenses.ToString("N0") VND</td> *@
+                                @*         <td class="@(course.NetIncome >= 0 ? "text-profit" : "text-loss")">@course.NetIncome.ToString("N0") VND</td> *@
+                                @*     </tr> *@
+                                @* } *@
+                                @* <tr class="table-active"> *@
+                                @*     <td><strong>Total</strong></td> *@
+                                @*     <td><strong>@listCourses.Count</strong></td> *@
+                                @*     <td class="text-profit"><strong>+@totalRevenues.ToString("N0") VND</strong></td> *@
+                                @*     <td class="text-loss"><strong>-@totalExpenses.ToString("N0") VND</strong></td> *@
+                                @*     <td class="@(totalNetIncome >= 0 ? "text-profit" : "text-loss")"> *@
+                                @*         <strong>@totalNetIncome.ToString("N0") VND</strong> *@
+                                @*     </td> *@
+                                @* </tr> *@
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<section class="features">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-12">
-                <div class="features-post">
-                    <div class="features-content">
-                        <div class="content-show">
-                            <h4><i class="fa fa-pencil"></i>All Courses</h4>
-                        </div>
-                        <div class="content-hide">
-                            <p>Curabitur id eros vehicula...</p>
-                            <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-12">
-                <div class="features-post second-features">
-                    <div class="features-content">
-                        <div class="content-show">
-                            <h4><i class="fa fa-graduation-cap"></i>Virtual Class</h4>
-                        </div>
-                        <div class="content-hide">
-                            <p>Curabitur id eros vehicula...</p>
-                            <div class="scroll-to-section"><a href="#section3">Details</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-12">
-                <div class="features-post third-features">
-                    <div class="features-content">
-                        <div class="content-show">
-                            <h4><i class="fa fa-book"></i>Real Meeting</h4>
-                        </div>
-                        <div class="content-hide">
-                            <p>Curabitur id eros vehicula...</p>
-                            <div class="scroll-to-section"><a href="#section4">Read More</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+<!-- Toast Notifications -->
+@* <div class="position-fixed end-0 p-3" style="z-index: 1055; top: 60px;"> *@
+@*     @if (!string.IsNullOrEmpty(message)) *@
+@*     { *@
+@*         <div class="toast align-items-center text-white bg-success border-0 show" role="alert"> *@
+@*             <div class="d-flex"> *@
+@*                 <div class="toast-body">@message</div> *@
+@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@*     @if (!string.IsNullOrEmpty(error)) *@
+@*     { *@
+@*         <div class="toast align-items-center text-white bg-danger border-0 show" role="alert"> *@
+@*             <div class="d-flex"> *@
+@*                 <div class="toast-body">@error</div> *@
+@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
+@*             </div> *@
+@*         </div> *@
+@*     } *@
+@* </div> *@

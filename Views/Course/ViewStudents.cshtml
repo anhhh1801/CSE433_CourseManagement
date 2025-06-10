@@ -55,11 +55,14 @@
                                                     <p>@(enrollment.FinalScore?.ToString("0.0") ?? "-")</p>
                                                 </div>
                                             </div>
-                                <button type="button" class="btn btn-primary btn-sm flex-fill text-center" data-bs-toggle="modal" data-bs-target="#scoreModal-@student?.studentId">
+                                @{
+                                    var modalId = $"scoreModal-{student.studentId}";
+                                }
+                                <button type="button" class="btn btn-primary btn-sm flex-fill text-center" data-bs-toggle="modal" data-bs-target="#@modalId">
                                                 Update Scores
                                             </button>
 
-                                            <div class="modal fade" id="scoreModal-@student?.studentId">
+                                <div class="modal fade" id="@modalId">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <form asp-controller="Course" asp-action="UpdateScores" method="post">

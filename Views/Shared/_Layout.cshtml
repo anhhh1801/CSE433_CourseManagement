@@ -11,46 +11,55 @@
     <link rel="stylesheet" href="~/new/css/templatemo-grad-school.css" />
     <link rel="stylesheet" href="~/new/css/owl.css" />
     <link rel="stylesheet" href="~/new/css/lightbox.css" />
+	<link rel="stylesheet" href="~/new/css/style.css" />
 
     <base href="~/" />
 </head>
 <body>
-    <header class="main-header clearfix" role="header">
+    <header class="main-header clearfix" role="header" style="display: flex;">
         <div class="logo">
             <a href="#"><em>Tutor</em> Management</a>
         </div>
+        <div style="display: flex;margin-right: 60px; margin-left: auto;">
         <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
         <nav id="menu" class="main-nav" role="navigation">
             <ul class="main-menu">
-                <li><a href="#section1">Home</a></li>
+                <li><a asp-action="Index" asp-controller="Home">Home</a></li>
                 <li class="has-submenu">
-                    <a href="#section2">Student</a>
+                    <a asp-action="List" asp-controller="Student">Student</a>
                     <ul class="sub-menu">
-                        <li><a href="#section2">List</a></li>
-                        <li><a href="#section3">Management</a></li>
+                        <li><a asp-action="List" asp-controller="Student">List</a></li>
+                        <li><a asp-action="Index" asp-controller="Student">Management</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
-                    <a href="#section2">Course</a>
+                    <a asp-action="List" asp-controller="Course">Course</a>
                     <ul class="sub-menu">
-                        <li><a href="#section2">List</a></li>
-                        <li><a href="#section3">Management</a></li>
+                        <li><a asp-action="List" asp-controller="Course">List</a></li>
+                        <li><a asp-action="Index" asp-controller="Course">Management</a></li>
                     </ul>
                 </li>
-                <li><a href="#section4">Admin</a></li>
-                <li><a href="#section4">Logout</a></li>
+                <li><a asp-action="Index" asp-controller="Admin">Admin</a></li>
             </ul>
-            
-        </nav>
+            </nav>
+            <form asp-controller="Authen" asp-action="Logout" method="post" class="logoutform" style="display: flex; margin: auto;">
+                <button type="submit" class="navbtn logout">Log Out</button>
+            </form>
+        </div>
+        
     </header>
-
-    @RenderBody()
-
+        @RenderBody()
+    
+    
+    
     <script src="~/new/vendor/jquery/jquery.min.js"></script>
     <script src="~/new/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
     <script src="~/new/js/owl-carousel.js"></script>
     <script src="~/new/js/video.js"></script>
     <script src="~/new/js/slick-slider.js"></script>
     <script src="~/new/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
