@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                    <input type="tel" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+                    <input type="text" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
                 </div>
                 <div class="mb-3 input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>

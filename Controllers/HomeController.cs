@@ -50,6 +50,24 @@ namespace CourseManagement.Controllers
             return View(teacher);
         }
 
+        [HttpPost]
+        public IActionResult EditProfile (int id, string teacherName, string phoneNumber, string email)
+        {
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == id);
+            if(teacher == null)
+            {
+                return NotFound();
+            }
+            teacher.teacherName = teacherName;
+            teacher.phoneNumber = phoneNumber;
+            teacher.email = email;
+            _context.Users.Update(teacher);
+            _context.SaveChanges();
+            TempData["Message"] = "Update Profile Successfully";
+            return RedirectToAction("Index");
+
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

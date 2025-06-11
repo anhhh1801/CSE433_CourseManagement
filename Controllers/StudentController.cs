@@ -31,6 +31,8 @@ namespace CourseManagement.Controllers
             }
 
             var students = _context.Students
+                .Include(s => s.enrollments)
+                .ThenInclude(e => e.Course)
                 .Where(s => s.teacher != null && s.teacher.teacherId == parsedId)
                 .ToList();
 
@@ -43,16 +45,20 @@ namespace CourseManagement.Controllers
 
             if (teacherId == null)
             {
+                TempData["Error"] = "User Not Found! Please Login Again!";
                 return RedirectToAction("NeedLogin", "Authen");
             }
 
             int parsedId;
             if (!int.TryParse(teacherId, out parsedId))
             {
+                TempData["Error"] = "User Not Found! Please Login Again!";
                 return RedirectToAction("Login", "Authen");
             }
 
             var students = _context.Students
+                .Include(s => s.enrollments)
+                .ThenInclude(e => e.Course)
                 .Where(s => s.teacher != null && s.teacher.teacherId == parsedId)
                 .ToList();
 
@@ -71,11 +77,13 @@ namespace CourseManagement.Controllers
             var teacherId = User.FindFirstValue("TeacherId");
             if (string.IsNullOrEmpty(teacherId) || !int.TryParse(teacherId, out int parsedTeacherId))
             {
+                TempData["Error"] = "User Not Found! Please Login Again!";
                 return RedirectToAction("Login", "Authen"); // Redirect if teacher is not logged in
             }
             var teacher = _context.Users.FirstOrDefault(t => t.teacherId == parsedTeacherId);
             if (teacher == null)
             {
+                TempData["Error"] = "User Not Found! Please Login Again!";
                 return BadRequest("Không tìm thấy giáo viên.");
             }
             model.teacher = teacher;
@@ -85,6 +93,7 @@ namespace CourseManagement.Controllers
             _context.Students.Add(model);
             _context.SaveChanges();
             ViewBag.Teacher = teacher;
+            TempData["Message"] = "Add Student Successfully!";
             return RedirectToAction("Index");
         }
 
@@ -103,6 +112,7 @@ namespace CourseManagement.Controllers
                 }
                 _context.Students.Remove(student);
                 _context.SaveChanges();
+                TempData["Message"] = "Delete Student Successfully!";
             }
             return RedirectToAction("Index");
         }
@@ -113,7 +123,8 @@ namespace CourseManagement.Controllers
             var student = _context.Students.SingleOrDefault(s => s.studentId == id);
             if (student == null)
             {
-                return NotFound();
+                TempData["Error"] = "Student Not Found!";
+                return View();
             }
             return View(student);
         }
@@ -129,6 +140,7 @@ namespace CourseManagement.Controllers
                 student.parentNumber = model.parentNumber;
                 _context.Students.Update(student);
                 _context.SaveChanges();
+                TempData["Message"] = "Update Student Information Successfully!";
             }
             return RedirectToAction("Index");
         }
