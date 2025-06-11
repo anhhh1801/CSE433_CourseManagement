@@ -93,7 +93,7 @@ body {
 .logout {
     padding-left: 50px;
     padding-right: 15px;
-    background-color: #8c0615;
+    background-color: #B91C1C !important;
 }
 
 .edit {
@@ -139,23 +139,20 @@ a.brand-logo.logo {
 }
 
 .rank1 td {
-    background-color: #f1c40f !important;
+    background-color: #FACC15 !important;
     color: #fff !important;
-    font-size: 30px !important;
     font-weight: bold;
 }
 
 .rank2 td {
-    background-color: #566573 !important;
+    background-color: #E5E7EB !important;
     color: #fff !important;
-    font-size: 25px !important;
     font-weight: bold;
 }
 
 .rank3 td {
-    background-color: #ba4a00 !important;
+    background-color: #FDBA74 !important;
     color: #fff !important;
-    font-size: 20px !important;
     font-weight: bold;
 }
 
@@ -230,6 +227,8 @@ a.brand-logo.logo {
     border-radius: 10px !important;
     margin-bottom: 20px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border-color: #E5E7EB;
+    border: 3px solid #E5E7EB;
 }
 
 .menu-aside-button {
@@ -310,6 +309,7 @@ a.brand-logo.logo {
 
     .logout {
         margin-right: 20px !important;
+        background-color: #B91C1C !important;
     }
 
     .open {

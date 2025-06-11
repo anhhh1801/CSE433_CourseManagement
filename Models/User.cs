@@ -20,7 +20,7 @@ namespace CourseManagement.Models
 
         public string? avatar { get; set; }
 
-        public int? phoneNumber { get; set; }
+        public string? phoneNumber { get; set; }
 
         public bool isActive { get; set; } = true;
 

@@ -20,11 +20,13 @@ namespace CourseManagement.Controllers
             var teacherId = User.FindFirst("TeacherId")?.Value;
             if (teacherId == null)
             {
+                TempData["Error"] = "Not Found User";
                 return RedirectToAction("Login", "Authen");
             }
             int parsedId;
             if (!int.TryParse(teacherId, out parsedId))
             {
+                TempData["Error"] = "Not Found User";
                 return RedirectToAction("Login", "Authen");
             }
             var admin = _context.Users.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
@@ -159,7 +161,11 @@ namespace CourseManagement.Controllers
         public IActionResult ToggleAdmin(int userId, bool isAdmin)
         {
             var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.teacherId == userId);
-            if (user == null) return NotFound();
+            if (user == null) 
+            {
+                TempData["Erroe"] = "User Not Found";
+                return NotFound();
+            }
 
             var adminRole = _context.Roles.FirstOrDefault(r => r.Name == "Admin");
             if (adminRole == null) return BadRequest();
@@ -177,7 +183,7 @@ namespace CourseManagement.Controllers
             }
             _context.Users.Update(user);
             _context.SaveChanges();
-
+            TempData["Message"] = "Admin Updated!";
             return RedirectToAction("UserList"); // hoặc tên Action bạn dùng để hiển thị danh sách
         }
     }

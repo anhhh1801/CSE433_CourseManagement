@@ -19,15 +19,20 @@
     <div class="card-body">
         <div class="row align-items-start">
             <div class="col-md-4">
-                <div class="teacher-profile">
-                    <h2 class="text-center">Teacher's Profile</h2>
-                    <div class="d-flex justify-content-center">
+                <div class="teacher-profile" style="padding: 20px;">
+                    <h2 class="text-center" style="margin-top: 20px; margin-bottom: 10px;">Teacher's Profile</h2>
+                    <div class=" justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="@Model.avatar" alt="Profile picture"
-                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
+                            class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                            <div style="display: flex;">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
                                 Change Avatar
                             </button>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal_@Model.teacherId">
+                                Edit Profile
+                            </button>
+                            </div>
 
                             <div class="modal fade" id="uploadAvatarModal">
                                 <div class="modal-dialog">
@@ -51,12 +56,43 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="modal fade" id="EditModal_@Model.teacherId">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form asp-controller="Home" asp-action="EditProfile" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit Profile</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    <input type="text" class="form-control" name="teacherName" asp-for="@Model.teacherName" placeholder="Full Name" required />
+                                                </div>
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                    <input type="email" class="form-control" name="email" asp-for="@Model.email" placeholder="Email" required />
+                                                </div>
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                    <input type="text" class="form-control" name="phoneNumber" asp-for="@Model.phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="p-3">
-                            <h3>@Model.teacherName</h3>
-                            <p><strong>Email:</strong> @Model.email</p>
-                            <p><strong>Phone Number:</strong> @Model.phoneNumber</p>
+                        <div class="p-3 text-center">
+                            <h5 style="margin-bottom: 10px;"><strong>Teacher Name:</strong> @Model.teacherName</h5>
+                            <h5 style="margin-bottom: 10px;"><strong>Email:</strong> @Model.email</h5>
+                            <h5 style="margin-bottom: 10px;"><strong>Phone Number:</strong> @Model.phoneNumber</h5>
                         </div>
                     </div>
 
@@ -64,11 +100,11 @@
                         <div class="row">
                             <div class="col">
                                 <h4>Total Students</h4>
-                                <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
+                                <p style="font-size: x-large;">@listStudents.Count</p>
                             </div>
                             <div class="col">
                                 <h4>Total Courses</h4>
-                                <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
+                                <p style="font-size: x-large;">@listCourses.Count</p>
                             </div>
                         </div>
                     </div>
@@ -78,10 +114,10 @@
             <!-- Top Student Table -->
             <div class="col-md-8">
                 <div class="col-md-12">
-                    <h3 class="bg-primary p-2 text-white">Top Student</h3>
+                    <h3 class=" p-2 text-white" style="background-color:#1D4ED8 !important;">Top Student</h3>
                     <div class="table-responsive">
                         <table class="table showlist table-bordered">
-                            <thead class="bg-info-subtle">
+                            <thead class="bg-info-subtle" style="background-color: #F3F4F6">
                                 <tr>
                                     <th>No.</th>
                                     <th>Student Name</th>
@@ -96,11 +132,12 @@
                                 }
                                 @foreach (var enrollment in listEnrollment)
                                 {
-                                    row++;
+                                    
                                     var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
 
                                     if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
                                     {
+                                        row++;
                                         <tr class="@rankClass">
                                             <td>@row</td>
                                             <td>@enrollment.Student.studentName</td>
@@ -128,18 +165,12 @@
                                             </td>
                                         </tr>
                                     }
-                                    else
-                                    {
-                                        <tr class="@rankClass">
-                                            <td>@row</td>
-                                            <td colspan="4" class="text-center">#</td>
-                                        </tr>
-                                    }
                                 }
                                 @for (; row < 5;)
                                 {
-                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
                                     row++;
+                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+                                    
                                     <tr class="@rankClass">
                                         <td>@row</td>
                                         <td colspan="4" class="text-center">#</td>
@@ -194,24 +225,4 @@
     </div>
 </div>
 
-<!-- Toast Notifications -->
-@* <div class="position-fixed end-0 p-3" style="z-index: 1055; top: 60px;"> *@
-@*     @if (!string.IsNullOrEmpty(message)) *@
-@*     { *@
-@*         <div class="toast align-items-center text-white bg-success border-0 show" role="alert"> *@
-@*             <div class="d-flex"> *@
-@*                 <div class="toast-body">@message</div> *@
-@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
-@*             </div> *@
-@*         </div> *@
-@*     } *@
-@*     @if (!string.IsNullOrEmpty(error)) *@
-@*     { *@
-@*         <div class="toast align-items-center text-white bg-danger border-0 show" role="alert"> *@
-@*             <div class="d-flex"> *@
-@*                 <div class="toast-body">@error</div> *@
-@*                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button> *@
-@*             </div> *@
-@*         </div> *@
-@*     } *@
-@* </div> *@
+

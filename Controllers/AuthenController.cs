@@ -38,7 +38,7 @@ namespace CourseManagement.Controllers
 
             if (teacher == null || !isValid || !isActive)
             {
-                ViewBag.ErrorMessage = "Email hoặc mật khẩu không đúng.";
+                TempData["Error"] = "Email or password is uncorrect!";
                 return View();
             }
             var roleNames = teacher.Role.Select(r => r.Name).ToList();
@@ -57,6 +57,7 @@ namespace CourseManagement.Controllers
             var principal = new ClaimsPrincipal(identity);
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+            TempData["Message"] = "Login Successfully!";
 
             return RedirectToAction("Index", "Home");
         }
@@ -68,7 +69,7 @@ namespace CourseManagement.Controllers
             
             if (_context.Users.Any(t => t.email == user.email))
             {
-                ViewBag.ErrorMessage = "Email đã tồn tại!";
+                TempData["Error"] = "Email existed!";
                 return View();
             }
             
@@ -83,6 +84,7 @@ namespace CourseManagement.Controllers
 
             _context.Users.Add(user);
             _context.SaveChanges();
+            TempData["Message"] = "Sign Up Successfully! Please Login.";
 
             return RedirectToAction("Login");
         }
@@ -91,16 +93,19 @@ namespace CourseManagement.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            TempData["Message"] = "Log out Successfully!";
             return RedirectToAction("UnLoginHomePage", "Home");
         }
 
 
         public IActionResult NeedLogin()
         {
+            TempData["Error"] = "You need to login to access this page.";
             return View();
         }
         public IActionResult AccessDenied()
         {
+            TempData["Error"] = "You do not have permission to access this page.";
             return View();
         }
     }

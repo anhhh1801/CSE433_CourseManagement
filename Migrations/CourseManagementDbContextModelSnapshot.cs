@@ -199,8 +199,9 @@ namespace CourseManagement.Migrations
                     b.Property<int>("TeacherId")
                         .HasColumnType("int");
 
-                    b.Property<int>("parentNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("parentNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("studentName")
                         .IsRequired()
@@ -235,8 +236,8 @@ namespace CourseManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("phoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("phoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("teacherName")
                         .IsRequired()

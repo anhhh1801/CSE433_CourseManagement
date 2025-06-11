@@ -39,20 +39,14 @@
                                             <div class="d-flex gap-2">
                                                 <button type="button" class="btn btn-info btn-sm flex-fill text-center"
                                                         data-bs-toggle="modal"
-                                                        data-bs-target="#scoreModal@student.StudentId">
+                                                        data-bs-target="#scoreModal_@student.studentId">
                                                     View Scores
                                                 </button>
-                                                <a class="btn btn-primary btn-sm flex-fill text-center"
-                                                   asp-controller="Student"
-                                                   asp-action="Courses"
-                                                   asp-route-id="@student.studentId">
-                                                    View Courses
-                                                </a>
                                             </div>
                                         </div>
 
                                         <!-- Modal for Scores -->
-                                        <div class="modal fade" id="scoreModal@student.StudentId">
+                                        <div class="modal fade" id="scoreModal_@student.studentId">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -65,16 +59,18 @@
                                                                 <thead>
                                                                     <tr>
                                                                         <th>Course Name</th>
+                                                                        <th>Course Course</th>
                                                                         <th>Progress Score</th>
                                                                         <th>Test Score</th>
                                                                         <th>Final Score</th>
+                                                                        <th>Performace</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
                                                                     @if (student.enrollments == null || !student.enrollments.Any())
                                                                     {
                                                                         <tr>
-                                                                            <td colspan="4" class="text-center">No courses enrolled</td>
+                                                                            <td colspan="5" class="text-center">No courses enrolled</td>
                                                                         </tr>
                                                                     }
                                                                     else
@@ -83,9 +79,11 @@
                                                                         {
                                                                             <tr>
                                                                                 <td>@enrollment.Course.courseName</td>
+                                                                    <td>@enrollment.Course.courseCode</td>
                                                                                 <td>@(enrollment.ProgressScore.HasValue ? enrollment.ProgressScore.Value.ToString("0.0") : "-")</td>
                                                                                 <td>@(enrollment.TestScore.HasValue ? enrollment.TestScore.Value.ToString("0.0") : "-")</td>
                                                                                 <td>@(enrollment.FinalScore.HasValue ? enrollment.FinalScore.Value.ToString("0.0") : "-")</td>
+                                                                                <td>@enrollment.Performance</td>
                                                                             </tr>
                                                                         }
                                                                     }

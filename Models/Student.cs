@@ -13,7 +13,7 @@ namespace CourseManagement.Models
         public string studentName { get; set; }
 
         public DateTime EntryDate { get; set; }
-        public int parentNumber { get; set; }
+        public string parentNumber { get; set; }
 
         public string? Avatar { get; set; }
 
