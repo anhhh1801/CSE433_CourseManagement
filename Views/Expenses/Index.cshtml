@@ -1,0 +1,155 @@
+﻿@model IEnumerable<CourseManagement.Models.Expenses>
+@{
+    var courses = ViewBag.Courses as List<CourseManagement.Models.Course>;
+    ViewData["Title"] = "Expenses List";
+
+}
+
+
+<h2>Expenses List</h2>
+
+<!-- Add New Expense Button -->
+<div class="mb-3">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
+        Add New Expense
+    </button>
+</div>
+
+<!-- Add New Expense Modal -->
+<div class="modal fade" id="addExpenseModal" tabindex="-1" aria-labelledby="addExpenseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddExpense" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addExpenseModalLabel">Add New Expense</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="courseId" class="form-label">Course</label>
+                        <select class="form-select" id="courseId" name="courseId" required>
+                            <option value="">-- Select Course --</option>
+                            @if (courses != null)
+                            {
+                                foreach (var course in courses)
+                                {
+                                    <option value="@course.courseId">@course.courseName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="Description" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="amount" name="Amount" step="0.01" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Expense</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Expenses Table -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Created At</th>
+            <th>Course</th>
+            <th style="width: 150px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+       @foreach (var expense in Model)
+{
+    <tr>
+        <td>@expense.description</td>
+        <td>@expense.amount.ToString("N2")</td>
+        <td>@expense.createdAt.ToString("dd/MM/yyyy HH:mm")</td>
+        <td>@expense.course?.courseName</td>
+        <td>
+            <!-- Nút mở modal sửa -->
+            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editExpenseModal_@expense.expenseId">
+                Edit
+            </button>
+
+            <!-- Form xóa -->
+            <form asp-action="DeleteExpense" method="post" style="display:inline;">
+                <input type="hidden" name="id" value="@expense.expenseId" />
+                <input type="hidden" name="courseId" value="@expense.CourseId" />
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this expense?');">Delete</button>
+            </form>
+        </td>
+    </tr>
+
+    <!-- Modal Edit -->
+<div class="modal fade" id="editExpenseModal_@expense.expenseId" tabindex="-1" aria-labelledby="editExpenseModalLabel_@expense.expenseId" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="EditExpense" method="post">
+                <!-- Hidden: ID của Expense -->
+                <input type="hidden" name="expenseId" value="@expense.expenseId" />
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editExpenseModalLabel_@expense.expenseId">Edit Expense</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Hidden: CourseId để đảm bảo binding đúng -->
+                    <input type="hidden" name="CourseId" value="@expense.CourseId" />
+
+                    <!-- Course dropdown (disabled vì không cho sửa khoá học sau khi tạo) -->
+                                @* <div class="mb-3"> *@
+                                @*     <label class="form-label">Course</label> *@
+                                @*     <select class="form-select" disabled> *@
+                                @*         @if (courses != null) *@
+                                @*         { *@
+                                @*             foreach (var course in courses) *@
+                                @*             { *@
+                                @*                 if (course.courseId == expense.CourseId) *@
+                                @*                 { *@
+                                @*                     <option value="@course.courseId" selected="selected">@course.courseName</option> *@
+                                @*                 } *@
+                                @*                 else *@
+                                @*                 { *@
+                                @*                     <option value="@course.courseId">@course.courseName</option> *@
+                                @*                 } *@
+                                @*             } *@
+                                @*         } *@
+                                @*     </select> *@
+                                @* </div> *@
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description_@expense.expenseId" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description_@expense.expenseId" name="description" value="@expense.description" required />
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="mb-3">
+                        <label for="amount_@expense.expenseId" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="amount_@expense.expenseId" name="amount" value="@expense.amount" step="0.01" required />
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+}
+    </tbody>
+</table>

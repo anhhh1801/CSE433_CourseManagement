@@ -4,6 +4,7 @@ using CourseManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CourseManagement.Migrations
 {
     [DbContext(typeof(CourseManagementDbContext))]
-    partial class CourseManagementDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250611052218_UpdateSchema")]
+    partial class UpdateSchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -104,7 +107,7 @@ namespace CourseManagement.Migrations
                     b.ToTable("Enrollments");
                 });
 
-            modelBuilder.Entity("CourseManagement.Models.Expenses", b =>
+            modelBuilder.Entity("CourseManagement.Models.Expense", b =>
                 {
                     b.Property<int>("expenseId")
                         .ValueGeneratedOnAdd()
@@ -131,7 +134,7 @@ namespace CourseManagement.Migrations
                     b.ToTable("Expenses");
                 });
 
-            modelBuilder.Entity("CourseManagement.Models.Revenues", b =>
+            modelBuilder.Entity("CourseManagement.Models.Revenue", b =>
                 {
                     b.Property<int>("revenueId")
                         .ValueGeneratedOnAdd()
@@ -144,9 +147,6 @@ namespace CourseManagement.Migrations
 
                     b.Property<double>("amount")
                         .HasColumnType("float");
-
-                    b.Property<DateTime>("createdAt")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("description")
                         .HasColumnType("nvarchar(max)");
@@ -306,7 +306,7 @@ namespace CourseManagement.Migrations
                     b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("CourseManagement.Models.Expenses", b =>
+            modelBuilder.Entity("CourseManagement.Models.Expense", b =>
                 {
                     b.HasOne("CourseManagement.Models.Course", "course")
                         .WithMany()
@@ -317,7 +317,7 @@ namespace CourseManagement.Migrations
                     b.Navigation("course");
                 });
 
-            modelBuilder.Entity("CourseManagement.Models.Revenues", b =>
+            modelBuilder.Entity("CourseManagement.Models.Revenue", b =>
                 {
                     b.HasOne("CourseManagement.Models.Course", "course")
                         .WithMany()

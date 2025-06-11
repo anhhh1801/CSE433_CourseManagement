@@ -1,0 +1,119 @@
+﻿@model IEnumerable<CourseManagement.Models.Revenues>
+@{
+    var courses = ViewBag.Courses as List<CourseManagement.Models.Course>;
+    ViewData["Title"] = "Revenue List";
+}
+
+<h2>Revenue List</h2>
+
+<!-- Add Revenue Button -->
+<div class="mb-3">
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addRevenueModal">
+        Add New Revenue
+    </button>
+</div>
+
+<!-- Add Revenue Modal -->
+<div class="modal fade" id="addRevenueModal" tabindex="-1" aria-labelledby="addRevenueModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="AddRevenue" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addRevenueModalLabel">Add New Revenue</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Course</label>
+                        <select class="form-select" name="courseId" required>
+                            <option value="">-- Select Course --</option>
+                            @foreach (var c in courses)
+                            {
+                                <option value="@c.courseId">@c.courseName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <input type="text" class="form-control" name="Description" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-control" name="Amount" step="0.01" required />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Table -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Created At</th>
+            <th>Course</th>
+            <th style="width: 150px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var revenue in Model)
+        {
+            <tr>
+                <td>@revenue.description</td>
+                <td>@revenue.amount.ToString("N2")</td>
+                <td>@revenue.createdAt.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@revenue.course?.courseName</td>
+                <td>
+                    <!-- Edit -->
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editRevenueModal_@revenue.revenueId">
+                        Edit
+                    </button>
+
+                    <!-- Delete -->
+                    <form asp-action="DeleteRevenue" method="post" style="display:inline;">
+                        <input type="hidden" name="id" value="@revenue.revenueId" />
+                        <input type="hidden" name="courseId" value="@revenue.CourseId" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+
+            <!-- Edit Modal -->
+            <div class="modal fade" id="editRevenueModal_@revenue.revenueId" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form asp-action="EditRevenue" method="post">
+                            <input type="hidden" name="revenueId" value="@revenue.revenueId" />
+                            <input type="hidden" name="CourseId" value="@revenue.CourseId" />
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Revenue</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Description</label>
+                                    <input type="text" class="form-control" name="description" value="@revenue.description" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Amount</label>
+                                    <input type="number" class="form-control" name="amount" step="0.01" value="@revenue.amount" required />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </tbody>
+</table>

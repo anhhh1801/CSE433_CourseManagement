@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseManagement.Models
 {
-    public class Revenue
+    public class Revenues
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -13,10 +13,14 @@ namespace CourseManagement.Models
         public double amount { get; set; }
 
         public string? description { get; set; }
+        [Required]
+        public DateTime createdAt { get; set; } = DateTime.Now;
 
         [Required]
         [ForeignKey("courseId")]
         public int CourseId { get; set; }
         public Course? course { get; set; }
+
+       
     }
 }

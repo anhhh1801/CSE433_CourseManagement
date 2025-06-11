@@ -17,9 +17,9 @@ namespace CourseManagement.Models
 
         public DbSet<Enrollment> Enrollments { get; set; }
 
-        public DbSet<Revenue> Revenues { get; set; }
+        public DbSet<Revenues> Revenues { get; set; }
 
-        public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Expenses> Expenses { get; set; }
 
         public DbSet<Role> Roles { get; set; }
 

@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Security.Claims;
 using CourseManagement.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -97,5 +98,8 @@ namespace CourseManagement.Controllers
 
             return RedirectToAction("Index");
         }
+
+      
+
     }
 }
