@@ -397,3 +397,13 @@ body.modal-open-overlay {
 .table-responsive {
     margin-bottom: 30px;
 }
+
+.modal-header {
+    background-color: black !important;
+    color: #f5a425;
+    font-weight: bold;
+}
+
+    .modal-header .btn-close {
+        color: #f5a425;
+    }

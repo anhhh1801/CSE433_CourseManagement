@@ -140,6 +140,7 @@ namespace CourseManagement.Controllers
                 course.courseName = model.courseName;
                 course.courseCode = model.courseCode;
                 course.courseSubject = model.courseSubject;
+                course.TuitionFee = model.TuitionFee;
 
                 _context.Courses.Update(course);
                 _context.SaveChanges();

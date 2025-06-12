@@ -14,13 +14,15 @@
 @*     </div> *@
 @* } *@
 <div class="card">
-    <div class="card-header border-0 p-3">
-        <h4 class="heading mb-0">User List</h4>
-        <form asp-action="Index" asp-controller="Student" method="get" class="mt-3">
+    <div class=" border-0 p-3 d-flex justify-content-between align-items-center">
+        <h4 class="heading mb-0">Manage User</h4>
+
+        <form asp-controller="Course" asp-action="List" method="get" class="mt-3 d-flex">
             <div class="input-group search">
                 <input type="text" class="form-control border border-primary"
-                       name="keyword" id="search" value="@ViewBag.Keyword"
-                       placeholder="Search for student..">
+                       name="keyword" id="search"
+                       value="@ViewBag.Keyword"
+                       placeholder="Search for courses.." />
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
@@ -110,7 +112,7 @@
                         @if (listUsers == null || listUsers.Count == 0)
                         {
                             <tr>
-                                <td colspan="8" class="text-center">No Admin</td>
+                                <td colspan="8" class="text-center">No Users</td>
                             </tr>
                         }
                         else
@@ -167,12 +169,43 @@
                                         </form>
                                     </td>
 									<td>
-										<a asp-controller="User" asp-action="Edit" asp-route-id="@user.teacherId"
-										   class="btn btn-secondary btn-sm">Update</a>
-                                        <a asp-controller="User" asp-action="Delete" asp-route-id="@user.teacherId"
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal_@user.teacherId">
+                                            Update  <i class="fa-solid fa-user-gear"></i>
+                                        </button>
+                                        <a asp-controller="Admin" asp-action="DeleteUser" asp-route-id="@user.teacherId"
 										   class="btn btn-danger btn-sm">Delete</a>
 									</td>
 
+                                    <div class="modal fade" id="EditModal_@user.teacherId">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form asp-controller="Admin" asp-action="EditProfile" asp-route-id="@user.teacherId" method="post" enctype="multipart/form-data">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Edit Profile</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="mb-3 input-group">
+                                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                            <input type="text" class="form-control" name="teacherName" value="@user.teacherName" placeholder="Full Name" required />
+                                                        </div>
+                                                        <div class="mb-3 input-group">
+                                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                            <input type="email" class="form-control" name="email" value="@user.email" placeholder="Email" required />
+                                                        </div>
+                                                        <div class="mb-3 input-group">
+                                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                            <input type="text" class="form-control" name="phoneNumber" value="@user.phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </tr>
                                 index2++;
@@ -184,6 +217,8 @@
             </div>
         </div>
     </div>
+    
+
     <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">

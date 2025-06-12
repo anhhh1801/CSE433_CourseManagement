@@ -9,7 +9,7 @@
 
 
 <div class="card">
-    <div class="card-header border-0 p-3">
+    <div class=" border-0 p-3">
         <div>
             <h1>Welcome to Home Tutor Website</h1>
             <h2 class="heading mb-0">Hello Admin @Model.teacherName, have a great day!</h2>
@@ -20,15 +20,20 @@
     <div class="card-body">
         <div class="row align-items-start">
             <div class="col-md-4">
-                <div class="teacher-profile">
-                    <h2 class="text-center">Admin's Profile</h2>
-                    <div class="d-flex justify-content-center">
+                <div class="teacher-profile" style="padding: 20px;">
+                    <h2 class="text-center" style="margin-top: 20px; margin-bottom: 10px;">Teacher's Profile</h2>
+                    <div class=" justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="@Model.avatar" alt="Profile picture"
-                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
-                                Change Avatar
-                            </button>
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                            <div style="display: flex;">
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
+                                    Change Avatar  <i class="fa-solid fa-image"></i>
+                                </button>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal_@Model.teacherId">
+                                    Edit Profile  <i class="fa-solid fa-user-gear"></i>
+                                </button>
+                            </div>
 
                             <div class="modal fade" id="uploadAvatarModal">
                                 <div class="modal-dialog">
@@ -52,12 +57,56 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="modal fade" id="EditModal_@Model.teacherId">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form asp-controller="Admin" asp-action="EditProfile" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit Profile</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                    <input type="text" class="form-control" name="teacherName" asp-for="@Model.teacherName" placeholder="Full Name" required />
+                                                </div>
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                    <input type="email" class="form-control" name="email" asp-for="@Model.email" placeholder="Email" required />
+                                                </div>
+                                                <div class="mb-3 input-group">
+                                                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                                    <input type="text" class="form-control" name="phoneNumber" asp-for="@Model.phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="p-3">
-                            <h3>@Model.teacherName</h3>
-                            <p><strong>Email:</strong> @Model.email</p>
-                            <p><strong>Phone Number:</strong> @Model.phoneNumber</p>
+                        <div class="p-3 text-center">
+                            <h5 style="margin-bottom: 10px;"><strong>Teacher Name:</strong> @Model.teacherName</h5>
+                            <h5 style="margin-bottom: 10px;"><strong>Email:</strong> @Model.email</h5>
+                            <h5 style="margin-bottom: 10px;"><strong>Phone Number:</strong> @Model.phoneNumber</h5>
+                        </div>
+                    </div>
+
+                    <div class="text-center border-top mt-3 pt-3">
+                        <div class="row">
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-user-group text-secondary"></i> Students</strong></h4>
+                                <p class=" fw-bold" style="font-size: x-large;">@listStudents.Count</p>
+                            </div>
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-layer-group text-secondary"></i> Courses</strong></h4>
+                                <p class=" fw-bold" style="font-size: x-large;">@listCourses.Count</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -69,17 +118,17 @@
                     <div class="row">
                         <div class="col text-center">
                             <a asp-action="StudentList" asp-controller="Admin">
-                            <div class="teacher-profile">
-                            <h4>Total Students</h4>
-                            <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
-                            </div>
+                                <div class="teacher-profile">
+                                <h4 style="margin: 30px; color: black">Total Students</h4>
+                                 <p class="fs-2 fw-bold text-primary" style="margin-bottom: 30px;color: black">@listStudents.Count</p>
+                                </div>
                             </a>
                         </div>
                         <div class="col text-center">
                             <a asp-action="CourseList" asp-controller="Admin">
                             <div class=" teacher-profile">
-                            <h4>Total Courses</h4>
-                            <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
+                                    <h4 style="margin: 30px; color: black">Total Course</h4>
+                                    <p class="fs-2 fw-bold text-primary" style="margin-bottom: 30px;color: black">@listCourses.Count</p>
                             </div>
                             </a>
                         </div>
@@ -92,16 +141,16 @@
                         <div class="col text-center">
                             <a asp-action="UserList" asp-controller="Admin">
                                 <div class=" teacher-profile">
-                                    <h4>Total Active Teachers</h4>
-                                    <p class="fs-2 fw-bold text-primary">@listAdmins.Count</p>
+                                    <h4 style="margin: 30px; color: black">Total Admin</h4>
+                                    <p class="fs-2 fw-bold text-primary" style="margin-bottom: 30px;color: black">@listAdmins.Count</p>
                                 </div>
                             </a>
                         </div>
                         <div class="col text-center">
                             <a asp-action="UserList" asp-controller="Admin">
                             <div class=" teacher-profile">
-                            <h4>Total Active Teachers</h4>
-                            <p class="fs-2 fw-bold text-primary">@listUsers.Count</p>
+                                    <h4 style="margin: 30px; color: black">Total Users</h4>
+                                    <p class="fs-2 fw-bold text-primary" style="margin-bottom: 30px;color: black">@listUsers.Count</p>
                             </div>
                             </a>
                         </div>

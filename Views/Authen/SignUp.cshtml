@@ -1,43 +1,47 @@
 ﻿@{
-	Layout = "~/Views/Shared/_LayoutSignUp.cshtml";
+    Layout = "_UnLoginLayout";
 }
 @model CourseManagement.Models.User;
-<div>
-    <div class="signup-wrapper">
-        <div class="signup-image">
-            <img src="/img/login-pic.png" alt="Sign Up Image">
-        </div>
-
-        <div class="signup-form">
-            <h2 class="signup-title">Create an Account</h2>
-
-            <form asp-controller="Authen" asp-action="SignUp"  method="post">
-                <div class="mb-3 input-group">
-                    <span class="input-group-text"><i class="fas fa-user"></i></span>
-                    <input type="text" class="form-control" asp-for="teacherName" placeholder="Full Name" required />
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                    <input type="email" class="form-control" asp-for="email" placeholder="Email" required />
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                    <input type="text" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" asp-for=password class="form-control" name="password" placeholder="Password" required />
-                </div>
-                <div class="mb-4 input-group">
-                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required />
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="~/new/assets/images/course-video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay header-text ">
+        <div class="caption d-flex justify-content-center">
+            <div class="login-form">
+                <div class="text-center">
+                    <h3 class="text-white fw-bold"><span class="text-primary">Create</span> an Account</h3>
                 </div>
 
-                <button type="submit" class="btn signup-btn w-100">Sign Up</button>
-            </form>
+                <form asp-controller="Authen" asp-action="SignUp" method="post">
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" class="form-control" asp-for="teacherName" placeholder="Full Name" required />
+                    </div>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" class="form-control" asp-for="email" placeholder="Email" required />
+                    </div>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                        <input type="text" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
+                    </div>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" asp-for=password class="form-control" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required />
+                    </div>
 
-            <p class="login-link">Already have an account? <a asp-action="Login" asp-controller="Authen"> Login</a></p>
+                    <button type="submit" class="btn btn-primary w-100 text-white">Sign Up</button>
+                </form>
+
+                <p class="login-link text-light">Already have an account? <a asp-action="Login" asp-controller="Authen"> Login</a></p>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
 

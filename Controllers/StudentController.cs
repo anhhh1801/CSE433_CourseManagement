@@ -39,7 +39,7 @@ namespace CourseManagement.Controllers
             return View(students);
         }
 
-        public IActionResult List()
+        public IActionResult List(string keyword)
         {
             var teacherId = User.FindFirstValue("TeacherId");
 
@@ -49,23 +49,50 @@ namespace CourseManagement.Controllers
                 return RedirectToAction("NeedLogin", "Authen");
             }
 
-            int parsedId;
-            if (!int.TryParse(teacherId, out parsedId))
+            if (!int.TryParse(teacherId, out int parsedId))
             {
                 TempData["Error"] = "User Not Found! Please Login Again!";
                 return RedirectToAction("Login", "Authen");
             }
 
-            var students = _context.Students
+            // Truy vấn dữ liệu kết hợp lọc nếu có từ khóa
+            var studentsQuery = _context.Students
                 .Include(s => s.enrollments)
-                .ThenInclude(e => e.Course)
-                .Where(s => s.teacher != null && s.teacher.teacherId == parsedId)
-                .ToList();
+                    .ThenInclude(e => e.Course)
+                .Where(s => s.teacher != null && s.teacher.teacherId == parsedId);
+
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                studentsQuery = studentsQuery.Where(s => s.studentName.Contains(keyword));
+            }
+
+            var students = studentsQuery.ToList();
+
+            ViewBag.Keyword = keyword; // Giữ lại keyword để hiển thị lại trong view
 
             return View(students);
         }
 
-        [HttpGet]
+
+        public IActionResult SearchList(string keyword)
+        {
+            ViewBag.Keyword = keyword;
+
+            // Giả sử bạn có danh sách sinh viên từ database
+            var students = _context.Students.AsQueryable();
+
+            // Lọc theo từ khóa nếu có
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                students = students.Where(s => s.studentName.Contains(keyword));
+            }
+
+            return RedirectToAction("List");
+        }
+        
+
+
+            [HttpGet]
         public async Task<IActionResult> Add()
         {
             return View();
