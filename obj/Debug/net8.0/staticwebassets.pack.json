@@ -1,432 +1,436 @@
 {
   "Files": [
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseManagement.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CourseManagement.bundle.scp.css"
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseManagement.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CourseManagement.9w3oai3ogc.bundle.scp.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\favicon.ico",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\DRAW 3.PNG",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\DRAW 3.PNG",
       "PackagePath": "staticwebassets\\img\\DRAW 3.PNG"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\DRAW8.PNG",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\DRAW8.PNG",
       "PackagePath": "staticwebassets\\img\\DRAW8.PNG"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture1.png",
       "PackagePath": "staticwebassets\\img\\Picture1.png"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture4.png",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture4.png",
       "PackagePath": "staticwebassets\\img\\Picture4.png"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture5.jpg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture5.jpg",
       "PackagePath": "staticwebassets\\img\\Picture5.jpg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture6.jpg",
       "PackagePath": "staticwebassets\\img\\Picture6.jpg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture7.jpg",
       "PackagePath": "staticwebassets\\img\\Picture7.jpg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\Picture8.jpg",
       "PackagePath": "staticwebassets\\img\\Picture8.jpg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\avatar_default.jpg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\avatar_default.jpg",
       "PackagePath": "staticwebassets\\img\\avatar_default.jpg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\img\\login-pic.png",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\login-pic.png",
       "PackagePath": "staticwebassets\\img\\login-pic.png"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\Flaticon.woff",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\Flaticon.woff",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\Flaticon.woff"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\FontAwesome.otf",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\FontAwesome.otf",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\FontAwesome.otf"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.eot",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.eot",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\flexslider-icon.eot"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.svg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.svg",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\flexslider-icon.svg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.ttf",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.ttf",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\flexslider-icon.ttf"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.woff",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\flexslider-icon.woff",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\flexslider-icon.woff"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.eot",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.eot",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\fontawesome-webfont.eot"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.svg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.svg",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\fontawesome-webfont.svg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.ttf",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.ttf",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\fontawesome-webfont.ttf"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.woff",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.woff",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\fontawesome-webfont.woff"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.woff2",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\fontawesome-webfont.woff2",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\fontawesome-webfont.woff2"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.eot",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.eot",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\slick.eot"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.svg",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.svg",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\slick.svg"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.ttf",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.ttf",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\slick.ttf"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.woff",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\fonts\\slick.woff",
       "PackagePath": "staticwebassets\\new\\assets\\fonts\\slick.woff"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\course-video.mp4",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\course-video.mp4",
       "PackagePath": "staticwebassets\\new\\assets\\images\\course-video.mp4"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\flex-slider.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\flex-slider.css",
       "PackagePath": "staticwebassets\\new\\css\\flex-slider.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\lightbox.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\lightbox.css",
       "PackagePath": "staticwebassets\\new\\css\\lightbox.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\owl.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\owl.css",
       "PackagePath": "staticwebassets\\new\\css\\owl.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\style-login.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style-login.css",
       "PackagePath": "staticwebassets\\new\\css\\style-login.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\style-signup.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style-signup.css",
       "PackagePath": "staticwebassets\\new\\css\\style-signup.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
       "PackagePath": "staticwebassets\\new\\css\\style.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\css\\templatemo-grad-school.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\templatemo-grad-school.css",
       "PackagePath": "staticwebassets\\new\\css\\templatemo-grad-school.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\custom.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\custom.js",
       "PackagePath": "staticwebassets\\new\\js\\custom.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\isotope.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\isotope.min.js",
       "PackagePath": "staticwebassets\\new\\js\\isotope.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\lightbox.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\lightbox.js",
       "PackagePath": "staticwebassets\\new\\js\\lightbox.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\owl-carousel.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\owl-carousel.js",
       "PackagePath": "staticwebassets\\new\\js\\owl-carousel.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\slick-slider.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\slick-slider.js",
       "PackagePath": "staticwebassets\\new\\js\\slick-slider.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\tabs.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\tabs.js",
       "PackagePath": "staticwebassets\\new\\js\\tabs.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\js\\video.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\js\\video.js",
       "PackagePath": "staticwebassets\\new\\js\\video.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\new\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\new\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.js",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.min.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.min.map",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.min.map"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.js",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.slim.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.min.js",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.min.js",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.slim.min.js"
     },
     {
-      "Id": "C:\\Thucs\\GithubFiles\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.min.map",
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\vendor\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\new\\vendor\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CourseManagement.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CourseManagement.Microsoft.AspNetCore.StaticWebAssets.props",
