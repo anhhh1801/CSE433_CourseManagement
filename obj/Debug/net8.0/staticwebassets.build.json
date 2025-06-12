@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KSxD/H1YYBg8JH17d2mTVpsLkwivEdRbeM0ICbahibw=",
+  "Hash": "jWlHKja1ceuvEiMX1j1DgJw7Lt+lRyNECbi3iwaArZ0=",
   "Source": "CourseManagement",
   "BasePath": "_content/CourseManagement",
   "Mode": "Default",
@@ -1900,8 +1900,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "uzdkordb3w",
-      "Integrity": "2ncYNPjjP3InkjRrgXx0wsE+0/BqfyQ4f7uP/vAs74A=",
+      "Fingerprint": "5jscmj47d9",
+      "Integrity": "cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\new\\css\\style.css"
@@ -9585,6 +9585,51 @@
       ]
     },
     {
+      "Route": "new/css/style.5jscmj47d9.css",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7328"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 12 Jun 2025 16:10:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5jscmj47d9"
+        },
+        {
+          "Name": "label",
+          "Value": "new/css/style.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk="
+        }
+      ]
+    },
+    {
       "Route": "new/css/style.css",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
       "Selectors": [],
@@ -9595,7 +9640,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7154"
+          "Value": "7328"
         },
         {
           "Name": "Content-Type",
@@ -9603,11 +9648,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"2ncYNPjjP3InkjRrgXx0wsE+0/BqfyQ4f7uP/vAs74A=\""
+          "Value": "\"cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:53 GMT"
+          "Value": "Thu, 12 Jun 2025 16:10:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9617,52 +9662,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-2ncYNPjjP3InkjRrgXx0wsE+0/BqfyQ4f7uP/vAs74A="
-        }
-      ]
-    },
-    {
-      "Route": "new/css/style.uzdkordb3w.css",
-      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7154"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"2ncYNPjjP3InkjRrgXx0wsE+0/BqfyQ4f7uP/vAs74A=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:53 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "uzdkordb3w"
-        },
-        {
-          "Name": "label",
-          "Value": "new/css/style.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-2ncYNPjjP3InkjRrgXx0wsE+0/BqfyQ4f7uP/vAs74A="
+          "Value": "sha256-cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk="
         }
       ]
     },
@@ -9689,7 +9689,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:53 GMT"
+          "Value": "Thu, 12 Jun 2025 14:51:25 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9734,7 +9734,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:53 GMT"
+          "Value": "Thu, 12 Jun 2025 14:51:25 GMT"
         },
         {
           "Name": "Cache-Control",

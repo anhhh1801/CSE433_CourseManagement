@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CourseManagement.Controllers
 {
-    
+
     public class AdminController : Controller
     {
         private readonly CourseManagementDbContext _context;
@@ -108,7 +108,7 @@ namespace CourseManagement.Controllers
             return View(teachers);
         }
 
-        
+
 
         //Course
         [HttpGet]
@@ -161,7 +161,7 @@ namespace CourseManagement.Controllers
         public IActionResult ToggleAdmin(int userId, bool isAdmin)
         {
             var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.teacherId == userId);
-            if (user == null) 
+            if (user == null)
             {
                 TempData["Erroe"] = "User Not Found";
                 return NotFound();
@@ -185,6 +185,66 @@ namespace CourseManagement.Controllers
             _context.SaveChanges();
             TempData["Message"] = "Admin Updated!";
             return RedirectToAction("UserList"); // hoặc tên Action bạn dùng để hiển thị danh sách
+        }
+
+        [HttpPost]
+        public IActionResult EditProfile(int id, string teacherName, string phoneNumber, string email)
+        {
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == id);
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+            teacher.teacherName = teacherName;
+            teacher.phoneNumber = phoneNumber;
+            teacher.email = email;
+            _context.Users.Update(teacher);
+            _context.SaveChanges();
+            TempData["Message"] = "Update Profile Successfully";
+            return RedirectToAction("UserList");
+
+        }
+
+        public IActionResult DeleteUser(int id)
+        {
+            var students = _context.Students
+                .Where(s => s.TeacherId == id)
+                .ToList();
+            var courses = _context.Courses
+                .Where(c => c.TeacherId == id)
+                .ToList();
+
+            var enrollments = _context.Enrollments
+                .Where(e => e.TeacherId == id)
+                .ToList();
+            var user = _context.Users.FirstOrDefault(u => u.teacherId == id);
+
+            if (user == null)
+            {
+                TempData["Error"] = "User Not Found";
+                return RedirectToAction("UserList");
+            }
+            foreach (var enrollment in enrollments)
+            {
+                _context.Enrollments.Remove(enrollment);
+            }
+            // Xóa tất cả sinh viên liên kết với giáo viên
+            foreach (var student in students)
+            {
+                _context.Students.Remove(student);
+            }
+            // Xóa tất cả khóa học liên kết với giáo viên
+            foreach (var course in courses)
+            {
+                _context.Courses.Remove(course);
+            }
+            // Xóa tất cả đăng ký liên kết với giáo viên
+            
+            // Xóa người dùng
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            TempData["Message"] = "User Deleted Successfully";
+            return RedirectToAction("UserList");
         }
     }
 }

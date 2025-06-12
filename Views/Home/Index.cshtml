@@ -4,6 +4,7 @@
     var listStudents = ViewBag.Students;
     var listCourses = ViewBag.Courses;
     var listEnrollment = ViewBag.Enrollments;
+    Double netIncomeTotal = ViewBag.NetIncomeTotal;
 }
 
 
@@ -26,12 +27,12 @@
                             <img src="@Model.avatar" alt="Profile picture"
                             class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
                             <div style="display: flex;">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
-                                Change Avatar
-                            </button>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
+                                    Change Avatar  <i class="fa-solid fa-image"></i>
+                                </button>
                                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal_@Model.teacherId">
-                                Edit Profile
-                            </button>
+                                    Edit Profile  <i class="fa-solid fa-user-gear"></i>
+                                </button>
                             </div>
 
                             <div class="modal fade" id="uploadAvatarModal">
@@ -98,13 +99,13 @@
 
                     <div class="text-center border-top mt-3 pt-3">
                         <div class="row">
-                            <div class="col">
-                                <h4>Total Students</h4>
-                                <p style="font-size: x-large;">@listStudents.Count</p>
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-user-group text-secondary"></i> Students</strong></h4>
+                                <p class=" fw-bold" style="font-size: x-large;">@listStudents.Count</p>
                             </div>
-                            <div class="col">
-                                <h4>Total Courses</h4>
-                                <p style="font-size: x-large;">@listCourses.Count</p>
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-layer-group text-secondary"></i> Courses</strong></h4>
+                                <p class=" fw-bold" style="font-size: x-large;">@listCourses.Count</p>
                             </div>
                         </div>
                     </div>
@@ -114,111 +115,113 @@
             <!-- Top Student Table -->
             <div class="col-md-8">
                 <div class="col-md-12">
-                    <h3 class=" p-2 text-white" style="background-color:#1D4ED8 !important;">Top Student</h3>
-                    <div class="table-responsive">
-                        <table class="table showlist table-bordered">
-                            <thead class="bg-info-subtle" style="background-color: #F3F4F6">
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Student Name</th>
-                                    <th>Final Score</th>
-                                    <th>Course</th>
-                                    <th>Performance</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @{
-                                    var row = 0;
-                                }
-                                @foreach (var enrollment in listEnrollment)
-                                {
-                                    
-                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+                    <div class="teacher-profile">
+                        <h3 class=" p-2" style="background-color:black !important;margin: 20px; color:#f5a425">Top Student</h3>
+                        <div class="table-responsive" style="margin: 20px;">
+                            <table class="table showlist table-bordered">
+                                <thead class="bg-info-subtle" style="background-color: #F3F4F6">
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Student Name</th>
+                                        <th>Final Score</th>
+                                        <th>Course</th>
+                                        <th>Performance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        var row = 0;
+                                    }
+                                    @foreach (var enrollment in listEnrollment)
+                                    {
 
-                                    if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
+                                        var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+
+                                        if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
+                                        {
+                                            row++;
+                                            <tr class="@rankClass">
+                                                <td>@row</td>
+                                                <td>@enrollment.Student.studentName</td>
+                                                <td>
+                                                    @{
+                                                        var score = enrollment?.FinalScore;
+                                                        var badgeClass = score == null ? "bg-secondary" :
+                                                        score >= 8 ? "bg-success" :
+                                                        score >= 6.5 ? "bg-info" :
+                                                        score >= 5 ? "bg-warning" :
+                                                        score >= 3.5 ? "bg-danger" : "bg-dark";
+                                                    }
+                                                    <span class="badge @badgeClass">@score?.ToString("0.##")</span>
+                                                </td>
+                                                <td>@enrollment.Course.courseName</td>
+                                                <td>
+                                                    @{
+                                                        var perf = enrollment.Performance;
+                                                        var perfClass = perf == 'A' ? "bg-success" :
+                                                        perf == 'B' ? "bg-info" :
+                                                        perf == 'C' ? "bg-warning" :
+                                                        perf == 'D' ? "bg-danger" : "bg-dark";
+                                                    }
+                                                    <span class="badge @perfClass">@enrollment.Performance</span>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    @for (; row < 5;)
                                     {
                                         row++;
+                                        var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
+
                                         <tr class="@rankClass">
                                             <td>@row</td>
-                                            <td>@enrollment.Student.studentName</td>
-                                            <td>
-                                                @{
-                                                    var score = enrollment?.FinalScore;
-                                                    var badgeClass = score == null ? "bg-secondary" :
-                                                    score >= 8 ? "bg-success" :
-                                                    score >= 6.5 ? "bg-info" :
-                                                    score >= 5 ? "bg-warning" :
-                                                    score >= 3.5 ? "bg-danger" : "bg-dark";
-                                                }
-                                                <span class="badge @badgeClass">@score?.ToString("0.##")</span>
-                                            </td>
-                                            <td>@enrollment.Course.courseName</td>
-                                            <td>
-                                                @{
-                                                    var perf = enrollment.Performance;
-                                                    var perfClass = perf == 'A' ? "bg-success" :
-                                                    perf == 'B' ? "bg-info" :
-                                                    perf == 'C' ? "bg-warning" :
-                                                    perf == 'D' ? "bg-danger" : "bg-dark";
-                                                }
-                                                <span class="badge @perfClass">@enrollment.Performance</span>
-                                            </td>
+                                            <td colspan="4" class="text-center">#</td>
                                         </tr>
                                     }
-                                }
-                                @for (; row < 5;)
-                                {
-                                    row++;
-                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
-                                    
-                                    <tr class="@rankClass">
-                                        <td>@row</td>
-                                        <td colspan="4" class="text-center">#</td>
-                                    </tr>
-                                }
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Income Overview -->
                 <div class="col-md-12">
-                    <h3 class="p-2 @(0 > 0 ? "bg-success" : "bg-danger")">Income Overview</h3>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead class="bg-info-subtle">
-                                <tr>
-                                    <th>Course ID</th>
-                                    <th>Course Name</th>
-                                    <th>Revenues</th>
-                                    <th>Expenses</th>
-                                    <th>Net Income</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @* @foreach (var course in listCourses)
-                                @* {
-                                @*     <tr class="@(course.netIncome >= 0 ? "profit" : "loss")"> *@
-                                @*         <td>@course.courseId</td> *@
-                                @*         <td>@course.courseName</td> *@
-                                @*         <td class="text-profit">+@course.TotalRevenues.ToString("N0") VND</td> *@
-                                @*         <td class="text-loss">-@course.TotalExpenses.ToString("N0") VND</td> *@
-                                @*         <td class="@(course.NetIncome >= 0 ? "text-profit" : "text-loss")">@course.NetIncome.ToString("N0") VND</td> *@
-                                @*     </tr> *@
-                                @* } *@
-                                @* <tr class="table-active"> *@
-                                @*     <td><strong>Total</strong></td> *@
-                                @*     <td><strong>@listCourses.Count</strong></td> *@
-                                @*     <td class="text-profit"><strong>+@totalRevenues.ToString("N0") VND</strong></td> *@
-                                @*     <td class="text-loss"><strong>-@totalExpenses.ToString("N0") VND</strong></td> *@
-                                @*     <td class="@(totalNetIncome >= 0 ? "text-profit" : "text-loss")"> *@
-                                @*         <strong>@totalNetIncome.ToString("N0") VND</strong> *@
-                                @*     </td> *@
-                                @* </tr> *@
+                    <div class="teacher-profile">
+
+                        <h3 class="p-2" style="background-color:black !important;margin: 20px; color:#f5a425">Income Overview</h3>
+                        <div class="table-responsive" style="margin: 20px;">
+                            <table class="table table-bordered">
+                                <thead class="bg-info-subtle">
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Course Name</th>
+                                        <th>Net Income</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        var index = 1;
+                                    }
+                                    @foreach (var course in listCourses)
+                                    {
+                                        <tr class="@(course.netIncome >= 0 ? "profit" : "loss")"> 
+                                            <td>@index</td> 
+                                            <td>@course.courseName</td> 
+                                            <td class="@(course.netIncome >= 0 ? "text-profit" : "text-loss")">@course.netIncome.ToString("N0") VND</td> 
+                                        </tr>
+                                        index++;
+                                    } 
+                                 <tr class="table-active">
+                                     <td colspan="2"><strong>Total</strong></td> 
+                                        <td class="@(netIncomeTotal >= 0 ? "text-profit" : "text-loss")">
+                                            <strong>@netIncomeTotal.ToString("N0") VND</strong>
+                                        </td>
+                                    </tr>
                             </tbody>
                         </table>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
