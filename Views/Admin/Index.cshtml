@@ -4,30 +4,30 @@
     var listStudents = ViewBag.Students;
     var listCourses = ViewBag.Courses;
     var listUsers = ViewBag.Users;
-	var listAdmins = ViewBag.Admins;
+    var listAdmins = ViewBag.Admins;
 }
 
 
 <div class="card">
-    <div class="card-header border-0 p-3">
+    <div class=" border-0 p-3">
         <div>
-            <h1>Welcome to Home Tutor Website</h1>
-            <h2 class="heading mb-0">Hello Admin @Model.teacherName, have a great day!</h2>
+            <h1 class="fw-bold text-primary">Welcome to Home Tutor Website</h1>
+            <h2 class="heading mb-0 text-secondary">Hello <strong>@Model.teacherName</strong>, have a great day!</h2>
             <p>Today is: @DateTime.Now.ToString("dddd, MMMM dd, yyyy")</p>
         </div>
     </div>
 
     <div class="card-body">
-        <div class="row align-items-start">
+        <div class="row align-items-start ">
             <div class="col-md-4">
-                <div class="teacher-profile">
-                    <h2 class="text-center">Admin's Profile</h2>
-                    <div class="d-flex justify-content-center">
+                <div class="teacher-profile" style="padding: 20px;">
+                    <h2 class="text-center table-title" style="margin-top: 20px; margin-bottom: 10px;">Admin's Profile</h2>
+                    <div class="justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="@Model.avatar" alt="Profile picture"
-                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover;">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal">
-                                Change Avatar
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModalstyle" style=" margin-right: 20px;">
+                                <i class="fa-solid fa-image"></i>
                             </button>
 
                             <div class="modal fade" id="uploadAvatarModal">
@@ -55,56 +55,48 @@
                         </div>
 
                         <div class="p-3">
-                            <h3>@Model.teacherName</h3>
-                            <p><strong>Email:</strong> @Model.email</p>
-                            <p><strong>Phone Number:</strong> @Model.phoneNumber</p>
+                            <h5><strong>Name: </strong>@Model.teacherName</h5>
+                            <h5><strong>Email:</strong> @Model.email</h5>
+                            <h5><strong>Phone Number:</strong> @Model.phoneNumber</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Top Student Table -->
-            <div class="col-md-8">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col text-center">
-                            <a asp-action="StudentList" asp-controller="Admin">
-                            <div class="teacher-profile">
-                            <h4>Total Students</h4>
-                            <p class="fs-2 fw-bold text-primary">@listStudents.Count</p>
+            <div class="col-md-8 teacher-profile">
+                <div class="row admin-items">
+                    <div class="col-6 text-center">
+                        <a asp-action="StudentList" asp-controller="Admin">
+                            <div class="admin-button">
+                                <h4>Total Students</h4>
+                                <p class="fs-2 fw-bold">@listStudents.Count</p>
                             </div>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a asp-action="CourseList" asp-controller="Admin">
-                            <div class=" teacher-profile">
-                            <h4>Total Courses</h4>
-                            <p class="fs-2 fw-bold text-primary">@listCourses.Count</p>
-                            </div>
-                            </a>
-                        </div>
+                        </a>
                     </div>
-                </div>
-
-
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col text-center">
-                            <a asp-action="UserList" asp-controller="Admin">
-                                <div class=" teacher-profile">
-                                    <h4>Total Active Teachers</h4>
-                                    <p class="fs-2 fw-bold text-primary">@listAdmins.Count</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <a asp-action="UserList" asp-controller="Admin">
-                            <div class=" teacher-profile">
-                            <h4>Total Active Teachers</h4>
-                            <p class="fs-2 fw-bold text-primary">@listUsers.Count</p>
+                    <div class="col-6 text-center">
+                        <a asp-action="CourseList" asp-controller="Admin">
+                            <div class=" admin-button">
+                                <h4>Total Courses</h4>
+                                <p class="fs-2 fw-bold">@listCourses.Count</p>
                             </div>
-                            </a>
-                        </div>
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a asp-action="UserList" asp-controller="Admin">
+                            <div class=" admin-button">
+                                <h4>Total Admins</h4>
+                                <p class="fs-2 fw-bold">@listAdmins.Count</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a asp-action="UserList" asp-controller="Admin">
+                            <div class="admin-button">
+                                <h4>Total Users</h4>
+                                <p class="fs-2 fw-bold">@listUsers.Count</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

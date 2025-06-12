@@ -1,106 +1,105 @@
-﻿
-@{
+﻿@{
     ViewData["PageName"] = "Student List";
-    @model List<CourseManagement.Models.Student>; 
+    @model List<CourseManagement.Models.Student>;
 }
 
-            <div class="card">
-                <div class="card-header border-0 p-3">
-                    <h4 class="heading mb-0">Student List</h4>
-                    <form asp-action="StudentList" method="get" class="mt-3">
-                        <div class="input-group search">
-                            <input type="text" class="form-control border border-primary"
-                                   name="keyword" id="search"
-                                   placeholder="Search for student.." />
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+<div class="card">
+    <div class="card-header border-0 p-3">
+        <h4 class="heading mb-0">Student List</h4>
+        <form asp-action="StudentList" method="get" class="mt-3">
+            <div class="input-group search">
+                <input type="text" class="form-control border border-primary"
+                       name="keyword" id="search"
+                       placeholder="Search for student.." />
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
 
-                <div class="card-body p-0">
-                    <div class="container-fluid">
-                        <div class="row">
-                            @foreach (var student in Model)
-                            {
-                                <div class="col-md-3">
-                                    <div class="studentcard">
-                                        <img src="@student.Avatar" class="card-img-top"
-                                             style="height: 300px; object-fit: cover;" />
-                                        <div class="card-body border-primary">
-                                            <h5 class="card-title">@student.studentName</h5>
-                                            <p class="parent-number">
-                                                Parent's Number: <strong>@student.parentNumber</strong>
-                                            </p>
-                                            <p class="card-text">
-                                                sID: <strong>@student.studentId</strong>
-                                            </p>
-                                            <div class="d-flex gap-2">
-                                                <button type="button" class="btn btn-info btn-sm flex-fill text-center"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#scoreModal_@student.studentId">
-                                                    View Scores
-                                                </button>
+    <div class="card-body p-0">
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var student in Model)
+                {
+                    <div class="col-md-3">
+                        <div class="studentcard">
+                            <img src="@student.Avatar" class="card-img-top"
+                                 style="height: 300px; object-fit: cover;" />
+                            <div class="card-body border-primary">
+                                <h5 class="card-title table-title">@student.studentName</h5>
+                                <p class="parent-number text-secondary">
+                                    Parent's Number: <strong>@student.parentNumber</strong>
+                                </p>
+                                <p class="card-text text-secondary">
+                                    sID: <strong>@student.studentId</strong>
+                                </p>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-primary btn-sm flex-fill text-center"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#scoreModal_@student.studentId">
+                                        View Scores
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Modal for Scores -->
+                            <div class="modal fade" id="scoreModal_@student.studentId">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Course Scores for @student.studentName</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="">
+                                                <table class="table table-bordered table-dark">
+                                                    <thead class="">
+                                                        <tr>
+                                                            <th>Course Name</th>
+                                                            <th>Course Course</th>
+                                                            <th>Progress Score</th>
+                                                            <th>Test Score</th>
+                                                            <th>Final Score</th>
+                                                            <th>Performace</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @if (student.enrollments == null || !student.enrollments.Any())
+                                                        {
+                                                            <tr>
+                                                                <td colspan="5" class="text-center">No courses enrolled</td>
+                                                            </tr>
+                                                        }
+                                                        else
+                                                        {
+                                                            foreach (var enrollment in student.enrollments)
+                                                            {
+                                                                <tr>
+                                                                    <td>@enrollment.Course.courseName</td>
+                                                                    <td>@enrollment.Course.courseCode</td>
+                                                                    <td>@(enrollment.ProgressScore.HasValue ? enrollment.ProgressScore.Value.ToString("0.0") : "-")</td>
+                                                                    <td>@(enrollment.TestScore.HasValue ? enrollment.TestScore.Value.ToString("0.0") : "-")</td>
+                                                                    <td>@(enrollment.FinalScore.HasValue ? enrollment.FinalScore.Value.ToString("0.0") : "-")</td>
+                                                                    <td>@enrollment.Performance</td>
+                                                                </tr>
+                                                            }
+                                                        }
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
-
-                                        <!-- Modal for Scores -->
-                                        <div class="modal fade" id="scoreModal_@student.studentId">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Course Scores for @student.studentName</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-bordered">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Course Name</th>
-                                                                        <th>Course Course</th>
-                                                                        <th>Progress Score</th>
-                                                                        <th>Test Score</th>
-                                                                        <th>Final Score</th>
-                                                                        <th>Performace</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    @if (student.enrollments == null || !student.enrollments.Any())
-                                                                    {
-                                                                        <tr>
-                                                                            <td colspan="5" class="text-center">No courses enrolled</td>
-                                                                        </tr>
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        foreach (var enrollment in student.enrollments)
-                                                                        {
-                                                                            <tr>
-                                                                                <td>@enrollment.Course.courseName</td>
-                                                                    <td>@enrollment.Course.courseCode</td>
-                                                                                <td>@(enrollment.ProgressScore.HasValue ? enrollment.ProgressScore.Value.ToString("0.0") : "-")</td>
-                                                                                <td>@(enrollment.TestScore.HasValue ? enrollment.TestScore.Value.ToString("0.0") : "-")</td>
-                                                                                <td>@(enrollment.FinalScore.HasValue ? enrollment.FinalScore.Value.ToString("0.0") : "-")</td>
-                                                                                <td>@enrollment.Performance</td>
-                                                                            </tr>
-                                                                        }
-                                                                    }
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>
-                            }
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
+        </div>
+    </div>
+</div>

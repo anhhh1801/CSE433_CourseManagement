@@ -68,10 +68,10 @@
 <!-- Summary -->
 <div class="col-12">
     <div class="card" style="margin-bottom: 20px;">
-        <div class="card-header border-0 p-3 d-flex justify-content-between align-items-center">
+        <div class="card-header p-3 d-flex justify-content-between align-items-center">
             <div>
-                <h2 class="mb-0">Financial Management</h2>
-                <p class="money">
+                <h2 class="mb-0 table-title">Financial Management</h2>
+                <p class="money text-secondary">
                     Total Income of @course.courseName:
                     <span class="@(netIncome > 0 ? "text-success" : "text-danger")">
                         @netIncome.ToString("N0")
@@ -79,8 +79,8 @@
                 </p>
             </div>
             <div class="text-end m-3">
-                <a asp-controller="Course" asp-action="List" class="btn btn-warning">
-                    <i class="fas fa-arrow-left"></i> Go Back
+                <a asp-controller="Course" asp-action="List" class="btn btn-warning text-sencondary fw-bold">
+                    <i class="fas fa-arrow-left text-secondary"></i> Go Back
                 </a>
             </div>
         </div>
@@ -93,15 +93,15 @@
     <div class="col-6">
         <div class="card" style="margin-top:0px">
             <div class="card-header border-0 p-3 d-flex justify-content-between">
-                <h3 class="mb-0">Expenses for @course.courseName</h3>
+                <h3 class="table-title">Expenses for @course.courseName</h3>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
-                    Add New Expense
+                    <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive basic-tbl">
-                    <table class="table table-bordered showlist">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered table-dark">
+                        <thead class="">
                             <tr>
                                 <th>Description</th>
                                 <th>Amount (VND)</th>
@@ -121,7 +121,7 @@
                                     </td>
                                 </tr>
                             }
-                            <tr class="table-active">
+                            <tr>
                                 <td><strong>Total Expense</strong></td>
                                 <td colspan="2"><strong class="text-danger">@totalExpense.ToString("N0") VND</strong></td>
                             </tr>
@@ -136,15 +136,15 @@
     <div class="col-6">
         <div class="card" style="margin-top:0px">
             <div class="card-header border-0 p-3 d-flex justify-content-between">
-                <h3 class="mb-0">Revenue of @course.courseName</h3>
+                <h3 class="table-title">Revenue of @course.courseName</h3>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRevenueModal">
-                    Add New Revenue
+                    <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive basic-tbl">
-                    <table class="table table-bordered showlist">
-                        <thead class="thead-dark">
+                    <table class="table table-bordered table-dark">
+                        <thead class="">
                             <tr>
                                 <th>Description</th>
                                 <th>Amount (VND)</th>
@@ -164,7 +164,7 @@
                                     </td>
                                 </tr>
                             }
-                            <tr class="table-active">
+                            <tr>
                                 <td><strong>Total Revenue</strong></td>
                                 <td colspan="2"><strong class="text-success">@totalRevenue.ToString("N0") VND</strong></td>
                             </tr>

@@ -43,10 +43,19 @@ namespace CourseManagement.Controllers
                 .OrderByDescending(e => e.FinalScore)
                 .Where(e => e.isActive)
                 .Take(5);
+            var top10 = _context.Enrollments
+                .Include(e => e.Student)
+                .Include(e => e.Course)           
+                .OrderByDescending(e => e.FinalScore)
+                .Take(10)
+                .ToList();
+
+
             ViewData["PageName"] = "Dashboard";
             ViewBag.Courses = courses;
             ViewBag.Students = students;
             ViewBag.Enrollments = enrollments;
+            ViewBag.Top10 = top10;
             return View(teacher);
         }
 

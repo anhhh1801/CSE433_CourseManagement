@@ -4,6 +4,8 @@ wwwroot\img\DRAW 3.PNG
 wwwroot\img\DRAW8.PNG
 wwwroot\img\login-pic.png
 wwwroot\img\Picture1.png
+wwwroot\img\Picture4.png
+wwwroot\img\Picture5.jpg
 wwwroot\img\Picture6.jpg
 wwwroot\img\Picture7.jpg
 wwwroot\img\Picture8.jpg

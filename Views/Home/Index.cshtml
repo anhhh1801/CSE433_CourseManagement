@@ -10,8 +10,8 @@
 <div class="card">
     <div class=" border-0 p-3">
         <div>
-            <h1>Welcome to Home Tutor Website</h1>
-            <h2 class="heading mb-0">Hello @Model.teacherName, have a great day!</h2>
+            <h1 class="fw-bold text-primary">Welcome to Home Tutor Website</h1>
+            <h2 class="heading mb-0 text-secondary">Hello <strong>@Model.teacherName</strong>, have a great day!</h2>
             <p>Today is: @DateTime.Now.ToString("dddd, MMMM dd, yyyy")</p>
         </div>
     </div>
@@ -20,18 +20,18 @@
         <div class="row align-items-start">
             <div class="col-md-4">
                 <div class="teacher-profile" style="padding: 20px;">
-                    <h2 class="text-center" style="margin-top: 20px; margin-bottom: 10px;">Teacher's Profile</h2>
+                    <h2 class="text-center table-title" style="margin-top: 20px; margin-bottom: 10px;">Teacher's Profile</h2>
                     <div class=" justify-content-center">
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img src="@Model.avatar" alt="Profile picture"
-                            class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                                 class="img-thumbnail" style="width: 250px; height: 250px; object-fit: cover; margin-bottom: 20px;">
                             <div style="display: flex;">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
-                                Change Avatar
-                            </button>
+                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadAvatarModal" style="margin-right: 20px;">
+                                    <i class="fa-solid fa-image"></i>
+                                </button>
                                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModal_@Model.teacherId">
-                                Edit Profile
-                            </button>
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </button>
                             </div>
 
                             <div class="modal fade" id="uploadAvatarModal">
@@ -89,22 +89,22 @@
                             </div>
                         </div>
 
-                        <div class="p-3 text-center">
+                        <div class="p-3 text-secondary">
                             <h5 style="margin-bottom: 10px;"><strong>Teacher Name:</strong> @Model.teacherName</h5>
                             <h5 style="margin-bottom: 10px;"><strong>Email:</strong> @Model.email</h5>
                             <h5 style="margin-bottom: 10px;"><strong>Phone Number:</strong> @Model.phoneNumber</h5>
                         </div>
                     </div>
 
-                    <div class="text-center border-top mt-3 pt-3">
+                    <div class="text-center border-top mt-3 pt-3 text-secondary">
                         <div class="row">
-                            <div class="col">
-                                <h4>Total Students</h4>
-                                <p style="font-size: x-large;">@listStudents.Count</p>
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-user-group text-secondary"></i> Students</strong></h4>
+                                <p class="text-white fw-bold" style="font-size: x-large;">@listStudents.Count</p>
                             </div>
-                            <div class="col">
-                                <h4>Total Courses</h4>
-                                <p style="font-size: x-large;">@listCourses.Count</p>
+                            <div class="col subcard m-1">
+                                <h4><strong><i class="fa-solid fa-layer-group text-secondary"></i> Courses</strong></h4>
+                                <p class="text-white fw-bold" style="font-size: x-large;">@listCourses.Count</p>
                             </div>
                         </div>
                     </div>
@@ -114,71 +114,54 @@
             <!-- Top Student Table -->
             <div class="col-md-8">
                 <div class="col-md-12">
-                    <h3 class=" p-2 text-white" style="background-color:#1D4ED8 !important;">Top Student</h3>
-                    <div class="table-responsive">
-                        <table class="table showlist table-bordered">
-                            <thead class="bg-info-subtle" style="background-color: #F3F4F6">
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Student Name</th>
-                                    <th>Final Score</th>
-                                    <th>Course</th>
-                                    <th>Performance</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @{
-                                    var row = 0;
-                                }
-                                @foreach (var enrollment in listEnrollment)
-                                {
-                                    
-                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
-
-                                    if (enrollment != null && enrollment.Student != null && enrollment.Course != null && enrollment.FinalScore != null && enrollment.FinalScore != 0)
-                                    {
-                                        row++;
-                                        <tr class="@rankClass">
-                                            <td>@row</td>
-                                            <td>@enrollment.Student.studentName</td>
-                                            <td>
-                                                @{
-                                                    var score = enrollment?.FinalScore;
-                                                    var badgeClass = score == null ? "bg-secondary" :
-                                                    score >= 8 ? "bg-success" :
-                                                    score >= 6.5 ? "bg-info" :
-                                                    score >= 5 ? "bg-warning" :
-                                                    score >= 3.5 ? "bg-danger" : "bg-dark";
-                                                }
-                                                <span class="badge @badgeClass">@score?.ToString("0.##")</span>
-                                            </td>
-                                            <td>@enrollment.Course.courseName</td>
-                                            <td>
-                                                @{
-                                                    var perf = enrollment.Performance;
-                                                    var perfClass = perf == 'A' ? "bg-success" :
-                                                    perf == 'B' ? "bg-info" :
-                                                    perf == 'C' ? "bg-warning" :
-                                                    perf == 'D' ? "bg-danger" : "bg-dark";
-                                                }
-                                                <span class="badge @perfClass">@enrollment.Performance</span>
-                                            </td>
-                                        </tr>
-                                    }
-                                }
-                                @for (; row < 5;)
-                                {
-                                    row++;
-                                    var rankClass = row == 1 ? "rank1" : row == 2 ? "rank2" : row == 3 ? "rank3" : "";
-                                    
-                                    <tr class="@rankClass">
-                                        <td>@row</td>
-                                        <td colspan="4" class="text-center">#</td>
+                    <div class="teacher-profile p-2">
+                        <h3 class="table-title">Student Leaderboard</h3>
+                        <div class="">
+                            <table class="table showlist table-bordered">
+                                <thead>
+                                    <tr class=" ">
+                                        <th class="text-primary bg-secondary">No.</th>
+                                        <th class="text-primary bg-secondary">Student Name</th>
+                                        <th class="text-primary bg-secondary">Final Score</th>
+                                        <th class="text-primary bg-secondary">Course</th>
+                                        <th class="text-primary bg-secondary">Performance</th>
                                     </tr>
-                                }
+                                </thead>
+                                <tbody>
+                                    @{
+                                        var row = 0;
+                                    }
+                                    @foreach (var enrollment in (IEnumerable<CourseManagement.Models.Enrollment>)ViewBag.Top10)
+                                    {
+                                        var finalScore = enrollment.FinalScore ?? 0.0;
+                                        Console.WriteLine($"DEBUG: Score = {finalScore} ({finalScore.GetType()})");
 
-                            </tbody>
-                        </table>
+                                        string badgeClass = enrollment.Performance switch
+                                        {
+                                            'A' => "bg-success",
+                                            'B' => "bg-info",
+                                            'C' => "bg-warning",
+                                            'D' => "bg-danger",
+                                            _ => "bg-dark"
+                                        };
+
+                                        string rankClass = row < 3 ? $"rank{row + 1}" : "";
+
+                                        <tr class=" rank @rankClass">
+                                            <td class="text-sencondary">@(row + 1)</td>
+                                            <td class="text-sencondary">@enrollment.Student.studentName</td>
+                                            <td class="text-sencondary">@(enrollment.FinalScore?.ToString("N2") ?? "N/A")</td>
+                                            <td class="text-sencondary">@enrollment.Course.courseName</td>
+                                            <td class="text-sencondary"><p class="badge @badgeClass">@enrollment.Performance</p></td>
+                                        </tr>
+
+                                        row++;
+                                    }
+
+                                </tbody>
+
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -186,7 +169,7 @@
                 <div class="col-md-12">
                     <h3 class="p-2 @(0 > 0 ? "bg-success" : "bg-danger")">Income Overview</h3>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-dark table-bordered">
                             <thead class="bg-info-subtle">
                                 <tr>
                                     <th>Course ID</th>
@@ -223,6 +206,8 @@
             </div>
         </div>
     </div>
+
 </div>
+
 
 

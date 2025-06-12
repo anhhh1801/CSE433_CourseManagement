@@ -1,4 +1,42 @@
 ﻿/*# sourceMappingURL=style.css.map */
+:root {
+    --bs-primary: #F5A425;
+    --bs-secondary: #172238;
+}
+
+.bg-primary {
+    background-color: #F5A425 !important;
+}
+
+.text-primary {
+    color: #F5A425 !important;
+}
+
+.border-primary {
+    border-color: #F5A425 !important;
+}
+
+.btn-primary {
+    background-color: #F5A425 !important;
+    border-color: #F5A425 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #e3931d !important;
+        border-color: #e3931d !important;
+    }
+
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+
+.text-secondary {
+    color: var(--bs-secondary) !important;
+}
+
+.border-secondary {
+    border-color: var(--bs-secondary) !important;
+}
 
 table td {
     padding: 10px 20px;
@@ -16,7 +54,7 @@ table td {
 
 .showlist td {
     font-size: 18px;
-    color: #000;
+    color: var(--bs-secondary) !important;
 }
 
 .btn-info {
@@ -139,21 +177,15 @@ a.brand-logo.logo {
 }
 
 .rank1 td {
-    background-color: #FACC15 !important;
-    color: #fff !important;
-    font-weight: bold;
+    background-color: gold !important;
 }
 
 .rank2 td {
-    background-color: #E5E7EB !important;
-    color: #fff !important;
-    font-weight: bold;
+    background-color: darkgray !important;
 }
 
 .rank3 td {
-    background-color: #FDBA74 !important;
-    color: #fff !important;
-    font-weight: bold;
+    background-color: darkorange !important;
 }
 
 .profit {
@@ -193,7 +225,7 @@ a.brand-logo.logo {
 .card {
     margin-top: 90px;
     margin-bottom: 50px;
-    padding-left:60px;
+    padding-left: 60px;
     padding-right: 60px;
     border: none;
 }
@@ -397,3 +429,74 @@ body.modal-open-overlay {
 .table-responsive {
     margin-bottom: 30px;
 }
+
+.table-title {
+    font-weight: bold;
+    color: var(--bs-primary) !important;
+    border-bottom: 2px solid var(--bs-primary);
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.table-bordered {
+    border-radius: 20px !important;
+}
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid var(--bs-secondary) !important;
+    }
+
+.subcard {
+    background: var(--bs-primary) !important;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.border-top {
+    border-top: 2px solid var(--bs-primary) !important;
+}
+
+.table-dark thead th {
+    background-color: #172238 !important;
+    border-color: #2b3545; /* Slight contrast border, adjust if needed */
+    color: #fff !important;
+}
+
+.table-dark thead tr th {
+    color: #fff !important;
+}
+
+.table-dark tbody tr td {
+    color: var(--bs-secondary) !important;
+    background: #eaeded;
+}
+
+table td, table th {
+    vertical-align: middle !important;
+}
+
+.admin-items a .admin-button {
+    color: var(--bs-secondary) !important;
+    background: var(--bs-primary) !important;
+    padding: 5px 15px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+    .admin-items a .admin-button h4 {
+        color: #fff;
+        font-weight:bold;
+    }
+    .admin-items a .admin-button p {
+        color: var(--bs-secondary) !important;
+    }
+
+    .admin-items a .admin-button:hover {
+        background: var(--bs-secondary) !important;
+    }
+        .admin-items a .admin-button:hover p {
+            color: var(--bs-primary) !important;
+        }
