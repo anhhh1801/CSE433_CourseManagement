@@ -1,9 +1,10 @@
 using CourseManagement.Models;
+using CourseManagement.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddScoped<FinancialService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

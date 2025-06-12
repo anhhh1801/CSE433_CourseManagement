@@ -33,12 +33,18 @@ namespace CourseManagement.Controllers
             var teacher = _context.Users
                 .Include(t => t.Role)
                 .FirstOrDefault(t => t.email == email);
+            if (teacher == null)
+            {
+                TempData["Error"] = "Email or password is incorrect!";
+                return View();
+            }
+
             bool isValid = BCrypt.Net.BCrypt.Verify(password, teacher.password);
             bool isActive = teacher.isActive;
 
-            if (teacher == null || !isValid || !isActive)
+            if (!isValid || !isActive)
             {
-                TempData["Error"] = "Email or password is uncorrect!";
+                TempData["Error"] = "Email or password is incorrect!";
                 return View();
             }
             var roleNames = teacher.Role.Select(r => r.Name).ToList();

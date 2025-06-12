@@ -3,17 +3,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["PageName"] = "Financial Report";
 	var listExpense = ViewBag.Expenses;
-	var listRevenue = ViewBag.Revenues;
+	var listRevenue = ViewBag.Incomes;
 	var course = ViewBag.Course;
-    var totalRevenue = ViewBag.TotalRevenue;
-	var totalExpense = ViewBag.TotalExpense;
-	var netIncome = ViewBag.NetIncome;
+    var totalIncomes = ViewBag.TotalIncomes;
+	var totalExpenses = ViewBag.TotalExpenses;
+    double netIncome = ViewBag.NetIncome as double? ?? 0;
+}
+
+@if (course != null)
+{
+    <div class="alert alert-info text-center" style="font-size:1.2rem; margin-bottom: 20px;">
+        Net Income for @course.courseName:
+        <span class="@(course.netIncome > 0 ? "text-success" : "text-danger")">
+            @course.netIncome.ToString("N0")
+        </span> VND
+    </div>
 }
 
 <div class="modal fade" id="addExpenseModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form asp-action="AddExpense" asp-route-courseId="@course.courseId" method="post">
+            <form asp-controller="Expenses" asp-action="Add" asp-route-courseId="@course.courseId" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Expense</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -37,13 +47,13 @@
     </div>
 </div>
 
-<!-- Add Revenue Modal -->
+<!-- Add Income Modal -->
 <div class="modal fade" id="addRevenueModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form asp-action="AddRevenue" asp-route-courseId="@course.courseId" method="post">
+            <form asp-controller="Incomes" asp-action="Add" asp-route-courseId="@course.courseId" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add New Revenue</h5>
+                    <h5 class="modal-title">Add New Income</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -112,10 +122,10 @@
                             @foreach (var expense in listExpense)
                             {
                                 <tr>
-                                    <td>@expense.description</td>
-                                    <td>@expense.amount.ToString("N0") VND</td>
+                                    <td>@expense.Description</td>
+                                    <td>@expense.Amount.ToString("N0") VND</td>
                                     <td>
-                                        <form asp-action="DeleteExpense" asp-route-courseId="@course.courseId" asp-route-id="@expense.expenseId" method="post" style="display:inline;">
+                                        <form asp-controller="Expenses" asp-action="Delete"  asp-route-courseId="@course.courseId" asp-route-id="@expense.ExpenseId" method="post" style="display:inline;">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
                                         </form>
                                     </td>
@@ -123,7 +133,7 @@
                             }
                             <tr class="table-active">
                                 <td><strong>Total Expense</strong></td>
-                                <td colspan="2"><strong class="text-danger">@totalExpense.ToString("N0") VND</strong></td>
+                                <td colspan="2"><strong class="text-danger">@totalExpenses.ToString("N0") VND</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -155,10 +165,10 @@
                             @foreach (var revenue in listRevenue)
                             {
                                 <tr>
-                                    <td>@revenue.description</td>
-                                    <td>@revenue.amount.ToString("N0") VND</td>
+                                    <td>@revenue.Description</td>
+                                    <td>@revenue.Amount.ToString("N0") VND</td>
                                     <td>
-                                        <form asp-action="DeleteRevenue" asp-route-courseId="@course.courseId" asp-route-id="@revenue.revenueId" method="post" style="display:inline;">
+                                        <form asp-controller="Incomes" asp-action="Delete" asp-route-courseId="@course.courseId" asp-route-id="@revenue.IncomeId" method="post" style="display:inline;">
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
                                         </form>
                                     </td>
@@ -166,7 +176,7 @@
                             }
                             <tr class="table-active">
                                 <td><strong>Total Revenue</strong></td>
-                                <td colspan="2"><strong class="text-success">@totalRevenue.ToString("N0") VND</strong></td>
+                                <td colspan="2"><strong class="text-success">@totalIncomes.ToString("N0") VND</strong></td>
                             </tr>
                         </tbody>
                     </table>

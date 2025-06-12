@@ -17,9 +17,9 @@ namespace CourseManagement.Models
 
         public DbSet<Enrollment> Enrollments { get; set; }
 
-        public DbSet<Revenue> Revenues { get; set; }
+        public DbSet<Incomes> Incomes { get; set; }
 
-        public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Expenses> Expenses { get; set; }
 
         public DbSet<Role> Roles { get; set; }
 
@@ -44,6 +44,14 @@ namespace CourseManagement.Models
                 .WithMany(u => u.enrollments)
                 .HasForeignKey(e => e.TeacherId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Incomes>()
+                .Property(i => i.Amount)
+                .HasDefaultValue(0);
+
+            modelBuilder.Entity<Expenses>()
+                .Property(e => e.Amount)
+                .HasDefaultValue(0);
 
             modelBuilder.Entity<Role>().HasData(
                 new Role

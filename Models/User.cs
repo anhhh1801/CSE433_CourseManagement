@@ -22,6 +22,8 @@ namespace CourseManagement.Models
 
         public string? phoneNumber { get; set; }
 
+        public double NetIncome { get; set; } = 0;
+
         public bool isActive { get; set; } = true;
 
         public ICollection<Course> courses { get; set; }

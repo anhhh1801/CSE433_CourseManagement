@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CourseManagement.Models
 {
-    public class Revenue
+    public class Expenses
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int revenueId { get; set; }
+        public int ExpenseId { get; set; }
 
         [Required]
-        public double amount { get; set; }
-
-        public string? description { get; set; }
+        public double Amount { get; set; } = 0;
+        public string? Description { get; set; }
 
         [Required]
         [ForeignKey("courseId")]
