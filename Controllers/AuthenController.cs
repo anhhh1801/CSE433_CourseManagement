@@ -30,7 +30,21 @@ namespace CourseManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string email, string password)
         {
-
+            if(email == null && password == null)
+            {
+                TempData["Error"] = "Email and Password are required!";
+                return View();
+            }
+            if (email == null)
+            {
+                TempData["Error"] = "Email is required!";
+                return View();
+            }
+            if (password == null)
+            {
+                TempData["Error"] = "Password ís required!";
+                return View();
+            }
             var teacher = await _context.Users
                 .Include(t => t.Role)
                 .FirstOrDefaultAsync(t => t.email == email);
@@ -168,6 +182,11 @@ namespace CourseManagement.Controllers
         [HttpPost]
         public IActionResult VerifyOTP(string otp)
         {
+            if (otp == null)
+            {
+                TempData["Error"] = "OTP is required";
+                return View();
+            }
             var sessionOtp = HttpContext.Session.GetString("OTP");
             if (otp == sessionOtp)
             {
@@ -183,6 +202,11 @@ namespace CourseManagement.Controllers
         [HttpPost]
         public IActionResult VerifyOTPForgotPassword(string otp)
         {
+            if(otp == null)
+            {
+                TempData["Error"] = "OTP is required";
+                return View();
+            }
             var sessionOtp = HttpContext.Session.GetString("OTP");
             if (otp == sessionOtp)
             {
