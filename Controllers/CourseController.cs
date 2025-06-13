@@ -73,6 +73,11 @@ namespace CourseManagement.Controllers
             return View();
         }
 
+        public IActionResult AddCourse()
+        {
+            return View();
+        }
+
         public IActionResult Edit(int id)
         {
             var course = _context.Courses.SingleOrDefault(c => c.courseId == id);
@@ -172,6 +177,30 @@ namespace CourseManagement.Controllers
             _context.SaveChanges();
             TempData["Message"] = "Add Course Sucessfully!";
             return RedirectToAction("Index");
+
+        }
+        [HttpPost]
+        public IActionResult AddCourse(Course model)
+        {
+            var teacherId = User.FindFirstValue("TeacherId");
+            if (string.IsNullOrEmpty(teacherId) || !int.TryParse(teacherId, out int parsedTeacherId))
+            {
+                TempData["Error"] = "User Not Found! Please Login again!";
+                return RedirectToAction("Login", "Authen"); // Redirect if teacher is not logged in
+            }
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == parsedTeacherId);
+            if (teacher == null)
+            {
+                TempData["Error"] = "User Not Found! Please Login again!";
+                return BadRequest("Không tìm thấy giáo viên.");
+            }
+            teacher.courses.Add(model);
+            model.Teacher = teacher;
+            _context.Users.Update(teacher);
+            _context.Courses.Add(model);
+            _context.SaveChanges();
+            TempData["Message"] = "Add Course Sucessfully!";
+            return RedirectToAction("List");
 
         }
 

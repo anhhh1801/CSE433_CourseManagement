@@ -41,7 +41,7 @@
                             <div class="modal fade" id="uploadAvatarModal">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <form asp-controller="Home" asp-action="UploadAvatar" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
+                                        <form class="needs-validation" novalidate asp-controller="Home" asp-action="UploadAvatar" asp-route-id="@Model.teacherId" method="post" enctype="multipart/form-data">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">Upload Avatar</h5>
                                                 <button type="button" class="btn-close fw-bold" data-bs-dismiss="modal"></button>
@@ -49,7 +49,10 @@
                                             <div class="modal-body">
                                                 <div class="mb-3">
                                                     <label class="form-label">Choose Image</label>
-                                                    <input type="file" class="form-control" name="avatar" accept="image/*" />
+                                                    <input type="file" class="form-control" name="avatar" accept="image/*" required/>
+                                                    <div class="invalid-feedback">
+                                                        Please choose a picture.
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -103,15 +106,15 @@
                                             <div class="modal-body">
                                                 <div class="mb-3 input-group">
                                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                                                    <input type="text" class="form-control" name="oldPass" placeholder="Old Password" required />
+                                                    <input type="password" class="form-control" name="oldPass" placeholder="Old Password" required />
                                                 </div>
                                                 <div class="mb-3 input-group">
                                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                                                    <input type="text" class="form-control" name="newPass" placeholder="New Password" required />
+                                                    <input type="password" class="form-control" name="newPass" placeholder="New Password" required />
                                                 </div>
                                                 <div class="mb-3 input-group">
                                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                                                    <input type="text" class="form-control" name="confirmNewPass" placeholder="Confirm New Password" required />
+                                                    <input type="password" class="form-control" name="confirmNewPass" placeholder="Confirm New Password" required />
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
@@ -261,5 +264,27 @@
         </div>
     </div>
 </div>
+<script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+</script>
+
 
 

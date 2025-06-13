@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace CourseManagement.Models
 {
@@ -25,6 +26,7 @@ namespace CourseManagement.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Enrollment>()

@@ -12,22 +12,31 @@
     <div class="card-body p-0">
         <div class="container-fluid">
             <div class="row">
-                @foreach (var course in Model)
+                @if (!Model.Any())
                 {
-                    <div class="col-md-3 mb-3">
-                        <div class=" coursecard p-2">
+                    <div class="alert alert-warning text-center mt-5">
+                        <h2>No Students</h2>
+                        <p>Please! <a asp-controller="Course" asp-action="AddCourse">Add Course</a>.</p>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var course in Model)
+                    {
+                        <div class="col-md-3 mb-3">
+                            <div class=" coursecard p-2">
                             <h5 class="card-title table-title" style="margin: 20px">@course.courseName</h5>
                             <h6 class="card-subtitle mb-2 fw-bold text-secondary" style="margin: 20px">
                                 @course.courseSubject | @course.courseCode
                             </h6>
                             <div class="d-flex gap-2" style="margin-top: 20px; margin-left: 10px; margin-right: 10px;margin-bottom: 20px;">
-                                <a class="btn btn-warning fw-bold btn-sm flex-fill text-center text-white"
+                                <a class="btn btn-warning fw-bold flex-fill text-center text-white"
                                    asp-controller="Course"
                                    asp-action="ViewStudents"
                                    asp-route-id="@course.courseId">
                                     View Students (@course.enrollments.Count)
                                 </a>
-                                <a class="btn btn-secondary fw-bold btn-sm flex-fill text-center"
+                                <a class="btn btn-secondary fw-bold flex-fill text-center"
                                    asp-controller="Course"
                                    asp-action="Financial"
                                    asp-route-id="@course.courseId">
@@ -36,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                }
+                }}
             </div>
         </div>
     </div>

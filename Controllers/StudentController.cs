@@ -92,7 +92,7 @@ namespace CourseManagement.Controllers
         
 
 
-            [HttpGet]
+        [HttpGet]
         public async Task<IActionResult> Add()
         {
             return View();
@@ -122,6 +122,38 @@ namespace CourseManagement.Controllers
             ViewBag.Teacher = teacher;
             TempData["Message"] = "Add Student Successfully!";
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult AddStudent()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddStudent(Student model)
+        {
+            var teacherId = User.FindFirstValue("TeacherId");
+            if (string.IsNullOrEmpty(teacherId) || !int.TryParse(teacherId, out int parsedTeacherId))
+            {
+                TempData["Error"] = "User Not Found! Please Login Again!";
+                return RedirectToAction("Login", "Authen"); // Redirect if teacher is not logged in
+            }
+            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == parsedTeacherId);
+            if (teacher == null)
+            {
+                TempData["Error"] = "User Not Found! Please Login Again!";
+                return BadRequest("Không tìm thấy giáo viên.");
+            }
+            model.teacher = teacher;
+            model.Avatar = "/img/avatar_default.jpg";
+            teacher.students.Add(model);
+            _context.Users.Update(teacher);
+            _context.Students.Add(model);
+            _context.SaveChanges();
+            ViewBag.Teacher = teacher;
+            TempData["Message"] = "Add Student Successfully!";
+            return RedirectToAction("List");
         }
 
         public IActionResult Delete(int id)

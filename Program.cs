@@ -8,8 +8,17 @@ builder.Services.AddScoped<FinancialService>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(10); // Th?i gian s?ng c?a session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 builder.Services.AddDbContext<CourseManagementDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"),
+    sqlOptions => sqlOptions.CommandTimeout(60)
+    ));
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
@@ -18,6 +27,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Authen/Logout";
         options.AccessDeniedPath = "/Authen/AccessDenied";
     });
+builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+builder.Services.AddSingleton<EmailService>();
 
 
 var app = builder.Build();
@@ -36,7 +47,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 

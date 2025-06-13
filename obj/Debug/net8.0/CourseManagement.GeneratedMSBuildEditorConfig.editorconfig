@@ -48,6 +48,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXEFjY2Vzc0RlbmllZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/EmailVerify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXEVtYWlsVmVyaWZ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/EmailVerifyForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXEVtYWlsVmVyaWZ5Rm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +72,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXFNpZ25VcC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/VerifyOTP.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXFZlcmlmeU9UUC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Authen/VerifyOTPForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVuXFZlcmlmeU9UUEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Course/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Course/AddCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEFkZENvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Course/Edit.cshtml]
@@ -118,6 +142,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/AddStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGRTdHVkZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/Edit.cshtml]

@@ -13,6 +13,13 @@
     <div class="card-body p-0">
         <div class="container-fluid">
             <div class="row">
+                @if(!Model.Any() ){
+                    <div class="alert alert-warning text-center mt-5">
+                        <h2>No Students</h2>
+                        <p>Please! <a asp-controller="Student" asp-action="AddStudent">Add Student</a>.</p>
+                    </div>
+                }
+                else{
                 @foreach (var student in Model)
                 {
                     <div class="col-md-3">
@@ -90,6 +97,7 @@
                             </div>
                         </div>
                     </div>
+                }
                 }
             </div>
         </div>
