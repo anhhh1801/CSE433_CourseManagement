@@ -41,14 +41,9 @@ namespace CourseManagement.Controllers
             var enrollments = _context.Enrollments
                 .Include(e => e.Student)
                 .OrderByDescending(e => e.FinalScore)
+                .Where(e => e.TeacherId.ToString() == teacherId)
                 .Where(e => e.isActive)
                 .Take(5);
-            var top10 = _context.Enrollments
-                .Include(e => e.Student)
-                .Include(e => e.Course)
-                .OrderByDescending(e => e.FinalScore)
-                .Take(10)
-                .ToList();
             double? netIncomeTotal = 0;
             foreach(var c in courses)
             {

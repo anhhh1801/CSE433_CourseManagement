@@ -1,5 +1,6 @@
 ﻿@model CourseManagement.Models.User;
 @{
+    ViewData["PageName"] = "Admin Dashboard";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     var listStudents = ViewBag.Students;
     var listCourses = ViewBag.Courses;
