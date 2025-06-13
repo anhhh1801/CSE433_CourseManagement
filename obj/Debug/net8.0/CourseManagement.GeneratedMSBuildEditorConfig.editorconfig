@@ -32,10 +32,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Admin/EnrollmentList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRW5yb2xsbWVudExpc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -122,10 +118,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxBZGQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/Course.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/CSE 443/Project_CourseManagement_CSE443/CSE433_CourseManagement/Views/Student/Edit.cshtml]

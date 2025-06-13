@@ -64,6 +64,7 @@ namespace CourseManagement.Controllers
                 .Include(c => c.enrollments)
                 .Where(c => c.Teacher.teacherId == parsedId)
                 .ToList();
+
             return View(courses);
         }
 
@@ -264,12 +265,12 @@ namespace CourseManagement.Controllers
             _context.Users.Update(teacher);
             _context.Enrollments.Add(enrollment);
 
-            // Tạo Income với học phí
+
             var income = new Incomes
             {
                 CourseId = courseId,
                 Amount = course.TuitionFee,
-                Description = "Enroll"
+                Description = "Enroll for " + student.studentName
             };
             _context.Incomes.Add(income);
             _context.SaveChanges();

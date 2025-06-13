@@ -41,7 +41,7 @@
                                     method="post"
                                     asp-route-courseId="@course.courseId"
                                     asp-route-studentId="@student.studentId">
-                                        <button type="submit" class="btn btn-primary btn-sm">Enroll</button>
+                                        <button type="submit" class="btn btn-warning btn-sm fw-bold">Enroll</button>
                                     </form>
                                 </td>
                             </tr>
@@ -57,7 +57,7 @@
                 </tbody>
             </table>
             <div class="text-center m-2">
-                <a class="btn btn-secondary"
+                <a class="btn btn-secondary fw-bold"
                     asp-controller="Course"
                     asp-action="Student"
                     asp-route-id="@course.courseId">
@@ -65,11 +65,5 @@
                 </a>
             </div>
         </div>
-    </div>
-</div>
-
-<div class="footer footer-outer mt-4">
-    <div class="copyright text-center">
-        <p>Project CSE310 - Home Tutor Management</p>
     </div>
 </div>

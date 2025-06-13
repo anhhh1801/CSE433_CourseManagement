@@ -132,5 +132,51 @@ namespace CourseManagement.Controllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(string oldPass, string newPass, string confirmNewPass)
+        {
+            var teacherId = User.FindFirst("TeacherId")?.Value;
+            if (teacherId == null)
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            int parsedId;
+            if (!int.TryParse(teacherId, out parsedId))
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            var teacher = await _context.Users.FirstOrDefaultAsync(t => t.teacherId.ToString() == teacherId);
+
+            bool isValid = BCrypt.Net.BCrypt.Verify(oldPass, teacher.password);
+
+            if (!isValid)
+            {
+                TempData["Error"] = "Old password is incorrect!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (newPass != confirmNewPass)
+            {
+                TempData["Error"] = "New password and confirmation do not match!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            if (newPass.Length < 6)
+            {
+                TempData["Error"] = "New password must be at least 6 characters long!";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Hash the new password
+            teacher.password = BCrypt.Net.BCrypt.HashPassword(newPass);
+            _context.Users.Update(teacher);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Password changed successfully!";
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

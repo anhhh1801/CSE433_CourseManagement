@@ -15,7 +15,7 @@ namespace CourseManagement.Controllers
             _context = context;
         }
         [Authorize(Roles = "Admin")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var teacherId = User.FindFirst("TeacherId")?.Value;
             if (teacherId == null)
@@ -29,15 +29,15 @@ namespace CourseManagement.Controllers
                 TempData["Error"] = "Not Found User";
                 return RedirectToAction("Login", "Authen");
             }
-            var admin = _context.Users.FirstOrDefault(t => t.teacherId.ToString() == teacherId);
-            var students = _context.Students.ToList();
-            var courses = _context.Courses.ToList();
-            var admins = _context.Users
+            var admin = await _context.Users.FirstOrDefaultAsync(t => t.teacherId.ToString() == teacherId);
+            var students = await _context.Students.ToListAsync();
+            var courses = await _context.Courses.ToListAsync();
+            var admins = await _context.Users
                 .Include(t => t.Role)
                 .Where(t => t.isActive && t.Role.Any(r => r.Name == "Admin"))
-                .ToList();
-            var users = _context.Users
-                .Where(u => u.isActive).ToList();
+                .ToListAsync();
+            var users = await _context.Users
+                .Where(u => u.isActive).ToListAsync();
 
             ViewData["PageName"] = "Admin Dashboard";
             ViewBag.Courses = courses;
@@ -158,16 +158,16 @@ namespace CourseManagement.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ToggleAdmin(int userId, bool isAdmin)
+        public async Task<IActionResult> ToggleAdmin(int userId, bool isAdmin)
         {
-            var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.teacherId == userId);
+            var user = await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.teacherId == userId);
             if (user == null)
             {
                 TempData["Erroe"] = "User Not Found";
                 return NotFound();
             }
 
-            var adminRole = _context.Roles.FirstOrDefault(r => r.Name == "Admin");
+            var adminRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "Admin");
             if (adminRole == null) return BadRequest();
 
             if (isAdmin)
@@ -188,9 +188,27 @@ namespace CourseManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditProfile(int id, string teacherName, string phoneNumber, string email)
+        public async Task<IActionResult> EditProfile(int id, string teacherName, string phoneNumber, string email)
         {
-            var teacher = _context.Users.FirstOrDefault(t => t.teacherId == id);
+            var teacher = await _context.Users.FirstOrDefaultAsync(t => t.teacherId == id);
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+            teacher.teacherName = teacherName;
+            teacher.phoneNumber = phoneNumber;
+            teacher.email = email;
+            _context.Users.Update(teacher);
+            _context.SaveChanges();
+            TempData["Message"] = "Update Profile Successfully";
+            return RedirectToAction("Index");
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProfileInUserList(int id, string teacherName, string phoneNumber, string email)
+        {
+            var teacher = await _context.Users.FirstOrDefaultAsync(t => t.teacherId == id);
             if (teacher == null)
             {
                 return NotFound();
@@ -205,19 +223,19 @@ namespace CourseManagement.Controllers
 
         }
 
-        public IActionResult DeleteUser(int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            var students = _context.Students
+            var students = await _context.Students
                 .Where(s => s.TeacherId == id)
-                .ToList();
-            var courses = _context.Courses
+                .ToListAsync();
+            var courses = await _context.Courses
                 .Where(c => c.TeacherId == id)
-                .ToList();
+                .ToListAsync();
 
-            var enrollments = _context.Enrollments
+            var enrollments = await _context.Enrollments
                 .Where(e => e.TeacherId == id)
-                .ToList();
-            var user = _context.Users.FirstOrDefault(u => u.teacherId == id);
+                .ToListAsync();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.teacherId == id);
 
             if (user == null)
             {
@@ -245,6 +263,98 @@ namespace CourseManagement.Controllers
             _context.SaveChanges();
             TempData["Message"] = "User Deleted Successfully";
             return RedirectToAction("UserList");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(string oldPass, string newPass, string confirmNewPass)
+        {
+            var teacherId = User.FindFirst("TeacherId")?.Value;
+            if (teacherId == null)
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            int parsedId;
+            if (!int.TryParse(teacherId, out parsedId))
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            var admin = await _context.Users.FirstOrDefaultAsync(t => t.teacherId.ToString() == teacherId);
+
+            bool isValid = BCrypt.Net.BCrypt.Verify(oldPass, admin.password);
+
+            if (!isValid)
+            {
+                TempData["Error"] = "Old password is incorrect!";
+                return RedirectToAction("Index", "Admin");
+            }
+
+            if (newPass != confirmNewPass)
+            {
+                TempData["Error"] = "New password and confirmation do not match!";
+                return RedirectToAction("Index", "Admin");
+            }
+
+            if (newPass.Length < 6)
+            {
+                TempData["Error"] = "New password must be at least 6 characters long!";
+                return RedirectToAction("Index", "Admin");
+            }
+
+            // Hash the new password
+            admin.password = BCrypt.Net.BCrypt.HashPassword(newPass);
+            _context.Users.Update(admin);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Password changed successfully!";
+            return RedirectToAction("Index", "Admin");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePasswordInUserList(string oldPass, string newPass, string confirmNewPass)
+        {
+            var teacherId = User.FindFirst("TeacherId")?.Value;
+            if (teacherId == null)
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            int parsedId;
+            if (!int.TryParse(teacherId, out parsedId))
+            {
+                TempData["Error"] = "Not Found User";
+                return RedirectToAction("Login", "Authen");
+            }
+            var admin = await _context.Users.FirstOrDefaultAsync(t => t.teacherId.ToString() == teacherId);
+
+            bool isValid = BCrypt.Net.BCrypt.Verify(oldPass, admin.password);
+
+            if (!isValid)
+            {
+                TempData["Error"] = "Old password is incorrect!";
+                return RedirectToAction("UserList", "Admin");
+            }
+
+            if (newPass != confirmNewPass)
+            {
+                TempData["Error"] = "New password and confirmation do not match!";
+                return RedirectToAction("UserList", "Admin");
+            }
+
+            if (newPass.Length < 6)
+            {
+                TempData["Error"] = "New password must be at least 6 characters long!";
+                return RedirectToAction("UserList", "Admin");
+            }
+
+            // Hash the new password
+            admin.password = BCrypt.Net.BCrypt.HashPassword(newPass);
+            _context.Users.Update(admin);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Password changed successfully!";
+            return RedirectToAction("UserList", "Admin");
         }
     }
 }

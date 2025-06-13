@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\1.PNG",
+      "PackagePath": "staticwebassets\\img\\1.PNG"
+    },
+    {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\DRAW 3.PNG",
       "PackagePath": "staticwebassets\\img\\DRAW 3.PNG"
     },
@@ -339,6 +343,10 @@
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\course-video.mp4",
       "PackagePath": "staticwebassets\\new\\assets\\images\\course-video.mp4"
+    },
+    {
+      "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\new\\assets\\images\\logo.png"
     },
     {
       "Id": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\flex-slider.css",

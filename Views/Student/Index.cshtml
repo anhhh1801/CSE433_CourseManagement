@@ -4,25 +4,17 @@
 
     var teacher = ViewBag.Teacher;
 }
-
-
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success m-3" role="alert">
-        @TempData["Message"]
-    </div>
-}
 <div class="card">
     <div class=" border-0 p-3 d-flex justify-content-between align-items-center">
         <h4 class="heading mb-0">Manage Student</h4>
 
         <form asp-controller="Student" asp-action="List" method="get" class="mt-3 d-flex">
             <div class="input-group search">
-                <input type="text" class="form-control border border-primary"
+                <input type="text" class="form-control border border-warning"
                        name="keyword" id="search"
                        value="@ViewBag.Keyword"
                        placeholder="Search for students.." />
-                <button class="btn btn-primary" type="submit">
+                <button class="btn btn-warning fw-bold" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </div>
@@ -60,9 +52,9 @@
                             </td>
                             <td>
                                 <a asp-controller="Student" asp-action="Edit" asp-route-id="@student.studentId"
-                                class="btn btn-secondary btn-sm">Update</a>
+                                       class="btn btn-secondary btn-sm fw-bold">Update</a>
                                 <a asp-controller="Student" asp-action="Delete" asp-route-id="@student.studentId"
-                                class="btn btn-danger btn-sm">Delete</a>
+                                       class="btn btn-danger btn-sm fw-bold">Delete</a>
                                 <button class="btn btn-info btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#uploadAvatarModal-@student.studentId">
                                     Change Avatar
@@ -77,7 +69,7 @@
                                             enctype="multipart/form-data">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title">Upload Avatar for @student.studentName</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        <button type="button" class="btn-close fw-bold" data-bs-dismiss="modal"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="mb-3">
@@ -87,8 +79,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                                        <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary fw-bold">Upload</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -102,7 +94,7 @@
             </table>
         </div>
         <div class="m-3 text-center">
-            <a asp-controller="Student" asp-action="Add" class="btn btn-primary">Add New Student</a>
+            <a asp-controller="Student" asp-action="Add" class="btn btn-warning">Add New Student</a>
         </div>
     </div>
 </div>

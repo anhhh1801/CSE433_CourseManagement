@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jWlHKja1ceuvEiMX1j1DgJw7Lt+lRyNECbi3iwaArZ0=",
+  "Hash": "JY3EuUTlM4n0/9WwLzkd7/Sewm/Oh5Errsun2P3xjVc=",
   "Source": "CourseManagement",
   "BasePath": "_content/CourseManagement",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\1.PNG",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "img/1#[.{fingerprint}]?.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t76xl938s7",
+      "Integrity": "RzlXaFtjOvjJX7rynGADM70ZEiRrtTtVEVbGUcmXpbQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\1.PNG"
     },
     {
       "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\avatar_default.jpg",
@@ -1823,6 +1844,27 @@
       "OriginalItemSpec": "wwwroot\\new\\assets\\images\\course-video.mp4"
     },
     {
+      "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\logo.png",
+      "SourceId": "CourseManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\",
+      "BasePath": "_content/CourseManagement",
+      "RelativePath": "new/assets/images/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xpicucomy7",
+      "Integrity": "xXf62OPeWztTE90CB3OGSAPoDqvZSHbmwyEY1m+sp5M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\new\\assets\\images\\logo.png"
+    },
+    {
       "Identity": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\flex-slider.css",
       "SourceId": "CourseManagement",
       "SourceType": "Discovered",
@@ -1900,8 +1942,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5jscmj47d9",
-      "Integrity": "cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=",
+      "Fingerprint": "1s4u5dsucb",
+      "Integrity": "T9O2qcNDQ/TEwur8VOtGnicAi95vyiNvEOb6wTHOs3U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\new\\css\\style.css"
@@ -2309,7 +2351,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:52 GMT"
+          "Value": "Fri, 13 Jun 2025 01:57:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2354,7 +2396,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:52 GMT"
+          "Value": "Fri, 13 Jun 2025 01:57:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2399,7 +2441,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:52 GMT"
+          "Value": "Fri, 13 Jun 2025 01:57:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2436,7 +2478,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 14:28:52 GMT"
+          "Value": "Fri, 13 Jun 2025 01:57:58 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2529,6 +2571,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "img/1.PNG",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45669"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RzlXaFtjOvjJX7rynGADM70ZEiRrtTtVEVbGUcmXpbQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 02:01:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RzlXaFtjOvjJX7rynGADM70ZEiRrtTtVEVbGUcmXpbQ="
+        }
+      ]
+    },
+    {
+      "Route": "img/1.t76xl938s7.PNG",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\img\\1.PNG",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45669"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RzlXaFtjOvjJX7rynGADM70ZEiRrtTtVEVbGUcmXpbQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 02:01:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t76xl938s7"
+        },
+        {
+          "Name": "label",
+          "Value": "img/1.PNG"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RzlXaFtjOvjJX7rynGADM70ZEiRrtTtVEVbGUcmXpbQ="
         }
       ]
     },
@@ -2883,7 +3007,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 08:19:28 GMT"
+          "Value": "Fri, 13 Jun 2025 03:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2928,7 +3052,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 11 Jun 2025 08:19:28 GMT"
+          "Value": "Fri, 13 Jun 2025 03:13:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3211,7 +3335,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 09 Jun 2025 03:24:15 GMT"
+          "Value": "Fri, 13 Jun 2025 10:17:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3248,7 +3372,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 09 Jun 2025 03:24:15 GMT"
+          "Value": "Fri, 13 Jun 2025 10:17:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3293,7 +3417,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Jun 2025 08:28:11 GMT"
+          "Value": "Fri, 13 Jun 2025 03:09:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3338,7 +3462,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Jun 2025 08:28:11 GMT"
+          "Value": "Fri, 13 Jun 2025 03:09:19 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9339,6 +9463,88 @@
       ]
     },
     {
+      "Route": "new/assets/images/logo.png",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXf62OPeWztTE90CB3OGSAPoDqvZSHbmwyEY1m+sp5M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 03:08:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xXf62OPeWztTE90CB3OGSAPoDqvZSHbmwyEY1m+sp5M="
+        }
+      ]
+    },
+    {
+      "Route": "new/assets/images/logo.xpicucomy7.png",
+      "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\assets\\images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10469"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xXf62OPeWztTE90CB3OGSAPoDqvZSHbmwyEY1m+sp5M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 03:08:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xpicucomy7"
+        },
+        {
+          "Name": "label",
+          "Value": "new/assets/images/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xXf62OPeWztTE90CB3OGSAPoDqvZSHbmwyEY1m+sp5M="
+        }
+      ]
+    },
+    {
       "Route": "new/css/flex-slider.6k1vjfxrub.css",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\flex-slider.css",
       "Selectors": [],
@@ -9585,7 +9791,7 @@
       ]
     },
     {
-      "Route": "new/css/style.5jscmj47d9.css",
+      "Route": "new/css/style.1s4u5dsucb.css",
       "AssetFile": "D:\\CSE 443\\Project_CourseManagement_CSE443\\CSE433_CourseManagement\\wwwroot\\new\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -9595,7 +9801,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7328"
+          "Value": "7391"
         },
         {
           "Name": "Content-Type",
@@ -9603,11 +9809,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=\""
+          "Value": "\"T9O2qcNDQ/TEwur8VOtGnicAi95vyiNvEOb6wTHOs3U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 16:10:08 GMT"
+          "Value": "Fri, 13 Jun 2025 03:10:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9617,7 +9823,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "5jscmj47d9"
+          "Value": "1s4u5dsucb"
         },
         {
           "Name": "label",
@@ -9625,7 +9831,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk="
+          "Value": "sha256-T9O2qcNDQ/TEwur8VOtGnicAi95vyiNvEOb6wTHOs3U="
         }
       ]
     },
@@ -9640,7 +9846,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7328"
+          "Value": "7391"
         },
         {
           "Name": "Content-Type",
@@ -9648,11 +9854,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk=\""
+          "Value": "\"T9O2qcNDQ/TEwur8VOtGnicAi95vyiNvEOb6wTHOs3U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Jun 2025 16:10:08 GMT"
+          "Value": "Fri, 13 Jun 2025 03:10:26 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9662,7 +9868,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-cR1IILrXf2lfDiap1aMCtDx2ETK6wsklPcbRzHG5Tuk="
+          "Value": "sha256-T9O2qcNDQ/TEwur8VOtGnicAi95vyiNvEOb6wTHOs3U="
         }
       ]
     },

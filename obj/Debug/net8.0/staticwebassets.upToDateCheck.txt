@@ -1,4 +1,5 @@
 wwwroot\favicon.ico
+wwwroot\img\1.PNG
 wwwroot\img\avatar_default.jpg
 wwwroot\img\DRAW 3.PNG
 wwwroot\img\DRAW8.PNG
@@ -82,6 +83,7 @@ wwwroot\new\assets\fonts\slick.svg
 wwwroot\new\assets\fonts\slick.ttf
 wwwroot\new\assets\fonts\slick.woff
 wwwroot\new\assets\images\course-video.mp4
+wwwroot\new\assets\images\logo.png
 wwwroot\new\css\flex-slider.css
 wwwroot\new\css\lightbox.css
 wwwroot\new\css\owl.css

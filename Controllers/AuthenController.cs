@@ -30,9 +30,9 @@ namespace CourseManagement.Controllers
         public async Task<IActionResult> Login(string email, string password)
         {
 
-            var teacher = _context.Users
+            var teacher = await _context.Users
                 .Include(t => t.Role)
-                .FirstOrDefault(t => t.email == email);
+                .FirstOrDefaultAsync(t => t.email == email);
             if (teacher == null)
             {
                 TempData["Error"] = "Email or password is incorrect!";
@@ -70,7 +70,7 @@ namespace CourseManagement.Controllers
 
         [HttpPost]
 
-        public IActionResult SignUp(User user)
+        public async Task<IActionResult> SignUp(User user)
         {
             
             if (_context.Users.Any(t => t.email == user.email))
@@ -79,7 +79,7 @@ namespace CourseManagement.Controllers
                 return View();
             }
             
-            var defaultRole = _context.Roles.FirstOrDefault(r => r.Name == "User");
+            var defaultRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "User");
 
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.password);
 

@@ -10,7 +10,7 @@
                 <div class="border-0 p-3">
                     <h4 class="heading mb-0">Students Enrolled in @course?.courseName</h4>
                     <div class="text-end m-3">
-                        <a asp-controller="Course" asp-action="List" class="btn btn-warning">
+            <a asp-controller="Course" asp-action="List" class="btn btn-warning fw-bold">
                             <i class="fas fa-arrow-left"></i> Go Back
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                                 @{
                                     var modalId = $"scoreModal-{student.studentId}";
                                 }
-                                <button type="button" class="btn btn-primary btn-sm flex-fill text-center" data-bs-toggle="modal" data-bs-target="#@modalId">
+                                <button type="button" class="btn btn-warning btn-sm flex-fill text-center fw-bold" data-bs-toggle="modal" data-bs-target="#@modalId">
                                                 Update Scores
                                             </button>
 
@@ -73,7 +73,7 @@
 
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title">Update Scores for @student?.studentName</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="background-color: #f5a425"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <div class="mb-3">
@@ -86,8 +86,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-warning fw-bold">Save Changes</button>
                                                             </div>
                                                         </form>
                                                     </div>

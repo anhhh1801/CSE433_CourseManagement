@@ -26,7 +26,7 @@
             <form asp-controller="Expenses" asp-action="Add" asp-route-courseId="@course.courseId" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Expense</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close fw-bold" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Expense</button>
+                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning fw-bold">Save Expense</button>
                 </div>
             </form>
         </div>
@@ -54,7 +54,7 @@
             <form asp-controller="Incomes" asp-action="Add" asp-route-courseId="@course.courseId" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Income</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close fw-bold" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -67,8 +67,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Revenue</button>
+                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning fw-bold">Save Revenue</button>
                 </div>
             </form>
         </div>
@@ -89,7 +89,7 @@
                 </p>
             </div>
             <div class="text-end m-3">
-                <a asp-controller="Course" asp-action="List" class="btn btn-warning">
+                <a asp-controller="Course" asp-action="List" class="btn btn-warning fw-bold">
                     <i class="fas fa-arrow-left"></i> Go Back
                 </a>
             </div>
@@ -104,7 +104,7 @@
         <div class="card" style="margin-top:0px">
             <div class="card-header border-0 p-3 d-flex justify-content-between">
                 <h3 class="mb-0">Expenses for @course.courseName</h3>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
+                <button type="button" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#addExpenseModal">
                     Add New Expense
                 </button>
             </div>
@@ -147,7 +147,7 @@
         <div class="card" style="margin-top:0px">
             <div class="card-header border-0 p-3 d-flex justify-content-between">
                 <h3 class="mb-0">Revenue of @course.courseName</h3>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRevenueModal">
+                <button type="button" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#addRevenueModal">
                     Add New Revenue
                 </button>
             </div>

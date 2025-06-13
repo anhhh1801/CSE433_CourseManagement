@@ -404,6 +404,9 @@ body.modal-open-overlay {
     font-weight: bold;
 }
 
-    .modal-header .btn-close {
-        color: #f5a425;
-    }
+.modal-header .btn-close {
+    background-color: #f5a425 !important;
+}
+.input-group-text{
+    background-color: black;
+}

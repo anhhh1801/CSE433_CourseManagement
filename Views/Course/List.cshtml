@@ -16,12 +16,12 @@
                 {
                     <div class="col-md-3 mb-3">
                         <div class=" coursecard p-2">
-                            <h5 class="card-title table-title">@course.courseName</h5>
-                            <h6 class="card-subtitle mb-2 fw-bold text-secondary">
+                            <h5 class="card-title table-title" style="margin: 20px">@course.courseName</h5>
+                            <h6 class="card-subtitle mb-2 fw-bold text-secondary" style="margin: 20px">
                                 @course.courseSubject | @course.courseCode
                             </h6>
-                            <div class="d-flex gap-2">
-                                <a class="btn btn-primary fw-bold btn-sm flex-fill text-center"
+                            <div class="d-flex gap-2" style="margin-top: 20px; margin-left: 10px; margin-right: 10px;margin-bottom: 20px;">
+                                <a class="btn btn-warning fw-bold btn-sm flex-fill text-center text-white"
                                    asp-controller="Course"
                                    asp-action="ViewStudents"
                                    asp-route-id="@course.courseId">
@@ -31,7 +31,7 @@
                                    asp-controller="Course"
                                    asp-action="Financial"
                                    asp-route-id="@course.courseId">
-                                    View Financial (0)
+                                    View Financial
                                 </a>
                             </div>
                         </div>

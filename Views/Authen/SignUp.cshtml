@@ -10,35 +10,35 @@
         <div class="caption d-flex justify-content-center">
             <div class="login-form">
                 <div class="text-center">
-                    <h3 class="text-white fw-bold"><span class="text-primary">Create</span> an Account</h3>
+                    <h3 class="text-white fw-bold" style="margin: 30px"><span class="text-primary" style="color: #f5a425 !important;">Create</span> an Account</h3>
                 </div>
 
                 <form asp-controller="Authen" asp-action="SignUp" method="post">
-                    <div class="mb-3 input-group">
+                    <div class="mb-3 input-group" style="margin-top: 30px">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                         <input type="text" class="form-control" asp-for="teacherName" placeholder="Full Name" required />
                     </div>
-                    <div class="mb-3 input-group">
+                    <div class="mb-3 input-group" style="margin-top: 30px">
                         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         <input type="email" class="form-control" asp-for="email" placeholder="Email" required />
                     </div>
-                    <div class="mb-3 input-group">
+                    <div class="mb-3 input-group" style="margin-top: 30px">
                         <span class="input-group-text"><i class="fas fa-phone"></i></span>
                         <input type="text" class="form-control" asp-for="phoneNumber" name="phoneNumber" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}" required />
                     </div>
-                    <div class="mb-3 input-group">
+                    <div class="mb-3 input-group" style="margin-top: 30px">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                         <input type="password" asp-for=password class="form-control" name="password" placeholder="Password" required />
                     </div>
-                    <div class="mb-4 input-group">
+                    <div class="mb-4 input-group" style="margin-top: 30px">
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                         <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required />
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 text-white">Sign Up</button>
+                    <button type="submit" class="btn btn-warning w-100 text-white fw-bold" style="margin-top: 30px">Sign Up</button>
                 </form>
 
-                <p class="login-link text-light">Already have an account? <a asp-action="Login" asp-controller="Authen"> Login</a></p>
+                <p class="login-link text-light fw-bold" style="margin-top: 30px">Already have an account? <a asp-action="Login" asp-controller="Authen"> Login</a></p>
             </div>
         </div>
     </div>
