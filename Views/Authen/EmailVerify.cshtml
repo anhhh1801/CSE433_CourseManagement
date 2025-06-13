@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_UnLoginLayout";
+}
+@model CourseManagement.Models.User;
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="~/new/assets/images/course-video.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay header-text ">
+        <div class="caption d-flex justify-content-center">
+            <div class="login-form">
+                <div class="text-center">
+                    <h3 class="text-white fw-bold" style="margin: 30px"><span class="text-primary" style="color: #f5a425 !important;">Enter</span> your Email</h3>
+                </div>
+
+                <form asp-controller="Authen" asp-action="SendOTP" method="post">
+                    <div class="mb-3 input-group" style="margin-top: 30px">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" class="form-control" name="email" required placeholder="Enter your email" />
+                    </div>
+                    <button type="submit" class="btn btn-warning w-100 text-white fw-bold" style="margin-top: 30px"><i class="fa-solid fa-paper-plane"></i> Send OTP</button>
+                </form>
+
+                <p class="login-link text-light fw-bold" style="margin-top: 30px">Already have an account? <a asp-action="Login" asp-controller="Authen"> Login</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+

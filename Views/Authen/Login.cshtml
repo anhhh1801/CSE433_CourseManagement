@@ -22,11 +22,14 @@
                         <span class="input-group-text"><i class="fas fa-lock"></i></span>
                         <input type="password" name="password" asp-for="password" class="form-control" placeholder="Password" required>
                     </div>
-                    <button type="submit" class="btn btn-warning w-100 text-white text-light fw-bold" style="margin-top: 30px">Login</button>
+                    <button type="submit" class="btn btn-warning w-100 text-white text-light fw-bold" style="margin-top: 30px"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
                 </form>
 
                 <div class="text-center text-light fw-bold" style="margin: 30px">
                     Don't have an account? <a asp-controller="Authen" asp-action="SignUp">Sign up</a>
+                </div>
+                <div class="text-center text-light fw-bold" style="margin: 30px">
+                    Forgot password? <a asp-controller="Authen" asp-action="EmailVerifyForgotPassword">Get it back</a>
                 </div>
             </div>
         </div>

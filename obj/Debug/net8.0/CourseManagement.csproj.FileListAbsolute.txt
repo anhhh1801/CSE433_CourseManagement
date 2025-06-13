@@ -519,3 +519,4 @@ D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\CourseManagement.pdb
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\CourseManagement.genruntimeconfig.cache
 D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\obj\Debug\net8.0\ref\CourseManagement.dll
+D:\CSE 443\Project_CourseManagement_CSE443\CSE433_CourseManagement\bin\Debug\net8.0\Newtonsoft.Json.dll

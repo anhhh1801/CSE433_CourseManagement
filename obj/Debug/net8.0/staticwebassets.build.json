@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JY3EuUTlM4n0/9WwLzkd7/Sewm/Oh5Errsun2P3xjVc=",
+  "Hash": "3uYfDVYLHfF/Ash1+lhMpnkGKm/rCVy9RTNjj4LrPgg=",
   "Source": "CourseManagement",
   "BasePath": "_content/CourseManagement",
   "Mode": "Default",
@@ -3007,7 +3007,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 03:13:38 GMT"
+          "Value": "Fri, 13 Jun 2025 15:38:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3052,7 +3052,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 03:13:38 GMT"
+          "Value": "Fri, 13 Jun 2025 15:38:23 GMT"
         },
         {
           "Name": "Cache-Control",
